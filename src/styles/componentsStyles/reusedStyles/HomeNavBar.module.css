@@ -1,0 +1,285 @@
+/* ===== Reset e Configurações Globais ===== */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Estrutura Base do Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  transition: all 0.6s ease;
+  width: 100%;
+}
+
+.navbar.fixed {
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+.navbarLeft,
+.navbarCenter,
+.navbarRight {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbarCenter {
+  flex-grow: 1;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+.navbarCenter a.logoLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  border-bottom: none;
+  margin-top: 15px;
+}
+
+/* ===== Componentes Interativos ===== */
+.iconButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.iconButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.iconButton:active {
+  transform: scale(0.95);
+}
+
+.icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* ===== Seletor de Idioma ===== */
+.languageSelector {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.languagePill {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50px;
+  padding: 6px 15px 6px 6px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 40px;
+}
+
+.languagePill:hover, 
+.languagePill.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.flagContainer {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  background: white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.flagImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.languageName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.chevron {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+
+.languageDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 8px;
+  padding: 8px 0;
+  width: 160px;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.languageOption {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.languageOption:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.languageOption.selected {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Componentes Especiais ===== */
+.menuOverlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 2rem;
+  z-index: 999;
+  overflow-y: auto;
+  animation: fadeInDown 0.3s ease-out;
+}
+
+.noScroll {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+body.noScroll {
+  position: fixed;
+  width: 100%;
+}
+
+/* ===== Animações ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .searchButton {
+    display: none !important;
+  }
+
+  .navbarLeft,
+  .navbarRight {
+    z-index: 2;
+  }
+
+  .menuButton .icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px; 
+    min-height: 30px;
+  }
+
+  .languageSelector {
+    margin-left: 0;
+    margin-right: 20px;
+    min-width: 120px;
+  }
+
+  .languagePill {
+    padding: 1px;
+    margin-left: 20px;
+    height: 30px;
+    min-width: 40px;
+    background: rgb(0, 0, 0);
+  }
+
+  .languageName,
+  .chevron {
+    display: none;
+  }
+
+  .flagContainer {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  .iconButton {
+    width: 32px;
+    height: 32px;
+    margin: 0 0.1rem;
+    padding: 0.3rem;
+  }
+
+  .icon {
+    font-size: 1rem;
+  }
+
+  /* Reset de efeitos hover/active em mobile */
+  .iconButton:hover,
+  .iconButton:active,
+  .languagePill:hover {
+    background-color: transparent !important;
+    transform: none !important;
+  }
+}
