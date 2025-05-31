@@ -9,6 +9,7 @@ import styles from "../styles/pagesStyles/HomePage.module.css"
 import imagem10 from "../assets/homeMedia/homenavbar/imagem10.jpg"
 import imagem1 from "../assets/homeMedia/homenavbar/imagem1.jpg"
 import InsightPos from "../componentsHomepage/InsightPos"
+import Footer from "../components/reused/Footer"
 
 export const HomePage = () => {
     return(
@@ -66,6 +67,8 @@ export const HomePage = () => {
            />
 
            <InsightPos/>
+
+           <Footer/>
           
         </LanguageProvider>
         
