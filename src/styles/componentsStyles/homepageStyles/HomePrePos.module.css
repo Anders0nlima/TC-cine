@@ -1,0 +1,376 @@
+/* Estilos gerais */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0 100px;
+  background-color: #13141c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 70px 20px 0;
+}
+
+.leftSide, .rightSide {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.leftSide {
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100%;
+}
+
+.rightSide {
+  align-items: center;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  height: 100%;
+}
+
+/* Estilos do cabeçalho */
+.header, .controls {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 2.1rem;
+  margin: 0;
+}
+
+.controls {
+  gap: 10px;
+  width: 15%;
+}
+
+.controlButton {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #f8c537;
+  border-radius: 50%;
+  background: none;
+  color: #f8c537;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controlButton:hover {
+  background-color: #f8c537;
+  color: #000;
+}
+
+.description {
+  width: 90%;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Accordion Styles */
+.accordionWrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.accordion {
+  position: absolute;
+  width: 530px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #13141c;
+  border-radius: 8px;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordionItem {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  max-height: 150px;
+}
+
+.accordionItem::before, .accordionItem::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.accordionItem::before {
+  top: 0;
+  width: 3px;
+  height: 0%;
+  background: #f8c537;
+  transition: height 0.3s ease-out;
+}
+
+.accordionItem::after {
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    #868bb3 0%,
+    #44475c 20%,
+    rgba(11, 12, 15, 0) 80%
+  );
+}
+
+.accordionItem.active::before {
+  height: 100%;
+}
+
+.accordionButton {
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: #13141c;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 550;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordionButton:hover {
+  background-color: #13141c;
+}
+
+.accordionIcon {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  color: white;
+  opacity: 1;
+  font-weight: 40;
+  transition: transform 0.3s ease;
+}
+
+.accordionButton.active .accordionIcon,
+.accordionItem.active .accordionIcon,
+.rotate {
+  transform: rotate(180deg);
+}
+
+.accordionCollapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  background-color: #13141c;
+}
+
+.accordionCollapse.show {
+  max-height: 500px;
+}
+
+.accordionBody {
+  padding: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Tab Styles */
+.tabButtons {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  justify-content: flex-start;
+}
+
+.tabButton {
+  padding: 0.4rem 3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  background-color: #53555e;
+  border: none;
+  border-radius: 30px;
+  margin: 0;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tabButton:hover {
+  background-color: #3d3f50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.activeTab {
+  background-color: #f8c537;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.activeTab:hover {
+  background-color: #e6b82e;
+}
+
+/* Cartaz Styles */
+.cartazWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.cartazContainer {
+  width: 400px;
+  border-radius: 10px;
+  background-color: #1a1b24;
+  overflow: hidden;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 0;
+}
+
+.cartazContainer::before, .cartazContainer::after {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cartazContainer::before {
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.144),
+    rgba(255, 255, 255, 0.05)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.cartazContainer::after {
+  top: -2;
+  left: -2;
+  right: -2;
+  bottom: -2;
+  border: 1px solid rgba(255, 255, 255, 0.253);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cartaz {
+  width: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Interesse Styles */
+.interesseWrapper {
+  display: inline-flex;
+  align-items: center;
+  background-color: #13141c;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.interesseText {
+  margin-right: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(230, 229, 229);
+  white-space: nowrap;
+}
+
+.iconButton {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #FFD700;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arrowIcon {
+  font-size: 12px;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+  background-color: #000;
+}
+
+.iconButton:hover .arrowIcon {
+  color: #FFD700;
+}
+
+/* Dots Styles */
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #555;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background-color: #f8c537;
+  transform: scale(1.2);
+}
