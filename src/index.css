@@ -1,1 +1,72 @@
 /*global styles for the entire application*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; 
+  font-family: 'Inter', sans-serif;
+}
+
+
+.cintoContudoExp {
+    position: relative;
+    padding: 100px 20px 200px;
+    background: 
+        /* Camada principal com cor inicial exata */
+        linear-gradient(
+            to bottom,
+            #13141c 0%,       /* COR INICIAL EXATA */
+            #13141c 10%,      /* Mantém sólido no topo */
+            rgba(26, 28, 37, 0.98) 15%,
+            rgba(39, 42, 53, 0.95) 20%,
+            rgba(54, 58, 72, 0.9) 25%,
+            rgba(72, 77, 92, 0.8) 30%,
+            rgba(98, 103, 121, 0.7) 40%,
+            rgba(142, 146, 160, 0.5) 55%,
+            rgba(190, 192, 201, 0.3) 70%,
+            rgba(230, 231, 235, 0.1) 85%,
+            transparent 100%
+        ),
+        white; /* Base branca */
+
+    /* Overlay de suavização superior */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background: linear-gradient(
+            to bottom,
+            #13141c,          /* COR INICIAL EXATA */
+            rgba(19, 20, 28, 0.8) 30%,
+            transparent 100%
+        );
+        z-index: 1;
+    }
+
+    /* Suavizador inferior */
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(
+            to top,
+            white,
+            rgba(255, 255, 255, 0)
+        );
+        z-index: 2;
+    }
+}

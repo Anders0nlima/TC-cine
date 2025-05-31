@@ -1,0 +1,71 @@
+/* DescubraOpc.module.css */
+
+.containeGeral {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    padding-bottom: 4rem;
+    background-color: #13141c;
+    color: white;
+    flex-wrap: wrap;
+    
+}
+
+.containerUm, .containeUM {
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px; /* Largura fixa */
+    height: 400px; /* Altura igual à largura para formar quadrado */
+    box-sizing: border-box; /* Inclui padding na dimensão total */
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.img {
+    max-width: 80%; /* Reduzi um pouco a imagem para caber melhor */
+    max-height: 180px; /* Altura máxima para a imagem */
+    object-fit: contain; /* Mantém proporção sem cortar */
+    margin: 0.5rem 0;
+}
+
+.descricao {
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgba(231, 231, 231, 0.671);
+    max-width: 90%;
+}
+
+/* Media Query para tablets */
+@media (max-width: 900px) {
+    .containerUm, .containeUM {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+/* Media Query para mobile */
+@media (max-width: 768px) {
+    .containeGeral {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .containerUm, .containeUM {
+        width: 100%;
+        max-width: 400px;
+        height: auto; /* Altura automática em mobile */
+        min-height: 350px; /* Altura mínima */
+        margin-bottom: 1.5rem;
+    }
+}

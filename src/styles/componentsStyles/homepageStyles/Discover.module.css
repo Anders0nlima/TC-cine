@@ -1,0 +1,197 @@
+.section {
+   background-color: #13141c;
+   color: rgb(255, 255, 255);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+ 
+ .primeiroContudo {
+   max-width: 1200px;
+   margin: 3rem auto 2rem;
+   width: 100%;
+   text-align: center; /* Alterado para center */
+   display: flex;
+   flex-direction: column;
+   align-items: center; /* Centraliza horizontalmente */
+ }
+ 
+ .primeiroContudo h1 {
+   font-size: 45px;
+   font-weight: 700;
+   margin: 0 0 1.5rem 0;
+   line-height: 1.2;
+   background: linear-gradient(90deg, #ffffff, #e0e0e0);
+   -webkit-background-clip: text;
+   background-clip: text;
+   color: transparent;
+   position: relative; /* Adicionado para posicionar a linha */
+   padding-bottom: 1rem; /* Espaço para a linha */
+ }
+ 
+ .primeiroContudo h1::after {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 80%; /* Largura da linha */
+   height: 1px;
+   background: linear-gradient(90deg, 
+     transparent 0%, 
+     rgba(255, 255, 255, 0.3) 20%, 
+     rgba(255, 255, 255, 0.6) 50%, 
+     rgba(255, 255, 255, 0.3) 80%, 
+     transparent 100%);
+ }
+ 
+ .primeiroContudo p {
+   font-size: 1.2rem;
+   line-height: 1.6;
+   color: rgba(255, 255, 255, 0.8);
+   max-width: 800px;
+   margin-bottom: 2rem;
+ }
+
+
+
+ .segundoContudo {
+   margin-top: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.contentWrapper {
+   width: 100%;
+   max-width: 1100px; /* Ajuste este valor conforme necessário */
+   margin-top: 50px;
+   padding: 0 20px;
+}
+
+.tabButtons {
+   display: flex;
+   margin-bottom: 1.5rem;
+   gap: 2rem;
+   justify-content: center; /* Centraliza os botões */
+}
+
+.tabButton {
+   font-size: 1rem;
+   font-weight: 500;
+   color: #000;
+   background-color: #53555e; 
+   padding: 0.4rem 3rem;
+   border-radius: 30px;
+   margin: 0;
+   display: inline-block;
+   width: auto;
+   text-align: center;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   transition: all 0.3s ease;
+   cursor: pointer;
+   border: none;
+   position: relative;
+   white-space: nowrap;
+}
+
+.tabButton:hover {
+   background-color: #3d3f50;
+   transform: translateY(-2px);
+   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.activeTab {
+   background-color: #f8c537;
+   color: #000;
+   font-weight: 600;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.activeTab:hover {
+   background-color: #e6b82e; 
+}
+
+.contentContainer {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   width: 100%;
+}
+
+.textContent {
+   flex: 1;
+   max-width: 50%;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.contentTitle {
+   font-size: 3rem;
+   font-weight: 600;
+   color: rgb(236, 234, 234);
+}
+
+.contentDescription {
+   font-size: 1rem;
+   line-height: 1.6;
+   color: rgb(207, 207, 207);
+}
+
+.imageContent {
+   flex: 1;
+   max-width: 60%;
+}
+
+.contentImage {
+   width: 100%;
+   height: auto;
+   border-radius: 8px;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Estilos para o botão de interesse (já fornecidos por você) */
+.interesseWrapper {
+   display: inline-flex;
+   align-items: center;
+   background-color: #13141c;
+   border-radius: 6px;
+   width: fit-content;
+}
+
+.interesseText {
+   font-weight: 600;
+   font-size: 0.8rem;
+   margin-right: 10px;
+   color: rgb(230, 229, 229);
+   white-space: nowrap;
+}
+
+.iconButton {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 30px;
+   height: 30px;
+   background-color: #FFD700;
+   border: 1px solid #000;
+   border-radius: 4px;
+   padding: 0;
+   cursor: pointer;
+   transition: all 0.2s ease;
+}
+
+.arrowIcon {
+   font-size: 12px;
+   color: #000;
+   transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+   background-color: #000;
+}
+
+.iconButton:hover .arrowIcon {
+   color: #FFD700;
+}
