@@ -1,0 +1,274 @@
+/* Estilos gerais */
+.section {
+  background-color: white;
+}
+
+.primeiroContudo, .segundoContudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.primeiroContudo {
+  padding-top: 50px;
+  margin-bottom: 3rem;
+}
+
+.primeiroContudo h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.primeiroContudo h1 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #333, #666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  padding-bottom: 1rem;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.primeiroContudo h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #000 20%, 
+    #000 80%, 
+    transparent 100%);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.primeiroContudo p, 
+.cardContent,
+.card p {
+  line-height: 1.5;
+  color: #555;
+  max-width: 90%;
+}
+
+.primeiroContudo p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.segundoContudo {
+  padding-bottom: 20px;
+}
+
+/* Estilos de cards */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+  width: 380px;
+  height: 350px;
+  position: absolute;
+  border: 1px solid #5c5a5a;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.cardMainTitle, .cardTitle {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.cardMainTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 1.5rem;
+  padding-bottom: 15px;
+  line-height: 1.3;
+}
+
+.cardMainTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #aaa9a9 20%, 
+    #838383 80%, 
+    transparent 100%);
+}
+
+.cardTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.cardContent {
+  font-size: 0.95rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+/* Estilos do carrossel */
+.carouselContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 350px;
+  margin: 2rem 0;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 2rem 0;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: visible;
+}
+
+.sideCard {
+  width: 200px;
+  height: 200px;
+  opacity: 0.8;
+  transform: scale(0.9);
+}
+
+.centerCard {
+  width: 350px;
+  height: 350px;
+  z-index: 2;
+  transform: scale(1.1);
+  background: #f8f8f8;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.leftCard, .rightCard {
+  transform: translateX(-100%) scale(0.9);
+  opacity: 0.8;
+  z-index: 1;
+  transition: transform 0.6s ease, opacity 0.4s ease, filter 0.6s ease;
+}
+
+.rightCard {
+  transform: translateX(100%) scale(0.9);
+}
+
+/* Estilos de tabs */
+.tabButtons {
+  display: flex;
+  margin-bottom: 1.5rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.tabButton, .navButton {
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabButton {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #2d2f3d;
+  padding: 0.4rem 3rem;
+  margin: 0;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  white-space: nowrap;
+}
+
+.tabButton:hover {
+  background-color: #3d3f50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.activeTab {
+  background-color: #f8c537;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.activeTab:hover {
+  background-color: #e6b82e;
+}
+
+/* Navegação */
+.navigationWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.navigationControls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.navButton {
+  background: #2d2f3d;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navButton:hover {
+  background: #f8c537;
+  color: #000;
+  transform: scale(1.1);
+}

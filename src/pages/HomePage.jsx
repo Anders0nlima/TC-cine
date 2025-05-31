@@ -3,10 +3,12 @@ import { HomeNavBar } from "../components/reused/HomeNavBar"
 import { LanguageProvider } from "../components/translationComponents/LanguageContext"
 import { Descubra } from "../componentsHomepage/Discover"
 import { HomePrePos } from "../componentsHomepage/HomePrePos"
+
 import styles from "../styles/pagesStyles/HomePage.module.css"
 
 import imagem10 from "../assets/homeMedia/homenavbar/imagem10.jpg"
 import imagem1 from "../assets/homeMedia/homenavbar/imagem1.jpg"
+import InsightPos from "../componentsHomepage/InsightPos"
 
 export const HomePage = () => {
     return(
@@ -62,6 +64,8 @@ export const HomePage = () => {
                   }
               ]}
            />
+
+           <InsightPos/>
           
         </LanguageProvider>
         
