@@ -1,0 +1,185 @@
+/* BeforeAfterSlider.module.css */
+
+.before_after_container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #13141c;
+}
+
+.slider_container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Valor padrão (mobile first) */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+}
+
+.slider_content {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Herda do container */
+  overflow: hidden;
+}
+
+.image_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.after_image_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.before_image, .after_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider_handle {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  cursor: ew-resize;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.slider_line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: white;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.scan_indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.arrows {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.scan_indicator::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+.thumbnails {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 54px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgb(172, 171, 171);
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(180, 180, 180, 0.5);
+  transform:  scale(1.10);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media Queries - Abordagem Mobile First */
+
+/* Telas pequenas (acima de 480px) */
+@media (min-width: 481px) {
+  .slider_container {
+    height: 400px;
+    
+  }
+  
+  .thumbnail {
+    width: 80px;
+    height: 45px;
+  }
+}
+
+/* Tablets (acima de 768px) */
+@media (min-width: 769px) {
+  .slider_container {
+    height: 550px;
+    
+  }
+}
+
+/* meu computador */
+@media (min-width: 1300px) {
+  .slider_container {
+    height: 600px;
+  }
+
+  .thumbnail {
+    width: 110px;
+    height: 60px;
+  }
+}
+
+/* compudador do luca */
+@media (min-width: 1867px) {
+  .slider_container {
+    height: 900px;
+  }
+  
+  .thumbnail {
+    width: 140px;
+    height: 80px;
+  }
+}
