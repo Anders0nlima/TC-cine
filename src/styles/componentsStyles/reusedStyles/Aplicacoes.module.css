@@ -1,0 +1,257 @@
+.section {
+    background-color: white; /* #d7dade */
+}
+
+.primeiroContudo {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding-top: 100px;
+  width: 100%;
+  text-align: center; /* Alterado para center */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+}
+
+.primeiroContudo h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.primeiroContudo h1 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #333, #666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative; /* Adicionado para posicionar a linha */
+  padding-bottom: 1rem; /* Espaço para a linha */
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.primeiroContudo h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Largura da linha */
+  height: 2%;
+  background: linear-gradient(90deg, 
+  transparent 0%, 
+  #000 20%, 
+  #000 80%, 
+  transparent 100%);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.primeiroContudo p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #000;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+
+
+/*segundo coteudo*/
+.segundoContudo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+/* Container dos botões */
+.tabsContainer {
+  display: flex;
+  justify-content: left;
+  margin-top: -50px;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.tabButtons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Estilo base do botão */
+.tabButton {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #2d2f3d;
+  padding: 0.3rem 2.7rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Efeito hover */
+.tabButton:hover {
+  background-color: #3d3f50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Estado ativo */
+.tabButton.activeTab {
+  background-color: #f8c537;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Hover no botão ativo */
+.tabButton.activeTab:hover {
+  background-color: #e6b82e;
+}
+
+/* Container do conteúdo */
+.conteudoContainer {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.conteudoContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.322),
+    rgba(0, 0, 0, 0.178),  
+    rgba(215, 218, 222, 0.1)  
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imagemWrapper {
+  flex: 0 0 45%;
+}
+
+.imagemConteudo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.textoWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tituloConteudo {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.textoConteudo {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Botão Meu Interesse */
+.interesseWrapper {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #d7dade; /* Linha cinza ao redor */
+  border-radius: 6px;
+  padding: 6px 10px; /* Reduzido o padding */
+  width: fit-content; /* Ajusta ao conteúdo */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border: 1px solid #000000;
+}
+
+.interesseText {
+  font-weight: 500; /* Mais fino */
+  font-size: 0.9rem; /* Um pouco menor */
+  margin-right: 10px; /* Espaço reduzido */
+  color: #333;
+  white-space: nowrap; /* Impede quebra de linha */
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* Tamanho reduzido */
+  height: 24px;
+  background-color: #FFD700;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arrowIcon {
+  font-size: 12px; /* Ícone menor */
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+/* Efeitos de hover */
+.iconButton:hover {
+  background-color: #000;
+}
+
+.iconButton:hover .arrowIcon {
+  color: #FFD700;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .conteudoContainer {
+    flex-direction: column;
+  }
+  
+  .imagemWrapper {
+    width: 100%;
+  }
+  
+  .tabButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+ 

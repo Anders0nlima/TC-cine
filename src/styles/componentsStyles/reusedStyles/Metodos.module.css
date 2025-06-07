@@ -1,0 +1,554 @@
+.section {
+  padding: 4rem 9rem;
+  background-color: #13141c;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.primeiroContudo {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  width: 100%;
+  text-align: center; /* Alterado para center */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+}
+
+.primeiroContudo h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.primeiroContudo h1 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative; /* Adicionado para posicionar a linha */
+  padding-bottom: 1rem; /* Espaço para a linha */
+}
+
+.primeiroContudo h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Largura da linha */
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 20%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    rgba(255, 255, 255, 0.3) 80%, 
+    transparent 100%);
+}
+
+.primeiroContudo p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+
+.segundoContudo {
+  position: relative;
+  max-width: 1200px;
+  max-height: 350px;
+  width: 100%;
+  margin: 2rem auto; /* Reduzi a margem para diminuir espaço */
+  height: 400px; /* Altura reduzida */
+  background-color: #1a1b24;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.segundoContudo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.144),
+    rgba(255, 255, 255, 0.05)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.videoModalBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.videoModalContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 90%;
+  width: fit-content;
+  margin: 80px auto 0;
+  position: relative;
+  z-index: 1001;
+}
+
+.videoModalContent {
+  background-color: #000;
+  padding: 20px;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.modalVideoPlayer {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  max-height: calc(100vh - 160px);
+  display: block;
+}
+
+.closeButton {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Garante que o vídeo principal toque automaticamente */
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoContainer {
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 10px 10px 0;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(26, 27, 36, 1) 0%,
+    rgba(26, 27, 36, 1) 5%,
+    rgba(26, 27, 36, 0.99) 7%,
+    rgba(26, 27, 36, 0.97) 10%,
+    rgba(26, 27, 36, 0.95) 13%,
+    rgba(26, 27, 36, 0.92) 16%,
+    rgba(26, 27, 36, 0.88) 20%,
+    rgba(26, 27, 36, 0.84) 25%,
+    rgba(26, 27, 36, 0.79) 30%,
+    rgba(26, 27, 36, 0.72) 35%,
+    rgba(26, 27, 36, 0.65) 40%,
+    rgba(26, 27, 36, 0.57) 45%,
+    rgba(26, 27, 36, 0.48) 50%,
+    rgba(26, 27, 36, 0.39) 55%,
+    rgba(26, 27, 36, 0.31) 60%,
+    rgba(26, 27, 36, 0.23) 65%,
+    rgba(26, 27, 36, 0.16) 70%,
+    rgba(26, 27, 36, 0.11) 75%,
+    rgba(26, 27, 36, 0.07) 80%,
+    rgba(26, 27, 36, 0.04) 85%,
+    rgba(26, 27, 36, 0.02) 90%,
+    rgba(26, 27, 36, 0.01) 95%,
+    rgba(26, 27, 36, 0) 100%
+  );
+  z-index: 1;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  
+}
+
+.contentLeft {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 40%;
+  z-index: 2;
+  color: white;
+}
+
+.companyName {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logoMetodo{
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.companyDescription {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.companyText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.playButton {
+  align-items: center;
+  border: 1px solid;
+  border-color: #d9d9d9;
+  border-radius: 95px;
+  display: flex;
+  gap: 15px;
+  height: 44px;
+  padding: 6px 15px;
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #d9d9d9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+.playButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
+.playIcon {
+  height: 20px;
+  width: 20px;
+}
+
+/*terceiroContudo*/
+
+.terceiroContudo h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000; /* Texto preto */
+  background-color: #f8c537; /* Cor de fundo amarela */
+  padding: 0.2rem 2.6rem;
+  border-radius: 30px; /* Bordas arredondadas */
+  margin: 5rem auto 1.5rem; /* Centraliza horizontalmente */
+  display: block; /* Mudamos para block para centralizar */
+  width: fit-content; /* Largura conforme conteúdo */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: default; /* Ou pointer se for clicável */
+  border: none;
+  position: relative;
+}
+.terceiroContudo p{
+  text-align: center;
+  padding-bottom: 60px;
+  margin: 0px 120px 0px 120px;
+}
+
+
+/*quartoContudo*/
+
+/* Estrutura Principal */
+.quartoContudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbarContainer {
+  width: fit-content;
+  min-width: 400px;
+  background-color: white;
+  border-top: 1px solid #333;
+  border-radius: 10px 10px 0 0;
+  margin: 60px auto 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 60px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.itemNav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.botaoNav {
+  padding: 0 30px;
+  flex: 1;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.botaoNav:hover {
+  color: #4dabf7;
+  transform: translateY(-2px);
+}
+
+.botaoNav:active {
+  transform: translateY(1px);
+}
+
+
+.botaoNav.ativo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 3px 3px 0 0;
+  animation: aparecer 0.3s ease-out;
+}
+
+.separador {
+  width: 1px;
+  height: 100%;
+  background: #333;
+  margin: 0 5px;
+}
+
+/* Área de Conteúdo */
+.conteudo {
+  width: 100%;
+  border: 1px solid #333;
+  border-top: none;
+  margin-top: 50px;
+  border-radius: 8px;
+  padding: 25px;
+  box-sizing: border-box;
+  background: #13141c;
+  color: #f0f0f0;
+  min-height: 300px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+
+.conteudo.saindo {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.conteudoContainer {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Textos */
+.textosContainer {
+  flex: 0 0 40%;
+  max-width: 40%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.marca {
+  font-size: 14px;
+  color: #a0a0a0;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.titulo {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.texto {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+/* Imagem */
+.imagemContainer {
+  flex: 0 0 60%;
+  max-width: 580px;
+  margin: 10px;
+  border-radius: 6px;
+  background: #2a2a2a;
+  align-self: flex-start;
+  position: relative;
+  padding: 2px; 
+  box-sizing: border-box;
+}
+
+.imagem {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px; 
+}
+
+.group {
+   width: 100%;
+   height: auto;
+  display: block;       
+  object-fit: cover;
+  align-items: center;    
+
+}
+
+.vector {
+  width: 100px;           
+  height: 140px;        
+  object-fit: contain;  
+  margin-top: 40px;
+}
+
+.img {
+  width: 30px;           
+  height: auto;       
+  max-height: 30px;  
+  margin-top: 40px;   
+}
+
+/* Animações */
+@keyframes aparecer {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .conteudoContainer {
+    flex-direction: column;
+  }
+  
+  .imagemContainer {
+    flex: 1;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 0;
+  }
+  
+  .botaoNav {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
