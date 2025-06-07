@@ -1,0 +1,694 @@
+/* Estilos base */
+.form_container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .progressContainer {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .progressNav {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .progressStep {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  
+  .stepNumber.completed {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .stepTitle {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .stepLine {
+    height: 4px;
+    width: 100%;
+    margin-top: 15px;
+    background-color: red;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.stepLine.completed {
+  background-color: #4CAF50; 
+}
+
+.stepDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  font-size: 1.5rem;
+  margin: 0 8px;
+  user-select: none;
+}
+  
+  /*thackyou*/
+  .thank_you_content h2{
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .thank_you_content p{
+    margin-top: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  
+  /* Formulário */
+  .form_step {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .form_group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .checkbox_group {
+    margin: 1rem 0;
+  }
+  
+  .checkbox_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkbox_item input {
+    margin-right: 0.5rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+
+  
+  .btn_primary:disabled {
+    background-color: #a3a3a3;
+  }
+  
+  .btn_primary:disabled .iconWrapper {
+    background-color: #737373;
+  }
+  
+  /* Efeito de loading */
+  .submitting {
+    position: relative;
+  }
+
+  .submitting::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 3px solid transparent;
+    border-top-color: #2c3e50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .btn_primary.submitting::after {
+    border-top-color: #ffffff; /* Cor branca para o spinner */
+    cursor: not-allowed;
+  }  
+
+  .btn_primary.submitting:hover {
+    /* remove todos os efeitos de hover */
+    transform: none;
+    box-shadow: none;
+    background-color: #FFD700; /* Mantém a cor original */
+  }
+  
+  .btn_primary {
+    background-color: #4CAF50;
+  }
+
+  .btn_primary:hover:not(:disabled):not(.submitting) {
+    /* seus estilos de hover */
+    background-color: #FFC000; /* Amarelo mais escuro */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  
+  .btn_secondary {
+    background-color: #f1f1f1;
+    color: #333;
+    margin-right: 1rem;
+  }
+  
+  .btn_secondary:hover {
+    background-color: #ddd;
+  }
+  
+  /*botao de proximo e volta*/
+  .form_actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+
+  .novoBotao {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 0.1px solid #0000002c;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    min-width: fit-content;
+    height: 36px;
+    transition: all 0.2s ease;
+}
+
+/* Estado disabled - agora mais específico */
+.novoBotao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.novoBotao:disabled .amareloWrapper {
+    background-color: #cccccc;
+}
+
+/* Parte amarela do botão */
+.amareloWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD700;
+    width: 36px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: absolute;
+    left: 0;
+    border-right: 1px solid #ffffff00;
+    z-index: 1;
+}
+
+.novoBotao:not(:disabled):hover .amareloWrapper {
+    width: 100%;
+}
+
+/* Ícone */
+.novoIcone {
+    font-size: 12px;
+    color: #000;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: absolute;
+    left: 12px;
+}
+
+.novoBotao:not(:disabled):hover .novoIcone {
+    left: calc(100% - 24px);
+    transform: translateX(-50%);
+}
+
+/* Texto */
+.novoTexto {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #000;
+    white-space: nowrap;
+    padding: 0 16px;
+    margin-left: 36px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.novoBotao:not(:disabled):hover .novoTexto {
+    color: #000;
+    margin-left: 16px;
+}
+
+/* Efeitos de interação */
+.novoBotao:not(:disabled):active {
+    transform: scale(0.98);
+}
+
+.novoBotao:not(:disabled)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.novoBotao:not(:disabled):active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+/* Botão Voltar - Estilo Secundário */
+.btn_secondary {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 0.1px solid #0000002c;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 30%;
+  min-width: fit-content;
+  height: 36px;
+  transition: all 0.2s ease;
+}
+
+.azulWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b82f6; /* Azul */
+  width: 36px;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: absolute;
+  left: 0;
+  border-right: 1px solid #ffffff00;
+  z-index: 1;
+}
+
+.btn_secondary:hover .azulWrapper {
+  width: 100%;
+}
+
+.btn_secondary:hover .btnIcone {
+  left: calc(100% - 24px);
+  transform: translateX(-50%);
+}
+
+.btn_secondary:hover .btnTexto {
+  color: #000;
+  margin-left: 16px;
+}
+
+.btn_secondary:active {
+  transform: scale(0.98);
+}
+
+.btn_secondary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn_secondary:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+.btn_secondary,
+.btn_primary {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 0.1px solid #0000002c;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 120px; /* Largura fixa para consistência */
+  height: 36px;
+  transition: all 0.3s ease;
+}
+
+/* Wrapper dos ícones (compartilhado) */
+.azulWrapper,
+.amareloWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+/* Cores específicas */
+.azulWrapper {
+  background-color: #3b82f6; /* Azul */
+}
+
+.amareloWrapper {
+  background-color: #FFD700; /* Amarelo */
+}
+
+/* Estado disabled */
+.btn_primary:disabled .amareloWrapper {
+  background-color: #cccccc;
+}
+
+.btn_primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Ícones (compartilhado) */
+.btnIcone {
+  font-size: 12px;
+  color: #000;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: absolute;
+  left: 12px;
+  z-index: 2;
+}
+
+/* Texto (compartilhado) */
+.btnTexto {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #000;
+  white-space: nowrap;
+  padding: 0 16px;
+  margin-left: 36px;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Efeitos hover - Corrigindo a velocidade */
+.btn_secondary:hover .azulWrapper,
+.btn_primary:hover .amareloWrapper {
+  width: 100%;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn_secondary:hover .btnIcone,
+.btn_primary:hover .btnIcone {
+  left: calc(100% - 15px);
+  transform: translateX(-50%);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn_secondary:hover .btnTexto,
+.btn_primary:hover .btnTexto {
+  margin-left: 16px;
+  transition: all 0.5s ease;
+}
+
+/* Efeito de clique */
+.btn_secondary:active,
+.btn_primary:active {
+  transform: scale(0.98);
+}
+
+/* Efeito ripple (compartilhado) */
+.btn_secondary::after,
+.btn_primary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn_secondary:active::after,
+.btn_primary:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+
+/* Estado de loading (submitting) */
+.btn_primary[disabled].submitting,
+.btn_secondary[disabled].submitting {
+  position: relative;
+  color: transparent !important;
+}
+
+.btn_primary[disabled].submitting::after,
+.btn_secondary[disabled].submitting::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Ajuste para texto dinâmico */
+.btnText {
+  transition: all 0.3s ease;
+}
+
+.btn_primary[disabled] .btnText,
+.btn_secondary[disabled] .btnText {
+  opacity: 0.8;
+}
+  
+  .error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+
+
+  /* Estilos para o dropdown personalizado */
+.custom_dropdown {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  margin-bottom: 1rem;
+}
+
+.dropdown_header {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.dropdown_header:hover {
+  border-color: #aaa;
+}
+
+.dropdown_arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdown_options {
+  position: relative;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 0.5rem;
+  background-color: white;
+  z-index: 10;
+}
+
+.checkbox_item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.checkbox_item input {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.checkbox_item label {
+  cursor: pointer;
+}
+
+.error_message{
+ font-size: 0.8rem;
+ color: #ff4444;
+}
+
+
+/*caixas flutuantes,*/
+.custom_dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown_container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  max-height: 193px;
+  overflow-y: auto;
+}
+
+.dropdown_content {
+  padding: 8px;
+  overflow: hidden;
+}
+
+.checkbox_item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  white-space: nowrap;
+}
+
+.checkbox_item input {
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+.dropdown_header {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown_arrow {
+  transition: transform 0.2s;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 1rem;
+    }
+    
+    .progress-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .step-line {
+      display: none;
+    }
+  }
