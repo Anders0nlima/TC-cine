@@ -1,0 +1,472 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    height: 73vh; /*100*/
+    width: 100vw;
+    background-color: #13141c;
+    overflow: hidden;
+}
+
+.box .home {
+    height: 73vh; /*100*/
+    width: 100vw;
+    position: relative;
+}
+
+.box .overlap_group {
+    height: 100%; 
+    width: 100%;
+    position: relative;
+}
+
+/* Container da imagem ajustado */
+.box .image_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.box .gradient_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; 
+    width: 30%;
+    background: linear-gradient(
+        90deg,
+        rgba(19, 20, 28, 1) 0%,
+        rgba(19, 20, 28, 0.95) 10%,
+        rgba(19, 20, 28, 0.85) 25%,
+        rgba(19, 20, 28, 0.6) 50%,
+        rgba(19, 20, 28, 0.3) 75%,
+        rgba(14, 15, 23, 0) 100%
+    );
+    z-index: 1;
+}
+
+.box .phantom_thread {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.box .frame {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    left: 10%;
+    position: absolute;
+    top: 10%;
+    width: 40%;
+    max-width: 705px;
+    z-index: 2;
+}
+
+.box .div {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 15.54px;
+    position: relative;
+    width: 100%;
+}
+
+.box .text_wrapper {
+    align-self: stretch;
+    color: #acacac;
+    font-family: "Inter", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+    margin-left: 25px;
+    
+}
+
+.box .group {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    height: 133.46px;
+    width: 100%;
+    max-width: 690px;
+    
+}
+
+.box .vector {
+    height: 60px; /*87*/
+    width: auto;
+
+    /*left: 27%; 
+    position: absolute;
+    top: 30px; 
+    width: 72%;*/
+}
+
+.box .img {
+    margin-top: 50px;
+    height: 200px; 
+    width: auto;
+    /*position: absolute;
+    width: 25%;*/
+}
+
+.box .frame_2 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+    margin-left: 25px;
+}
+
+.box .text_wrapper_2 {
+    align-self: stretch;
+    color: #fbbc09;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.box .escolha_a_melhor_op {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin-bottom: 0rem;
+}
+
+.box .frame_8 {
+    align-items: center;
+    border: 1px solid;
+    border-color: #d9d9d9;
+    border-radius: 95px;
+    display: flex;
+    gap: 15px;
+    height: 44px;
+    right: 5%;
+    padding: 6px 5px;
+    position: absolute;
+    bottom: 20%;
+    width: 132px;
+    z-index: 2;
+}
+
+.box .icon_play_circle {
+    height: 32px;
+    position: relative;
+    width: 32px;
+}
+
+.box .text_wrapper_5 {
+    color: #d9d9d9;
+    font-family: "Inter", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+
+
+/* Container do vídeo */
+.box .video_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.box .video_player {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Botão de play/pause */
+.box .play_button {
+    align-items: center;
+    border: 1px solid;
+    border-color: #d9d9d9;
+    border-radius: 95px;
+    display: flex;
+    gap: 15px;
+    height: 44px; 
+    right: 5%;
+    padding: 6px 15px;
+    position: absolute;
+    bottom: 20%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #d9d9d9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.box .play_button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.box .play_icon {
+    height: 20px;
+    width: 20px;
+}
+
+.video_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .video_modal_backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .video_modal_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 90%;
+    width: fit-content;
+    margin: 80px auto 0;
+    position: relative;
+    z-index: 1001;
+  }
+  
+  .video_modal_content {
+    background-color: #000;
+    padding: 30px;
+    border-radius: 4px;
+    flex-grow: 1;
+  }
+  
+  .modal_video_player {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 160px);
+    display: block;
+  }
+  
+  /* Botão Close - Versão Corrigida */
+  .close_button {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    color: white;
+    width: 50px; /* Largura e altura iguais */
+    height: 50px;
+    border-radius: 50%; /* Isso cria o círculo perfeito */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-top: 20px;
+    padding: 0; /* Remove padding extra */
+  }
+  
+  .close_button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+  
+  .close_icon {
+    font-size: 20px; /* Tamanho do ícone */
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: inherit; /* Herda a transição do botão */
+  }
+  
+  /* Garante que o box-sizing está correto */
+  .close_button * {
+    box-sizing: border-box;
+  }
+
+
+/* Responsividade */
+/* Tablets - entre 768px e 1199px */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .box {
+      height: 70vh;
+    }
+    
+    .box .frame {
+      left: 5%;
+      width: 40%;
+      gap: 50px;
+      top: 20%;
+    }
+    
+    .box .image_container,
+    .box .video_container {
+      width: 50%;
+    }
+    
+    .box .gradient_overlay {
+      width: 40%;
+    }
+    
+    .box .frame_8,
+    .box .play_button {
+      bottom: 15%;
+      right: 3%;
+    }
+    
+    .box .group {
+      height: 110px;
+    }
+    
+    .box .vector {
+      height: 50px;
+      top: 25px;
+    }
+    
+    .box .img {
+      height: 100px;
+      width: 100px;
+    }
+
+/* Celulares - até 767px */
+@media (max-width: 767px) {
+    .box {
+      height: 100vh;
+    }
+    
+    .box .home {
+      height: 100vh;
+    }
+    
+    .box .frame {
+      top: 15%;
+      left: 5%;
+      width: 90%;
+      gap: 30px;
+      max-width: none;
+    }
+    
+    .box .image_container,
+    .box .video_container {
+      width: 100%;
+      opacity: 0.3;
+    }
+    
+    .box .gradient_overlay {
+      display: none;
+    }
+    
+    .box .div {
+      gap: 10px;
+    }
+    
+    .box .group {
+      height: 80px;
+    }
+    
+    .box .vector {
+      height: 40px;
+      left: 20%;
+      top: 15px;
+      width: 80%;
+    }
+    
+    .box .img {
+      height: 60px;
+    }
+    
+    .box .text_wrapper,
+    .box .text_wrapper_2,
+    .box .escolha_a_melhor_op {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    .box .frame_2 {
+      bottom: 30px;
+      gap: 10px;
+    }
+    
+    .box .frame_8,
+    .box .play_button {
+      height: 36px;
+      width: 110px;
+      padding: 4px 8px;
+      bottom: 10%;
+      right: 5%;
+    }
+    
+    .box .icon_play_circle,
+    .box .play_icon {
+      height: 24px;
+      width: 24px;
+    }
+    
+    .box .text_wrapper_5 {
+      font-size: 14px;
+    }
+    
+    /* Ajustes para o modal de vídeo em mobile */
+    .video_modal_container {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+    
+    .video_modal_content {
+      padding: 15px;
+      width: 100%;
+    }
+    
+    .close_button {
+      width: 40px;
+      height: 40px;
+      margin-top: 15px;
+    }
+    
+    .close_icon {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
