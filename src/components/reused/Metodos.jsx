@@ -17,7 +17,8 @@ const Metodos = ({
   customBotoes,
   customConteudos,
   containerTitulo,
-  containerDescricao
+  containerDescricao,
+  watchButtonText
 }) => {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const modalVideoRef = useRef(null);
@@ -111,7 +112,7 @@ const Metodos = ({
             icon={faPlay} 
             className={styles.playIcon} 
           />
-          <span>Assistir</span>
+          <span>{watchButtonText}</span>
         </button>
       </div>
 
