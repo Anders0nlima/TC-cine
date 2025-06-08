@@ -101,7 +101,7 @@ const currentLanguage = languageOptions[language] || languageOptions['pt'];
         </div>
         
         <div className={styles.navbarCenter}> {/*.navbarCenter a.logoLink*/}
-          <a href="/teste-selo" className={styles.logoLink}>
+          <a href="/" className={styles.logoLink}>
           <img 
             src={logoCine3}
             alt="Microsoft Logo"

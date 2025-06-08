@@ -12,7 +12,7 @@ function AppRoutes() {
           <Route path="/suporte" element={<SuportPage/>} />
           
           {/* Rota padrão ou redirecionamento, o teste-selo será mudado para "home" --- Navigate to="/producao" --- /*/}
-          <Route path="/TC-cine" element={<HomePage/>} />
+          <Route path="/" element={<HomePage/>} />
         </Routes>
       );
   }

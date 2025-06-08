@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/TC-cine">
       <LanguageProvider>
         <AppRoutes/>
       </LanguageProvider>
