@@ -55,6 +55,25 @@ export const LanguageProvider = ({ children }) => {
         watchButton: "Assistir",
         pauseButton: "Pausar"
       },
+      metodosConteudos:{
+        botaoUm:"Resultado final",
+        botaoDois:"Estudo dinâmico",
+        botaoTres: "Técnicas criativas",
+        botaoQuatro:"Mapa espaciais",
+        botaoCinco:"Simulações técnicas"
+      },
+      metodosConteudosText:{
+        TitleUm:"Resultado Final",
+        TextUm:"O Resultado Final é fruto das Técnicas Desenvolvidas pela TC|CINE. Por meio de processos organizados e Otimizados, garantimos alta qualidade visual ao alinhar rigor Técnico e criatividade. Clique nos botões acima e acompanhe em detalhes cada etapa do nosso fluxo de Trabalho.",
+        TitleDois:"Estudo Dinâmico",
+        TextDois:"Na TC|CINE, Utilizados estruturas organizacionais na Pré & Produção que facilitam o controle de equipamentos, orçamentos e cronogramas, além de decupagens Dinâmicas e ordem de serviços detalhadas, tudo de forma automática e precisa. Otimizando e assegurando a qualidade desejada.",
+        TitleTres:"Técnicas Criativas",
+        TextTres:"Ambientes controlados e bem organizados são a base para a liberdade criativa. A função da TC|CINE é criar um espaço técnico onde a criatividade possa ser aplicada em Planos de filmagens, MoodBoards e Shotlists, criando um universo que possa ser compartilhado com o restante da equipe.",
+        TitleQuatro:"Mapa Espaciais",
+        TextQuatro:"Contamos com equipes capazes de criar Blueprints e modelos de planejamento espacial em locações. Esses mapas garantem que diretores avaliem as disponibilidades técnicas e antecipem obstáculos, além da sua função criativa, definido melhor o fluxo de produção objetivamente.",
+        TitleCinco:"Simulações Técnicas",
+        TextCinco:"Com todos os documentos técnicos definidos, nosso time de designers 3D realiza simulações completas: ângulos de câmera, composições, iluminação, cenografia e muito além. A pré-visualização virtual torna o processo criativo mais dinâmico, seguro e econômico, justamento por seu objetivo assertivo.",
+      },
       posProducao: {
         business: "Negócios ",
         filmProductions: "Pós-produções cinematográficas",
@@ -126,6 +145,25 @@ export const LanguageProvider = ({ children }) => {
         containerDescricao: "Choose the best option for your film production, take your ideas off the paper and see how we can help you produce more.",
         watchButton: "Watch",
         pauseButton: "Pause"
+      },
+       metodosConteudos:{
+        botaoUm:"Final result",
+        botaoDois:"Dynamic Study",
+        botaoTres: "Creative techniques",
+        botaoQuatro:"Space map",
+        botaoCinco:"Technical simulations"
+      },
+      metodosConteudosText:{
+        TitleUm:"Final result",
+        TextUm:"The Final Result is the result of the Techniques Developed by TC|CINE. Through organized and optimized processes, we ensure high visual quality by aligning technical rigor and creativity. Click on the buttons above and follow each step of our workflow in detail.",
+        TitleDois:"Dynamic Study",
+        TextDois:"At TC|CINE, we use organizational structures in Pre & Production that facilitate the control of equipment, budgets and schedules, in addition to Dynamic breakdowns and detailed service orders, all automatically and accurately. Optimizing and ensuring the desired quality.",
+        TitleTres:"Creative techniques",
+        TextTres:"Controlled and well-organized environments are the basis for creative freedom. TC|CINE's role is to create a technical space where creativity can be applied to filming plans, mood boards and shotlists, creating a universe that can be shared with the rest of the team.",
+        TitleQuatro:"Space map",
+        TextQuatro:"We have teams capable of creating Blueprints and spatial planning models on location. These maps ensure that directors assess technical availability and anticipate obstacles, in addition to their creative function, better defining the production flow objectively.",
+        TitleCinco:"Technical simulations",
+        TextCinco:"With all the technical documents defined, our team of 3D designers performs complete simulations: camera angles, compositions, lighting, scenography and much more. Virtual preview makes the creative process more dynamic, safe and economical, precisely because of its assertive objective.",
       },
       posProducao: {
         business: "Post-production",

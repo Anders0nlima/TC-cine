@@ -1,10 +1,36 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CONTEUDOS } from "../conteudoMetodo/MetodosConteudos"
-import { faPlay,  faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from "../../styles/componentsStyles/reusedStyles/Metodos.module.css";
 import video1 from "../../assets/productionMedia/video1.mp4";
-import logoCine3 from "../../assets/productionMedia/logoCine3.png"
+import logoCine3 from "../../assets/productionMedia/logoCine3.png";
+import { getConteudos } from "../conteudoMetodo/MetodosConteudos";
+
+const ConteudoSeguro = ({ conteudo, className }) => {
+  const conteudoAtual = conteudo || {
+    titulo: 'Content not available :(',
+    texto: 'Please select any item above',
+    imagem: null
+  };
+
+  return (
+    <div className={className}>
+      <div className={styles.textosContainer}>
+        <h2 className={styles.titulo}>{conteudoAtual.titulo}</h2>
+        <p className={styles.texto}>{conteudoAtual.texto}</p>
+      </div>
+      {conteudoAtual.imagem && (
+        <div className={styles.imagemContainer}>
+          <img 
+            src={conteudoAtual.imagem} 
+            alt={conteudoAtual.titulo}
+            className={styles.imagem}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Metodos = ({
   titulo,
@@ -20,35 +46,43 @@ const Metodos = ({
   containerDescricao,
   watchButtonText
 }) => {
+  const CONTEUDOS = getConteudos();
   const [showVideoModal, setShowVideoModal] = useState(false);
   const modalVideoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-  //const [conteudoAtivo, setConteudoAtivo] = useState('Resultado final');
   const [saindo, setSaindo] = useState(false);
 
-  const botoes = customBotoes || CONTEUDOS[variant].botoes;
-  const conteudos = customConteudos || CONTEUDOS[variant].dados;
+  const botoes = customBotoes || CONTEUDOS[variant]?.botoes || [];
+  const conteudos = customConteudos || CONTEUDOS[variant]?.dados || {};
 
-  const [conteudoAtivo, setConteudoAtivo] = useState(botoes[0]);
-  
+  // Inicializa com a primeira chave válida
+  const [conteudoAtivo, setConteudoAtivo] = useState(() => {
+    const chaveValida = botoes.find(botao => botao in conteudos);
+    return chaveValida || (botoes[0] ?? '');
+  });
+
+  // Debug
+  /*useEffect(() => {
+    console.log('Estado atual:', {
+      conteudoAtivo,
+      existe: conteudoAtivo in conteudos,
+      botoes,
+      conteudos: Object.keys(conteudos)
+    });
+  }, [conteudoAtivo, conteudos]);*/
+
   const togglePlayPause = () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
+      isPlaying ? videoRef.current.pause() : videoRef.current.play();
       setIsPlaying(!isPlaying);
     }
   };
 
-  const toggleVideoModal = () => {
-    setShowVideoModal(!showVideoModal);
-  };
+  const toggleVideoModal = () => setShowVideoModal(!showVideoModal);
 
   const mudarConteudo = (novoConteudo) => {
-    if (novoConteudo !== conteudoAtivo) {
+    if (novoConteudo !== conteudoAtivo && novoConteudo in conteudos) {
       setSaindo(true);
       setTimeout(() => {
         setConteudoAtivo(novoConteudo);
@@ -59,113 +93,85 @@ const Metodos = ({
 
   return (
     <>
-    <section id="metodos" name="metodos" className={styles.section}> 
-      <div className={styles.primeiroContudo}>
-        <h4>{titulo}</h4>
-        <h1>{tituloPrincipal}</h1>
-        <p>{descricao}</p>
-      </div>
-
-      <div className={styles.segundoContudo}>
-        <div className={styles.videoContainer}>
-          <div className={styles.gradientOverlay} />
-          <video
-            ref={videoRef}
-            className={styles.videoPlayer}
-            src={videoExp}
-            loop
-            muted
-            autoPlay
-            playsInline
-          />
+      <section id="metodos" name="metodos" className={styles.section}> 
+        {/* Primeiro Conteúdo */}
+        <div className={styles.primeiroContudo}>
+          <h4>{titulo}</h4>
+          <h1>{tituloPrincipal}</h1>
+          <p>{descricao}</p>
         </div>
 
-        <div className={styles.contentLeft}>
-          <div className={styles.group}>
-                          <img 
-                          className={styles.logoMetodo}
-                          src={logoCine3} 
-                          alt="" 
-                          height={25}
-                          width={150}
-                          />
-                          {/*<img
-                            className={styles.img}
-                            alt="Group"
-                            src="https://c.animaapp.com/hSTv3Klm/img/group@2x.png"
-                          />
-                        
-                          <img
-                            className={styles.vector}
-                            alt="Vector"
-                            src="https://c.animaapp.com/hSTv3Klm/img/vector.svg"
-                          />*/}
-                        </div>
-          <div className={styles.companyDescription}>{containerTitulo}</div>
-          <p className={styles.companyText}>
-            {containerDescricao}
-          </p>
-        </div>
+        {/* Segundo Conteúdo */}
+        <div className={styles.segundoContudo}>
+          <div className={styles.videoContainer}>
+            <div className={styles.gradientOverlay} />
+            <video
+              ref={videoRef}
+              className={styles.videoPlayer}
+              src={videoExp}
+              loop
+              muted
+              autoPlay
+              playsInline
+            />
+          </div>
 
-        <button className={styles.playButton} onClick={toggleVideoModal}>
-          <FontAwesomeIcon 
-            icon={faPlay} 
-            className={styles.playIcon} 
-          />
-          <span>{watchButtonText}</span>
-        </button>
-      </div>
+          <div className={styles.contentLeft}>
+            <div className={styles.group}>
+              <img 
+                className={styles.logoMetodo}
+                src={logoCine3} 
+                alt="Logo TC|CINE" 
+                height={25}
+                width={150}
+              />
+            </div>
+            <div className={styles.companyDescription}>{containerTitulo}</div>
+            <p className={styles.companyText}>{containerDescricao}</p>
+          </div>
 
-      <div className={styles.terceiroContudo}>
-        <h3>{Destaque}</h3>
-        <p>{subDescricao}</p>
-      </div>
-
-      <div className={styles.quartoContudo}>
-  <div className={styles.navbarContainer}>
-    <nav className={styles.navbar}>
-      {botoes.map((botao, index) => (
-        <div key={botao} className={styles.itemNav}>
-          <button
-            className={`${styles.botaoNav} ${conteudoAtivo === botao ? styles.ativo : ''}`}
-            onClick={() => mudarConteudo(botao)}
-          >
-            {botao}
+          <button className={styles.playButton} onClick={toggleVideoModal}>
+            <FontAwesomeIcon icon={faPlay} className={styles.playIcon} />
+            <span>{watchButtonText}</span>
           </button>
-          {index !== botoes.length - 1 && <div className={styles.separador}></div>}
         </div>
-      ))}
-    </nav>
-  </div>
-  
-  <div className={`${styles.conteudo} ${saindo ? styles.saindo : ''} ${styles.darkTheme}`}>
-    <div className={styles.conteudoContainer}>
-      {/* Div dos Textos (Esquerda) */}
-      <div className={styles.textosContainer}>
-        {/*<span className={styles.marca}>Microsoft</span>*/}
-        <h2 className={styles.titulo}>{conteudos[conteudoAtivo].titulo}</h2>
-        <p className={styles.texto}>{conteudos[conteudoAtivo].texto}</p>
-      </div>
-      
-      {/* Div da Imagem (Direita) */}
-      <div className={styles.imagemContainer}>
-        <img 
-          src={conteudos[conteudoAtivo].imagem} 
-          alt={conteudos[conteudoAtivo].titulo}
-          className={styles.imagem}
-        />
-      </div>
-    </div>
-  </div>
-</div>
 
-{/*<BeforeAfterSlider/>*/}
+        {/* Terceiro Conteúdo */}
+        <div className={styles.terceiroContudo}>
+          <h3>{Destaque}</h3>
+          <p>{subDescricao}</p>
+        </div>
 
-      
-    </section>
+        {/* Quarto Conteúdo */}
+        <div className={styles.quartoContudo}>
+          <div className={styles.navbarContainer}>
+            <nav className={styles.navbar}>
+              {botoes.map((botao, index) => (
+                <div key={botao} className={styles.itemNav}>
+                  <button
+                    className={`${styles.botaoNav} ${conteudoAtivo === botao ? styles.ativo : ''}`}
+                    onClick={() => mudarConteudo(botao)}
+                    disabled={!(botao in conteudos)}
+                  >
+                    {botao}
+                  </button>
+                  {index !== botoes.length - 1 && <div className={styles.separador}></div>}
+                </div>
+              ))}
+            </nav>
+          </div>
+          
+          <div className={`${styles.conteudo} ${saindo ? styles.saindo : ''} ${styles.darkTheme}`}>
+            <ConteudoSeguro 
+              conteudo={conteudos[conteudoAtivo]} 
+              className={styles.conteudoContainer}
+            />
+          </div>
+        </div>
+      </section>
 
- {/* Modal do Vídeo */}
- {showVideoModal && (
+      {/* Modal do Vídeo */}
+      {showVideoModal && (
         <div className={styles.videoModal}>
           <div className={styles.videoModalBackdrop} onClick={toggleVideoModal} />
           <div className={styles.videoModalContainer}>
@@ -188,7 +194,7 @@ const Metodos = ({
           </div>
         </div>
       )}
-</>
+    </>
   );
 };
 
