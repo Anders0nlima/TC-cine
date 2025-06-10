@@ -4,6 +4,7 @@ import imagemEdicao from "../../assets/productionMedia/edicao.png"
 import imagemSonoridade from "../../assets/productionMedia/sonorizacao.png"
 import imagemGrind from "../../assets/productionMedia/colorgrading.png"
 import { BotaoGeral } from '../reused/BotaoGeral';
+import { useLanguage } from '../translationComponents/LanguageContext';
 
 
 const Aplicacoes = ({
@@ -16,22 +17,23 @@ const Aplicacoes = ({
   botaoDois = "Color Granding",
   botaoTres = "Sonorização"
 }) => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('pre-producao');
 
   const conteudos = {
     'pre-producao': {
-      titulo: "Edição Audiovisual",
-      texto: " A Selo oferece diversos formatos de edição para produtos audiovisuais. Tem uma obra seja documentário, ficção, publicitário ou institucionale busca um resultado eficiente, que valorize ao máximo o seu material? Conte com a Selo.  Clique no botão abaixo para contratar os serviços ou entrar em contato com nossos especialistas.",
+      titulo: t("aplicacoesProduction.contTituloUm"),
+      texto: t("aplicacoesProduction.contTextoUm"),
       imagem: imagemEdicao
     },
     'producao': {
-      titulo: "Color Grading",
-      texto: "Ficou interessado no poder do color grading para o seu produto audiovisual? Conte com a Selo para transformar seu conteúdo em uma verdadeira obra visual, com qualidade e estilo. Clique no botão abaixo para contratar os serviços ou entrar em contato com nossos especialistas.",
+      titulo: t("aplicacoesProduction.contTituloDois"),
+      texto: t("aplicacoesProduction.contTextoDois"),
       imagem: imagemGrind
     },
     'ambos': {
-      titulo: "Design Sonoro",
-      texto: "Quer que seu projeto tenha o máximo de imersão e impacto no público? Os serviços de  Design Sonoro da Selo é a opção certa para você. Clique no botão abaixo para contratar ou, se ainda tiver alguma dúvida, um de nossos especialistas entrará em contato para ajudá-lo.",
+      titulo: t("aplicacoesProduction.contTituloTres"),
+      texto: t("aplicacoesProduction.contTextoTres"),
       imagem: imagemSonoridade
     },
     /*'pre-producaoP':{
@@ -131,7 +133,7 @@ const Aplicacoes = ({
             <p className={styles.textoConteudo}>{conteudos[activeTab]?.texto}</p>
             
             <BotaoGeral
-            texto="Veja Mais"
+            texto= {t("aplicacoesProduction.contBotao")}
             />
           </div>
         </div>

@@ -101,20 +101,20 @@ export const Production = () => {
 
             <section id="aplicacoes" name="aplicacoes" style={{ minHeight: '80vh', scrollMarginTop: '100px' }}>
                 <Aplicacoes
-                    titulo="Aplicações"
-                    tituloPrincipal="NOSSOS SERVIÇOS PRINCIPAIS"
-                    descricao="Conheça nossos serviços principais para produção audiovisual."
-                    botaoUm="Pré-Produção"
-                    botaoDois="Produção"
-                    botaoTres="Ambos"
+                    titulo={t("aplicacoesProduction.titulo")}
+                    tituloPrincipal={t("aplicacoesProduction.tituloPrincipal")}
+                    descricao={t("aplicacoesProduction.descricao")}
+                    botaoUm={t("aplicacoesProduction.botaoUm")}
+                    botaoDois={t("aplicacoesProduction.botaoDois")}
+                    botaoTres={t("aplicacoesProduction.botaoTres")}
                 />
             </section>
 
             <MiniFooter
-                tx1="Ficou interessado?"
-                tx2="Acesse a página de suporte ao cliente e entre em contato com um de nossos especialistas e tire suas dúvidas ao contrate os serviços da selo"
-                txbutton1="Acesse a página de suporte ao cliente"
-                txbutton2="Pós-produção do Selo"
+                tx1= {t("minifooter.tx1")}
+                tx2={t("minifooter.tx2")}
+                txbutton1={t("minifooter.txbutton1")}
+                txbutton2={t("minifooter.txbutton2")}
                 link1="/suporte"
                 link2="/pos-producao"
             />
