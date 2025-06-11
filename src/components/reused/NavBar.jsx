@@ -84,8 +84,18 @@ const currentLanguage = languageOptions[language] || languageOptions['pt'];
   };
 
   const handleLanguageChange = (lang) => {
-    changeLanguage(lang); // Usa a função do contexto
-    setLanguageOpen(false);
+     if (language === lang) {
+    setLanguageOpen(false); // Fecha o menu mesmo se o idioma já estiver selecionado
+    return;
+  }
+
+  changeLanguage(lang);
+  setLanguageOpen(false);
+
+  // Dá tempo para o idioma ser salvo antes do reload
+  setTimeout(() => {
+    window.location.reload();
+  }, 100); // 100ms é suficiente na maioria dos casos
   };
 
   return (
