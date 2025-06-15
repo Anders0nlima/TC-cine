@@ -1,30 +1,37 @@
 import { Link } from 'react-scroll';
 import { useState, useEffect } from 'react';
-import { useLanguage } from "../../components/translationComponents/LanguageContext";
+import { useLanguage } from "../translationComponents/LanguageContext";
 import styles from "../../styles/componentsStyles/reusedStyles/NavBarRouter.module.css";
 
-export const NavBarRouter = () => {
+export const NavBarRouter = ({ 
+  items = [
+    /*{ id: 'colaboradores', translationKey: 'navbarrouter.visaoGeral' },
+    { id: 'metodos', translationKey: 'navbarrouter.metodos' },
+    { id: 'aplicacoes', translationKey: 'navbarrouter.aplicacoes' }*/
+  ], 
+  stickyOffset = 490, 
+  scrollOffset = -80 
+}) => {
     const { t } = useLanguage();
-    const [activeSection, setActiveSection] = useState('visao-geral');
+    const [activeSection, setActiveSection] = useState(items[0]?.id || '');
     const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             // Verifica se o navbar principal passou do topo
-            if (window.scrollY > 490) { // Ajuste este valor conforme necessário
+            if (window.scrollY > stickyOffset) {
                 setIsSticky(true);
             } else {
                 setIsSticky(false);
             }
 
             // Detecta a seção ativa
-            const sections = ['colaboradores', 'metodos', 'aplicacoes'];
-            for (const section of sections) {
-                const element = document.getElementById(section);
+            for (const item of items) {
+                const element = document.getElementById(item.id);
                 if (element) {
                     const rect = element.getBoundingClientRect();
                     if (rect.top <= 100 && rect.bottom >= 100) {
-                        setActiveSection(section);
+                        setActiveSection(item.id);
                         break;
                     }
                 }
@@ -33,69 +40,24 @@ export const NavBarRouter = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [items, stickyOffset]);
 
     return (
         <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''}`}>
-            {/*<Link
-                className={`${styles.navButton} ${activeSection === 'visao-geral' ? styles.active : ''}`}
-                to="visao-geral"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                spy={true}
-                onSetActive={() => setActiveSection('visao-geral')}
-            >
-                <strong>{t('navbarrouter.visaoGeral')}</strong>
-            </Link>*/}
-
-            <Link
-                className={`${styles.navButton} ${activeSection === 'colaboradores' ? styles.active : ''}`}
-                to="colaboradores"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                spy={true}
-                onSetActive={() => setActiveSection('colaboradores')}
-            >
-                <strong>{t('navbarrouter.visaoGeral')}</strong>
-            </Link>
-
-            <Link
-                className={`${styles.navButton} ${activeSection === 'metodos' ? styles.active : ''}`}
-                to="metodos"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                spy={true}
-                onSetActive={() => setActiveSection('metodos')}
-            >
-                <strong>{t('navbarrouter.metodos')}</strong>
-            </Link>
-
-            <Link
-                className={`${styles.navButton} ${activeSection === 'aplicacoes' ? styles.active : ''}`}
-                to="aplicacoes"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                spy={true}
-                onSetActive={() => setActiveSection('aplicacoes')}
-            >
-                <strong>{t('navbarrouter.aplicacoes')}</strong>
-            </Link>
-
-            {/*<Link
-                className={`${styles.navButton} ${activeSection === 'insight' ? styles.active : ''}`}
-                to="insight"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                spy={true}
-                onSetActive={() => setActiveSection('insight')}
-            >
-                <strong>{t('navbarrouter.insight')}</strong>
-            </Link>*/}
+            {items.map((item) => (
+                <Link
+                    key={item.id}
+                    className={`${styles.navButton} ${activeSection === item.id ? styles.active : ''}`}
+                    to={item.id}
+                    smooth={true}
+                    duration={500}
+                    offset={scrollOffset}
+                    spy={true}
+                    onSetActive={() => setActiveSection(item.id)}
+                >
+                    <strong>{t(item.translationKey)}</strong>
+                </Link>
+            ))}
         </nav>
     );
 };

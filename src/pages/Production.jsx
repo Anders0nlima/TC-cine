@@ -24,7 +24,15 @@ export const Production = () => {
                 descriptionText={t("producao.description")}
                 watchButtonText={t("posProducao.watchButton")}
             />
-            <NavBarRouter />
+            <NavBarRouter
+            items={[
+                    { id: 'colaboradores', translationKey: 'navbarrouterteste.visaoGeral' },
+                    { id: 'metodos', translationKey: 'navbarrouterteste.ColorGrading' },
+                    { id: 'aplicacoes', translationKey: 'navbarrouterteste.DesighSonoro' }
+                    ]}
+                   stickyOffset={490}
+                   scrollOffset={-80}
+            />
 
             <section id="colaboradores" name="colaboradores" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
                 <Colaboradores

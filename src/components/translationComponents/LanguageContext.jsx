@@ -109,6 +109,12 @@ export const LanguageProvider = ({ children }) => {
         aplicacoes: "Aplicações",
         insight: "Insight"
       },
+      navbarrouterteste:{
+       visaoGeral: "Visão Geral",
+       ColorGrading: "Color Grading",
+       DesighSonoro: "Design Sonoro",
+       Aplicacao: "Aplicação"
+      },
       visaoGeral:{
         titulo: "Visão Geral",
         tituloPrincipal: "TRANSFORME SUA MANEIRA DE PRODUZIR",
@@ -220,6 +226,12 @@ export const LanguageProvider = ({ children }) => {
         metodos: "Methods",
         aplicacoes: "Applications",
         insight: "Insight"
+      },
+        navbarrouterteste:{
+       visaoGeral: "Overview",
+       ColorGrading: "Color Grading",
+       DesighSonoro: "Sound Design",
+       Aplicacao: "Application"
       },
       visaoGeral:{
         titulo: "Overview",

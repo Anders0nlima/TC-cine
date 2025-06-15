@@ -7,13 +7,13 @@ import videoposBase from "../assets/PosProductionMedia/videopos.mp4"
 import imagemcartaz1 from "../assets/posProductionMedia/cartazimagem1.jpg"
 import imagem5 from "../assets/posProductionMedia/imagem5.jpg"
 import styles from "../styles/pagesStyles/PosProduction.module.css"
-import { NavBarRouterPp } from "../components/reused/NavBarRouterPp";
 import Colaboradores from "../components/reused/Colaboradores";
 import Metodos from "../components/reused/Metodos";
 import BeforeAfterSlider from "../componentsPosProduction/BeforeAfterSlider";
 import DesignSonoro from "../componentsPosProduction/DesignSonoro";
 import Aplicacoes from "../components/reused/Aplicacoes";
 import { MiniFooter } from "../components/reused/MiniFooter";
+import { NavBarRouter } from "../components/reused/NavBarRouter";
 
 
 export const PosProduction = () => {
@@ -28,9 +28,18 @@ export const PosProduction = () => {
                 descriptionText={t("posProducao.description")}
                 watchButtonText={t("posProducao.watchButton")}
             />
-            <NavBarRouterPp />
+            <NavBarRouter
+            items={[
+                    { id: 'VisaoGeral', translationKey: 'navbarrouterteste.visaoGeral' },
+                    { id: 'ColorGrading', translationKey: 'navbarrouterteste.ColorGrading' },
+                    { id: 'DesighSonoro', translationKey: 'navbarrouterteste.DesighSonoro' },
+                    { id: 'Aplicacao', translationKey: 'navbarrouterteste.Aplicacao' } 
+                    ]}
+                   stickyOffset={490}
+                   scrollOffset={-80}
+            />
 
-            <section id="colaboradores" name="colaboradores" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
+            <section id="VisaoGeral" name="colaboradores" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
                 <Colaboradores
                     titulo="Visão Geral"
                     tituloPrincipal="MELHORE O FLUXO DE TRABALHO"
@@ -88,7 +97,7 @@ export const PosProduction = () => {
                 />
             </section>
 
-            <section id="metodos" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }} >
+            <section id="ColorGrading" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }} >
                 <Metodos
                     titulo="Color gradind"
                     tituloPrincipal="VISUAL DE CINEMA"
@@ -103,7 +112,7 @@ export const PosProduction = () => {
             </section>
             <BeforeAfterSlider />
 
-            <section id="metodos" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
+            <section id="DesighSonoro" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
                 <DesignSonoro
                     titulo="Design sonoro"
                     tituloPrincipal="SINTA A EXPLOSÃO SONORA"
@@ -144,15 +153,19 @@ export const PosProduction = () => {
 
             </section>
 
-            <Aplicacoes
-                titulo="Aplicações"
-                quartoBotaoNome="Todos"
-                quartoConteudo={{
+
+            <section id="Aplicacao" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
+                   <Aplicacoes
+                    titulo="Aplicações"
+                    quartoBotaoNome="Todos"
+                    quartoConteudo={{
                     titulo: "Pré-produção",
                     texto: "Ficou interessado nos serviços de pré-produção da Selo? Clique no botão abaixo para contratar ou, se ainda estiver com dúvidas, um de nossos especialistas entrará em contato para auxiliá-lo.",
                     imagem: imagem5
                 }}
             />
+            </section>
+           
 
             <MiniFooter
                 tx1="Ficou interessado?"
