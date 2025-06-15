@@ -7,7 +7,8 @@ const DesignSonoro = ({
   tituloPrincipal,
   descricao,
   itensAccordion,
-  cartazes
+  cartazes,
+  botaoDestaque
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -25,7 +26,7 @@ const DesignSonoro = ({
 
       <div className={styles.segundoContudo}>
         <div className={styles.leftColumn}>
-          <h3>Destaques</h3>
+          <h3>{botaoDestaque}</h3>
           
           <div className={styles.accordionWrapper}>
             <div className={styles.accordion}>

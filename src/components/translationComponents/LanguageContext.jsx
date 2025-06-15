@@ -102,6 +102,24 @@ export const LanguageProvider = ({ children }) => {
         contTextoTres:"Quer que seu projeto tenha o máximo de imersão e impacto no público? Os serviços de  Design Sonoro da Selo é a opção certa para você. Clique no botão abaixo para contratar ou, se ainda tiver alguma dúvida, um de nossos especialistas entrará em contato para ajudá-lo.",
         contBotao:"Veja Mais"
       },
+      designSonoro:{
+        botao: "Destaques",
+        titulo: "Design sonoro",
+        tituloPrincipal:"SINTA A EXPLOSÃO SONORA",
+        descricao:"O design sonoro é uma etapa essencial na pós-produção audiovisual, responsável por criar atmosfera, transmitir emoções e proporcionar uma experiência imersiva ao público, Desde Filmes de Ficção, Comerciais publicitários à Documentários",
+        cartazTituloUm:"Som 3D inversivo",
+        cartazDescricaoUm:"A pré-produção  cinematográfica e a fase de planejamento do filme, incluindo roteiro, orçamento, seleção de elenco, equipe escolha de locação e definição de espactos visuais.",
+        cartazTituloDois:"Ambientação 5.1",
+        cartazDescricaoDois:"A pré-produção  cinematográfica e a fase de planejamento do filme, incluindo roteiro, orçamento, seleção de elenco, equipe escolha de locação e definição de espactos visuais.",
+        cartazTituloTres:"Estudio Foley",
+        cartazDescricaoTres:"Conte com os melhores proposicionistas da área, e com experiências, possibilitando maior rendimento e otimização da pridução",
+        accordionTitleUm:"Imprecione o público com conceitos sonoros originais",
+        accodionContentUm:"A equipe Selo de Sound Design atua em parceria com outros departamentos criativos do projeto, estudos acadêmicos e tendências do mercado audiovisual, garantido maior integração e potencializa a imersão",
+        accordionTitleDois:"Trage o público para seu universos com a mixagem",
+        accodionContentDois:"A Selo não constroi apenas cenas que impactam pelo visual, mas que podem ser sentidas pela audição. Utilizamos tecnologias de pontas, como mixagem 3D e Áudio Binaural para criar espaços tridimensionais",
+        accordionTitleTres:"Eletrize o público com composições originais",
+        accodionContentTres:"Na Selo Cada nota é pensada no impacto, ritmo, originalidade e identidade do projeto, tornando a experiência do público inesquecível."
+      },
       minifooter:{
         tx1: "Ficou interessado?",
         tx2: "Acesse a página de suporte ao cliente e entre em contato com um de nossos especialistas e tire suas dúvidas ao contrate os serviços da selo",
@@ -226,6 +244,24 @@ export const LanguageProvider = ({ children }) => {
         contTituloTres:"Sound Design",
         contTextoTres:"Do you want your project to have maximum immersion and impact on the audience? Selo's Sound Design services are the right option for you. Click the button below to hire us or, if you still have any questions, one of our experts will contact you to help you.",
         contBotao:"See More"
+      },
+      designSonoro:{
+        botao: "Highlights",
+        titulo: "Sound design",
+        tituloPrincipal:"FEEL THE SOUND EXPLOSION",
+        descricao:"Sound design is an essential step in audiovisual post-production, responsible for creating atmosphere, transmitting emotions and providing an immersive experience to the audience, from fiction films, advertising commercials to documentaries.",
+        cartazTituloUm:"Inversive 3D sound",
+        cartazDescricaoUm:"The pre-production of a film and the planning phase of a film, including script, budget, casting, crew, location selection and definition of visual spaces.",
+        cartazTituloDois:"Setting 5.1",
+        cartazDescricaoDois:"The pre-production of a film and the planning phase of a film, including script, budget, casting, crew, location selection and definition of visual spaces.",
+        cartazTituloTres:"Foley Studio",
+        cartazDescricaoTres:"Count on the best propositioners in the area, and with experience, enabling greater performance and production optimization.",
+        accordionTitleUm:"Impress audiences with original sound concepts",
+        accodionContentUm:"The Selo de Sound Design team works in partnership with other creative departments of the project, academic studies and trends in the audiovisual market, ensuring greater integration and enhancing immersion.",
+        accordionTitleDois:"Bring your audience into your world with mixing",
+        accodionContentDois:"Selo doesn't just create scenes that are visually impressive, but that can also be felt through hearing. We use cutting-edge technologies such as 3D mixing and Binaural Audio to create three-dimensional spaces.",
+        accordionTitleTres:"Electrify the audience with original compositions",
+        accodionContentTres:"At Selo, each note is designed with the impact, rhythm, originality and identity of the project in mind, making the audience's experience unforgettable."
       },
       minifooter:{
         tx1: "Are you interested?",

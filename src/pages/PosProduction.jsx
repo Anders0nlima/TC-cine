@@ -115,38 +115,39 @@ export const PosProduction = () => {
 
             <section id="DesighSonoro" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
                 <DesignSonoro
-                    titulo="Design sonoro"
-                    tituloPrincipal="SINTA A EXPLOSÃO SONORA"
-                    descricao="O design sonoro é uma etapa essencial na pós-produção audiovisual, responsável por criar atmosfera, transmitir emoções e proporcionar uma experiência imersiva ao público, Desde Filmes de Ficção, Comerciais publicitários à Documentários "
+                    botaoDestaque={t("designSonoro.botao")}
+                    titulo= {t("designSonoro.titulo")}
+                    tituloPrincipal={t("designSonoro.tituloPrincipal")}
+                    descricao={t("designSonoro.descricao")}
                     cartazes={[
                         {
                             cartazImagem: imagemcartaz1,
-                            cartazTitulo: "Som 3D inversivo",
-                            cartazDescricao: "A pré-produção  cinematográfica e a fase de planejamento do filme, incluindo roteiro, orçamento, seleção de elenco, equipe escolha de locação e definição de espactos visuais."
+                            cartazTitulo: t("designSonoro.cartazTituloUm"),
+                            cartazDescricao: t("designSonoro.cartazDescricaoUm")
                         },
                         {
                             cartazImagem: imagemcartaz1,
-                            cartazTitulo: "Ambientação 5.1",
-                            cartazDescricao: "A pré-produção  cinematográfica e a fase de planejamento do filme, incluindo roteiro, orçamento, seleção de elenco, equipe escolha de locação e definição de espactos visuais."
+                            cartazTitulo: t("designSonoro.cartazTituloDois"),
+                            cartazDescricao: t("designSonoro.cartazDescricaoDois")
                         },
                         {
                             cartazImagem: imagemcartaz1,
-                            cartazTitulo: "Estudio Foley",
-                            cartazDescricao: "Conte com os melhores proposicionistas da área, e com experiências, possibilitando maior rendimento e otimização da pridução"
+                            cartazTitulo: t("designSonoro.cartazTituloTres"),
+                            cartazDescricao: t("designSonoro.cartazDescricaoTres")
                         }
                     ]}
                     itensAccordion={[
                         {
-                            title: "Imprecione o público com conceitos sonoros originais ",
-                            content: "A equipe Selo de Sound Design atua em parceria com outros departamentos criativos do projeto, estudos acadêmicos e tendências do mercado audiovisual, garantido maior integração e potencializa a imersão "
+                            title: t("designSonoro.accordionTitleUm"),
+                            content: t("designSonoro.accodionContentUm")
                         },
                         {
-                            title: "Trage o público para seu universos com a mixagem",
-                            content: "A Selo não constroi apenas cenas que impactam pelo visual, mas que podem ser sentidas pela audição. Utilizamos tecnologias de pontas, como mixagem 3D e Áudio Binaural para criar espaços tridimensionais"
+                            title: t("designSonoro.accordionTitleDois"),
+                            content: t("designSonoro.accodionContentDois")
                         },
                         {
-                            title: "Eletrize o público com composições originais  ",
-                            content: "Na Selo Cada nota é pensada no impacto, ritmo, originalidade e identidade do projeto, tornando a experiência do público inesquecível. "
+                            title: t("designSonoro.accordionTitleTres"),
+                            content: t("designSonoro.accodionContentTres")
                         }
                     ]}
                     filmeCartaz={cartazfilme2}
