@@ -41,54 +41,54 @@ export const PosProduction = () => {
 
             <section id="VisaoGeral" name="colaboradores" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
                 <Colaboradores
-                    titulo="Visão Geral"
-                    tituloPrincipal="MELHORE O FLUXO DE TRABALHO"
-                    descricao="A pós-produção é uma das etapas de produção de qualquer obra, ela é determinante para a qualidade final do projeto.  Para isso a Selo utiliza técnicas avançadas, workflows refinados e profissionais especializados prontos para extrair o máximo do processo. "
-                    botaoUm="Edição"
-                    botaoDois="Performance"
-                    botaoTres="Criatividade"
+                    titulo={t("colaboradoresPp.titulo")}
+                    tituloPrincipal={t("colaboradoresPp.tituloPrincipal")}
+                    descricao={t("colaboradoresPp.descricao")}
+                    botaoUm={t("colaboradoresPp.botaoUm")}
+                    botaoDois={t("colaboradoresPp.botaoDois")}
+                    botaoTres={t("colaboradoresPp.botaoTres")}
                     itensAccordion={
                         {
                             experiencia: [
                                 {
-                                    title: "Produza ritmo com a edição",
-                                    content: "O selo oferece serviços básicos de edição de vídeos em diferentes formatos, como: Curtas Longas-metragens, Comerciais, Documentários e vídeos institucionais."
+                                    title: t("colaboradoresPp.experienciaTitle1"),
+                                    content: t("colaboradoresPp.experienciaContent2")
                                 },
                                 {
-                                    title: "Alie ciência e criatividade ",
-                                    content: "São aplicadas e desenvolvidas estruturas narrativas e técnicas complexas, embasadas em fundamentos teóricos e metodologias científicas a respeito da montagem audiovisual. "
+                                    title: t("colaboradoresPp.experienciaTitle3"),
+                                    content: t("colaboradoresPp.experienciaContent4")
                                 },
                                 {
-                                    title: "Inove por meio da arte",
-                                    content: "Temos como princípio a inovação por meio da arte, por isso sempre valoriza novas abordagens criativas, garantindo um fluxo orgânico e adaptável a cada projeto."
+                                    title: t("colaboradoresPp.experienciaTitle5"),
+                                    content: t("colaboradoresPp.experienciaContent6")
                                 }
                             ],
                             otimizacao: [
                                 {
-                                    title: "Seja produtivo com otimização",
-                                    content: "Como parte essencial do selo, implementamos mecanismos que otimizam processos técnicos e valorizam a liberdade criativa."
+                                    title: t("colaboradoresPp.otimizacaoTitle1"),
+                                    content: t("colaboradoresPp.otimizacaoContent2")
                                 },
                                 {
-                                    title: "Obtenha Melhores Resultados com Controle",
-                                    content: "O selo assume toda a gestão do processo, garantindo controle total, estabilidade e confiança nos resultados entregues."
+                                    title: t("colaboradoresPp.otimizacaoTitle3"),
+                                    content: t("colaboradoresPp.otimizacaoContent4")
                                 },
                                 {
-                                    title: "Tenha resultaos Dentro dos Prazos",
-                                    content: "Cada etapa é conduzida com rigor técnico e supervisão especializada, assegurando entregas pontuais e de alta precisão."
+                                    title: t("colaboradoresPp.otimizacaoTitle5"),
+                                    content: t("colaboradoresPp.otimizacaoContent6")
                                 }
                             ],
                             organizacao: [
                                 {
-                                    title: "Crie mais com integração criativa",
-                                    content: "Cada departamento do selo atua em parceria com outras áreas criativas, garantindo conexões com diferentes aspectos do processo."
+                                    title: t("colaboradoresPp.organizacaoTitle1"),
+                                    content: t("colaboradoresPp.organizacaoContent2")
                                 },
                                 {
-                                    title: "Alcance resultos com padrões de mercado ",
-                                    content: "O selo segue padrões e tendências do mercado, o que garante obras atuais e com relevância no cenário social contemporâneo."
+                                    title: t("colaboradoresPp.organizacaoTitle3"),
+                                    content: t("colaboradoresPp.organizacaoContent4")
                                 },
                                 {
-                                    title: "Construa produtos originais que se destaquem",
-                                    content: "A liberdade artística é essencial para o selo, por isso buscamos sempre inovar e criar produtos audiovisuais marcantes."
+                                    title: t("colaboradoresPp.organizacaoTitle5"),
+                                    content: t("colaboradoresPp.organizacaoContent6")
                                 }
                             ]
                         }
@@ -99,15 +99,16 @@ export const PosProduction = () => {
 
             <section id="ColorGrading" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }} >
                 <Metodos
-                    titulo="Color gradind"
-                    tituloPrincipal="VISUAL DE CINEMA"
-                    descricao="A colorização é uma etapa essencial da pós-produção audiovisual, responsável por refinar e transformar o material Bruto em uma obra visualmente impactante. A selo atua nos dois segmentos da colorização tanto na forma técnica quanto na estética."
+                    titulo={t("metodosPp.titulo")}
+                    tituloPrincipal={t("metodosPp.tituloPrincipal")}
+                    descricao={t("metodosPp.descricao")}
                     videoExp={videoposBase}
-                    Destaque="Destaques"
-                    subDescricao="O color grading não se limita à aplicação de filtros ou ajustes básicos, trata-se de um processo completo, dividido em etapas estratégicas."
+                    Destaque={t("metodosPp.Destaque")}
+                    subDescricao={t("metodosPp.subDescricao")}
                     variant="cinematografia"
-                    containerTitulo="Veja o poder narrativo do color Granding"
-                    containerDescricao="Escolha a melhor opção para sua produção cinematrográficas, retire suas ideas do pepel e veja como podemos ajudar você a produzir mais."
+                    containerTitulo={t("metodosPp.containerTitulo")}
+                    containerDescricao={t("metodosPp.containerDescricao")}
+                    watchButtonText={t("metodosPp.watchButton")}
                 />
             </section>
             <BeforeAfterSlider />

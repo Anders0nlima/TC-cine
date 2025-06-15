@@ -69,18 +69,18 @@ export const getConteudos = () => {
     },
     cinematografia: {
       [CONTENT_IDS.CINEMATOGRAFIA.CORRECAO]: {
-        titulo: 'Correção de Cor',
-        texto: 'A correção de cor é a base do color Grading. Seu principal objetivo é garantir a uniformidade técnica das imagens obtidas diretamente das câmeras.',
+        titulo: t('metodosConteudosTextPp.TitleUm'),
+        texto: t('metodosConteudosTextPp.TextUm'),
         imagem: grind1
       },
       [CONTENT_IDS.CINEMATOGRAFIA.LOOK]: {
-        titulo: 'Definição do Look',
-        texto: 'Em produções mais exigentes é necessário dar passos a mais no quesito color Grading, esse é o caso da Definição de Look.',
+        titulo: t('metodosConteudosTextPp.TitleDois'),
+        texto: t('metodosConteudosTextPp.TextDois'),
         imagem: grind2
       },
       [CONTENT_IDS.CINEMATOGRAFIA.COLORIZACAO]: {
-        titulo: 'Colorização Estética',
-        texto: 'A colorização estética é a etapa de manuseio dos materiais e aplicações das estéticas estabelecidas.',
+        titulo: t('metodosConteudosTextPp.TitleTres'),
+        texto: t('metodosConteudosTextPp.TextTres'),
         imagem: grind3
       }
     }
@@ -96,9 +96,9 @@ export const getConteudos = () => {
       [CONTENT_IDS.PADRAO.SIMULACOES]: safeTranslate('metodosConteudos.botaoCinco','Simulações técnicas')
     },
     cinematografia: {
-      [CONTENT_IDS.CINEMATOGRAFIA.CORRECAO]: 'Correção',
-      [CONTENT_IDS.CINEMATOGRAFIA.LOOK]: 'Look',
-      [CONTENT_IDS.CINEMATOGRAFIA.COLORIZACAO]: 'Colorização'
+      [CONTENT_IDS.CINEMATOGRAFIA.CORRECAO]: safeTranslate('metodosConteudosPp.botaoUm', 'Correção'),
+      [CONTENT_IDS.CINEMATOGRAFIA.LOOK]: safeTranslate('metodosConteudosPp.botaoDois', 'Look'),
+      [CONTENT_IDS.CINEMATOGRAFIA.COLORIZACAO]: safeTranslate('metodosConteudosPp.botaoTres', 'Colorização')
     }
   };
 
