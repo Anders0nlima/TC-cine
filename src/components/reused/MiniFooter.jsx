@@ -9,7 +9,7 @@ export const MiniFooter = ({
   txbutton1,
   txbutton2,
   link1 = "/suporte",
-  link2 = "/pos-producao"
+  link2 = "/pos-producao",
 }) => {
   return (
     <div className={styles.container}>
@@ -26,12 +26,13 @@ export const MiniFooter = ({
           </div>
         </Link>
 
-        <Link to={link2 || '#'} className={styles.interesseWrapper}>
-        <span className={styles.interesseText}><strong>{txbutton2}</strong></span>
-          <div className={styles.iconButton}>
+            <Link to={link2 || '#'} className={styles.interesseWrapper}>
+           <span className={styles.interesseText}><strong>{txbutton2}</strong></span>
+           <div className={styles.iconButton}>
             <FontAwesomeIcon icon={faChevronRight} className={styles.arrowIcon} />
           </div>
         </Link>
+      
       </div>
     </div>
   );

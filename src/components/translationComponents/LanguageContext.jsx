@@ -100,6 +100,18 @@ export const LanguageProvider = ({ children }) => {
         contTextoDois:"Ficou interessado no poder do color grading para o seu produto audiovisual? Conte com a Selo para transformar seu conteúdo em uma verdadeira obra visual, com qualidade e estilo. Clique no botão abaixo para contratar os serviços ou entrar em contato com nossos especialistas.",
         contTituloTres:"Design Sonoro",
         contTextoTres:"Quer que seu projeto tenha o máximo de imersão e impacto no público? Os serviços de  Design Sonoro da Selo é a opção certa para você. Clique no botão abaixo para contratar ou, se ainda tiver alguma dúvida, um de nossos especialistas entrará em contato para ajudá-lo.",
+        botaoUmPp: "Edição",
+        botaoDoisPp: "Color Granding",
+        botaoTresPp: "Sonorização",
+        contTituloUmPp: "Edição Audiovisual(Pp)",
+        contTextoUmPp: "A Selo oferece diversos formatos de edição para produtos audiovisuais. Tem uma obra seja documentário, ficção, publicitário ou institucionale busca um resultado eficiente, que valorize ao máximo o seu material? Conte com a Selo. Clique no botão abaixo para contratar os serviços ou entrar em contato com nossos especialistas.(Pp)",
+        contTituloDoisPp:"Color Grading(Pp)",
+        contTextoDoisPp:"Ficou interessado no poder do color grading para o seu produto audiovisual? Conte com a Selo para transformar seu conteúdo em uma verdadeira obra visual, com qualidade e estilo. Clique no botão abaixo para contratar os serviços ou entrar em contato com nossos especialistas.(Pp)",
+        contTituloTresPp:"Design Sonoro(Pp)",
+        contTextoTresPp:"Quer que seu projeto tenha o máximo de imersão e impacto no público? Os serviços de Design Sonoro da Selo é a opção certa para você. Clique no botão abaixo para contratar ou, se ainda tiver alguma dúvida, um de nossos especialistas entrará em contato para ajudá-lo.(Pp)",
+        botaoQuatroNome: "Todos",
+        botaoQuatroTitulo: "Pré-produção",
+        botaoQuatroTexto: "Ficou interessado nos serviços de pré-produção da Selo? Clique no botão abaixo para contratar ou, se ainda estiver com dúvidas, um de nossos especialistas entrará em contato para auxiliá-lo.",
         contBotao:"Veja Mais"
       },
       designSonoro:{
@@ -125,6 +137,7 @@ export const LanguageProvider = ({ children }) => {
         tx2: "Acesse a página de suporte ao cliente e entre em contato com um de nossos especialistas e tire suas dúvidas ao contrate os serviços da selo",
         txbutton1: "Acesse a página de suporte ao cliente",
         txbutton2: "Pós-produção do Selo",
+        txbutton2Pp: "produção do Selo"
       },
       posProducao: {
         business: "Negócios ",
@@ -243,6 +256,22 @@ export const LanguageProvider = ({ children }) => {
         contTextoDois:"Are you interested in the power of color grading for your audiovisual product? Count on Selo to transform your content into a true visual work, with quality and style. Click the button below to hire the services or contact our experts.",
         contTituloTres:"Sound Design",
         contTextoTres:"Do you want your project to have maximum immersion and impact on the audience? Selo's Sound Design services are the right option for you. Click the button below to hire us or, if you still have any questions, one of our experts will contact you to help you.",
+        Aplititulo: "Applications",
+        AplitituloPrincipal: "HIRE OUR SERVICES",
+        Aplidescricao: "Check below what best suits your needs and speak to one of our experts.",
+        botaoUmPp: "Edition",
+        botaoDoisPp: "Color Granding",
+        botaoTresPp: "Sound",
+        contTituloUmPp: "Audiovisual Edition(Pp)",
+        contTextoUmPp: "Selo offers several editing formats for audiovisual products. Do you have a documentary, fiction, advertising or institutional work and are looking for an efficient result that maximizes the value of your material? Count on Selo. Click the button below to hire our services or contact our specialists.(Pp)",
+        contTituloDoisPp:"Color Grading(Pp)",
+        contTextoDoisPp:"Are you interested in the power of color grading for your audiovisual product? Count on Selo to transform your content into a true visual work, with quality and style. Click the button below to hire the services or contact our experts.(Pp)",
+        contTituloTres:"Sound Design(Pp)",
+        contTituloTresPp:"Sound Design(Pp)",
+        contTextoTresPp:"Do you want your project to have maximum immersion and impact on the audience? Selo's Sound Design services are the right option for you. Click the button below to hire us or, if you still have any questions, one of our experts will contact you to help you.(Pp)",
+        botaoQuatroNome: "All",
+        botaoQuatroTitulo: "Pre-production",
+        botaoQuatroTexto: "Are you interested in Selo's pre-production services? Click the button below to sign up or, if you still have questions, one of our specialists will contact you to assist you.",
         contBotao:"See More"
       },
       designSonoro:{
@@ -268,6 +297,7 @@ export const LanguageProvider = ({ children }) => {
         tx2: "Access the customer support page and contact one of our specialists and clear up any doubts you may have when hiring Selo's services.",
         txbutton1: "Visit the customer support page",
         txbutton2: "Post-production of the Seal",
+        txbutton2Pp: "production of the Seal"
       },
       metodos:{
         titulo: "Methods",

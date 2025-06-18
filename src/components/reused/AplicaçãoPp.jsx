@@ -7,33 +7,33 @@ import { BotaoGeral } from '../reused/BotaoGeral';
 import { useLanguage } from '../translationComponents/LanguageContext';
 
 
-const Aplicacoes = ({
+const AplicacoesPp = ({
   titulo = "Utilitários",
   tituloPrincipal = "CONTRATE NOSSOS SERVIÇOS",
   descricao = "Confira abaixo o que mais se adapta às suas necessidades e fale com um de nossos especialistas.",
   quartoBotaoNome = null, // Alterado para null como padrão
   quartoConteudo = null,   // Alterado para null como padrão
-  botaoUm = "Edição",
-  botaoDois = "Color Granding",
-  botaoTres = "Sonorização"
+  botaoUmPp = "Edição",
+  botaoDoisPp = "Color Granding",
+  botaoTresPp = "Sonorização"
 }) => {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('pre-producao');
 
   const conteudos = {
     'pre-producao': {
-      titulo: t("aplicacoesProduction.contTituloUm"),
-      texto: t("aplicacoesProduction.contTextoUm"),
+      titulo: t("aplicacoesProduction.contTituloUmPp"),
+      texto: t("aplicacoesProduction.contTextoUmPp"),
       imagem: imagemEdicao
     },
     'producao': {
-      titulo: t("aplicacoesProduction.contTituloDois"),
-      texto: t("aplicacoesProduction.contTextoDois"),
+      titulo: t("aplicacoesProduction.contTituloDoisPp"),
+      texto: t("aplicacoesProduction.contTextoDoisPp"),
       imagem: imagemGrind
     },
     'ambos': {
-      titulo: t("aplicacoesProduction.contTituloTres"),
-      texto: t("aplicacoesProduction.contTextoTres"),
+      titulo: t("aplicacoesProduction.contTituloTresPp"),
+      texto: t("aplicacoesProduction.contTextoTresPp"),
       imagem: imagemSonoridade
     },
     ...(quartoConteudo && { 'novo-servico': quartoConteudo }) // Só adiciona se quartoConteudo existir
@@ -58,19 +58,19 @@ const Aplicacoes = ({
               className={`${styles.tabButton} ${activeTab === 'pre-producao' ? styles.activeTab : ''}`}
               onClick={() => handleTabChange('pre-producao')}
             >
-              {botaoUm}
+              {botaoUmPp}
             </button>
             <button 
               className={`${styles.tabButton} ${activeTab === 'producao' ? styles.activeTab : ''}`}
               onClick={() => handleTabChange('producao')}
             >
-              {botaoDois}
+              {botaoDoisPp}
             </button>
             <button 
               className={`${styles.tabButton} ${activeTab === 'ambos' ? styles.activeTab : ''}`}
               onClick={() => handleTabChange('ambos')}
             >
-              {botaoTres}
+              {botaoTresPp}
             </button>
 
             {quartoBotaoNome && (
@@ -106,4 +106,4 @@ const Aplicacoes = ({
     </section>
   );
 };
-export default Aplicacoes;
+export default AplicacoesPp;

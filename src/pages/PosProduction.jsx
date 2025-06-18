@@ -14,6 +14,7 @@ import DesignSonoro from "../componentsPosProduction/DesignSonoro";
 import Aplicacoes from "../components/reused/Aplicacoes";
 import { MiniFooter } from "../components/reused/MiniFooter";
 import { NavBarRouter } from "../components/reused/NavBarRouter";
+import AplicacoesPp from "../components/reused/AplicaçãoPp";
 
 
 export const PosProduction = () => {
@@ -157,12 +158,17 @@ export const PosProduction = () => {
 
 
             <section id="Aplicacao" name="metodos" style={{ minHeight: '100vh', scrollMarginTop: '100px' }}>
-                   <Aplicacoes
-                    titulo="Aplicações"
-                    quartoBotaoNome="Todos"
+                   <AplicacoesPp
+                    titulo={t("aplicacoesProduction.titulo")}
+                    tituloPrincipal={t("aplicacoesProduction.tituloPrincipal")}
+                    descricao={t("aplicacoesProduction.descricao")}
+                    botaoUmPp={t("aplicacoesProduction.botaoUmPp")}
+                    botaoDoisPp={t("aplicacoesProduction.botaoDoisPp")}
+                    botaoTresPp={t("aplicacoesProduction.botaoTresPp")}
+                    quartoBotaoNome={t("aplicacoesProduction.botaoQuatroNome")}
                     quartoConteudo={{
-                    titulo: "Pré-produção",
-                    texto: "Ficou interessado nos serviços de pré-produção da Selo? Clique no botão abaixo para contratar ou, se ainda estiver com dúvidas, um de nossos especialistas entrará em contato para auxiliá-lo.",
+                    titulo: t("aplicacoesProduction.botaoQuatroTitulo"),
+                    texto: t("aplicacoesProduction.botaoQuatroTexto"),
                     imagem: imagem5
                 }}
             />
@@ -170,10 +176,10 @@ export const PosProduction = () => {
            
 
             <MiniFooter
-                tx1="Ficou interessado?"
-                tx2="Acesse a página de suporte ao cliente e entre em contato com um de nossos especialistas e tire suas dúvidas ao contrate os serviços da selo"
-                txbutton1="Acesse a página de suporte ao cliente"
-                txbutton2="Produção do Selo"
+                tx1= {t("minifooter.tx1")}
+                tx2={t("minifooter.tx2")}
+                txbutton1={t("minifooter.txbutton1")}
+                txbutton2={t("minifooter.txbutton2Pp")}
                 link1="/suporte"
                 link2="/producao"
             />
