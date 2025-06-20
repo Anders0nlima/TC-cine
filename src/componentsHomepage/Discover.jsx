@@ -7,7 +7,10 @@ import imagem2 from "../assets/homeMedia/homenavbar/imagem7.jpg";
 import { BotaoGeral } from '../components/reused/BotaoGeral';
 import {DescubraOpc} from '../componentsHomepage/DescubraOpc';
 
+import { useLanguage } from '../components/translationComponents/LanguageContext';
+
 export const Descubra = () => {
+    const { t } = useLanguage();
     const [activeTab, setActiveTab] = useState('produtora');
 
   const handleTabChange = (tab) => {
@@ -18,8 +21,8 @@ export const Descubra = () => {
         <>
             <section className={styles.section}>
                 <div className={styles.primeiroContudo}>
-                    <h1>Descubra a TC|CINE</h1>
-                    <p>A Tecnologia Criativa Cinematográfica (TC|CINE) é uma produtora & coprodutora audiovisual que une métodos e processos tecnológicos à criatividade cinematográfica.</p>
+                    <h1>{t("homeDescubraPage.titulo")}</h1>
+                    <p>{t("homeDescubraPage.descricao")}</p>
                 </div>
 
                 <div className={styles.segundoContudo}>
@@ -31,13 +34,13 @@ export const Descubra = () => {
             className={`${styles.tabButton} ${activeTab === 'produtora' ? styles.activeTab : ''}`}
             onClick={() => handleTabChange('produtora')}
           >
-            Produtora
+            {t("homeDescubraPage.bottonUm")}
           </button>
           <button 
             className={`${styles.tabButton} ${activeTab === 'coprodutora' ? styles.activeTab : ''}`}
             onClick={() => handleTabChange('coprodutora')}
           >
-            Coprodutora
+            {t("homeDescubraPage.bottonDois")}
           </button>
         </div>
 
@@ -46,12 +49,12 @@ export const Descubra = () => {
             {activeTab === 'produtora' ? (
               <>
                 <div className={styles.textContent}>
-                  <h2 className={styles.contentTitle}>Ideia para produtos autorais</h2>
+                  <h2 className={styles.contentTitle}>{t("homeDescubraPage.contentTitleUm")}</h2>
                   <p className={styles.contentDescription}>
-                    Com uma equipe experiente e processos eficientes, a TC|CINE participa de todas as etapas da produção audiovisual (Pre&Produção e Pós-produção), desde grandes projetos até produções com orçamentos menores. Também oferecemos consultorias técnicas e criativas para o desenvolvimento de roteiros, planejamento e execução de produções.
+                    {t("homeDescubraPage.contentDescriptionUm")}
                   </p>
                   <BotaoGeral
-                  texto="Contrate"
+                  texto={t("homeDescubraPage.botaoGeral")}
                   link="/suporte"
                   />
                 </div>
@@ -62,12 +65,12 @@ export const Descubra = () => {
             ) : (
               <>
                 <div className={styles.textContent}>
-                  <h2 className={styles.contentTitle}>Vá mais longe <br /> em Equipe</h2>
+                  <h2 className={styles.contentTitle}>{t("homeDescubraPage.contentTitleDoisB")} <br /> {t("homeDescubraPage.contentTitleDoisR")}</h2>
                   <p className={styles.contentDescription}>
-                    A TC|CINE é parceira de produtoras independentes que buscam suporte em etapas específicas de seus projetos. Atuamos com flexibilidade em pré-produção, produção e pós-produção, oferecendo soluções personalizadas que elevam a qualidade e o impacto de cada obra. Conheça todos os nossos serviços e descubra como podemos transformar ideias em narrativas audiovisuais de alto padrão.
+                    {t("homeDescubraPage.contentDescriptionDois")}
                   </p>
                   <BotaoGeral
-                  texto="Contrate"
+                  texto={t("homeDescubraPage.botaoGeral")}
                   link="/suporte"
                   />
                 </div>

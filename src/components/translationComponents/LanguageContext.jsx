@@ -207,6 +207,100 @@ export const LanguageProvider = ({ children }) => {
         title3: "EXPECIALISTAS DE PRODUÇÃO",
         content3: "Conte com os melhores proficcionais da área, e com experiência, possibilidades maior rendimento e otimização da produção.",
         destaquesBotao: "Destaques"
+      },
+      homeLandingPage:{
+        titleText: "Torne sua imaginação real",
+        descriptionText: "A nova forma de produzir conteúdo cinematográfico",
+        watchButtonText: "Assistir"
+      },
+      homeDescubraPage:{
+        titulo: "Descubra a TC|CINE",
+        descricao: "A Tecnologia Criativa Cinematográfica (TC|CINE) é uma produtora & coprodutora audiovisual que une métodos e processos tecnológicos à criatividade cinematográfica.",
+        conteudoTituloUm: "CRIATIVIDADE AUDIOVISUAL",
+        contuedoDescricaoUm: "A TC|CINE tem o compromisso com a inovação criativa no setor audiovisual Brasileiro.",
+        conteudoTituloDois: "TECNOLOGIA AUDIOVISUAL",
+        contuedoDescricaoDois: "A TC|CINE estuda e aplica novas tecnicas e métodos para a qualidade estrutural, visul, e sonora em seus resultados.",
+        bottonUm: "Produtora",
+        bottonDois: "Coprodutora",
+        contentTitleUm: "Ideia para produtos autorais",
+        contentDescriptionUm: "Com uma equipe experiente e processos eficientes, a TC|CINE participa de todas as etapas da produção audiovisual (Pre&Produção e Pós-produção), desde grandes projetos até produções com orçamentos menores. Também oferecemos consultorias técnicas e criativas para o desenvolvimento de roteiros, planejamento e execução de produções.",
+        contentTitleDoisB: "Vá mais longe",
+        contentTitleDoisR: "em Equipe",
+        contentDescriptionDois: "A TC|CINE é parceira de produtoras independentes que buscam suporte em etapas específicas de seus projetos. Atuamos com flexibilidade em pré-produção, produção e pós-produção, oferecendo soluções personalizadas que elevam a qualidade e o impacto de cada obra. Conheça todos os nossos serviços e descubra como podemos transformar ideias em narrativas audiovisuais de alto padrão.",
+        botaoGeral: "Contrate",
+      },
+      homePrePosPage:{
+        titleUmP:"PRÉ & PRODUÇÃO AUDIOVISUAL",
+        descriptionUmP:"O departamento de Pré & Produção da TC|CINE oferece uma variedade de serviços para o seu projeto audiovisual. Clique em Saiba Mais e descubra em detalhes nossos métodos e soluções para cada etapa da produção.",
+        accTitleUmP:"Diversos formatos audiovisuais",
+        accContentUmP:"Realizamos projetos para cinema e TV, com suporte técnico e criativo em todas as etapas. Oferecemos consultoria e desenvolvimento de projetos para editais.",
+        accTitleDoisP:"Variadas estruturas",
+        accContentDoisP:"A TC|CINE se adapta a diferentes realidades de produção, com soluções eficazes para projetos de baixo orçamento ou de grande porte.",
+        accTitleTresP:"Produção única",
+        accContentTresP:"Nosso time Executivo, oferece produção, locações, contratos, aluguel de equipamentos e toda a logística necessária para transformar sua ideia em realidade.",
+
+        titleUmS:"PÓS-PRODUÇÃO AUDIOVISUAL",
+        descriptionUmS:"O setor de Pós-Produção da TC|CINE disponibiliza diversas ferramentas para a finalização do seu projeto. Clique em Saiba Mais e veja como podemos elevar a qualidade da sua produção ao mais alto nível.",
+        accTitleUmS:"Edição cinematográfica",
+        accContentUmS:"A TC|CINE conta com montadores experientes, prontos para entregar ritmo, narrativa e autenticidade ao seu projeto audiovisual.",
+        accTitleDoisS:"Color grading",
+        accContentDoisS:"Nosso departamento especializado em cor trabalha para extrair o máximo de qualidade visual, garantindo identidade e impacto em cada cena.",
+        accTitleTresS:"Sonorização cinematográfica",
+        accContentTresS:"Oferecemos serviços completos de áudio: edição, mixagem 3D e trilhas musicais originais que elevam a imersão e a força da sua obra.",
+        botaoGeral: "Saiba Mais"
+      },
+      insightPos:{
+        titulo: "INSIGHT",
+        tituloPrincipal: "A MELHOR OPÇÃO",
+        descricao: "Descubra por que a Selo é a escolha ideal na produção audiovisual. Fale com a gente e veja como a Selo pode transformar suas ideias em realidade.",
+
+        bottonExp: "Pilares",
+        titleExpU:"Pilares",
+        mainTituloExpU:"Produza mais com organização",
+        subTitleExpU:"Organização alinhada com criatividade",
+        contentExpU:"Na TC|CINE, a organização é a base da criatividade. Projetos bem estruturados liberam o potencial artístico, garantindo eficiência, clareza e excelência desde a pré-produção até a entrega final.",
+
+        titleExpD:"Pilares",
+        mainTituloExpD:"Otimize etapas técnicas",
+        subTitleExpD:"Otimização para melhores performance",
+        contentExpD:"Cada processo passa por constantes análises e melhorias. Buscamos eficiência sem abrir mão da qualidade, otimizando recursos e etapas para alcançar resultados de alto desempenho técnico.",
+
+        titleExpT:"Pilares",
+        mainTituloExpT:"Obtenha qualidade superiores",
+        subTitleExpT:"Resultados Supriendentes",
+        contentExpT:"Mais do que resultados em produtos, a TC|CINE proporciona experiências. Nossa estrutura é pensada para gerar resultados superiores, que surpreendem e conectam com o público de forma profunda e memorável.",
+
+        bottonOtm: "Ciência & Arte",
+        titleOtmU:"Ciência & Arte",
+        mainTituloOtmU:"Bases científicas",
+        subTitleOtmU:"Fundamentos científicos em execução",
+        contentOtmU:"Toda a estrutura da Selo é fundamentada em estudos e práticas científicas. Acreditamos que a Arte é uma extensão essencial da Ciência e no audiovisual, essa união se transforma em linguagem, precisão e inovação.",
+
+        titleOtmD:"Ciência & Arte",
+        mainTituloOtmD:"Busca por inovação",
+        subTitleOtmD:"Práticas Cientícas os melhores resultados",
+        contentOtmD:"A equipe da Selo está em constante diálogo com processos científicos e criativos, explorando novas formas de aplicar a ciência à arte para aprimorar cada etapa da produção audiovisual.",
+
+        titleOtmT:"Ciência & Arte",
+        mainTituloOtmT:"Atuação acadêmica",
+        subTitleOtmT:"Pontos entre o mercado e a Acadêmia científic",
+        contentOtmT:"A Selo também atua como ponte entre o mercado e a academia, desenvolvendo e compartilhando novas perspectivas sobre o audiovisual com base científica, contribuindo para a evolução do setor.",
+
+        bottonOrg: "Criatividade",
+        titleOrgU:"Criatividade",
+        mainTituloOrgU:"Mercado Saturado",
+        subTitleOrgU:"Compreendimento do Mercado",
+        contentOrgU:"O mercado audiovisual muitas vezes se mostra saturado, especialmente por limitações criativas. Desenvolvemos processos que priorizam a originalidade, promovendo soluções inovadoras que se destacam.",
+
+        titleOrgD:"Criatividade",
+        mainTituloOrgD:"Liberdade Artística",
+        subTitleOrgD:"Valores Criativos",
+        contentOrgD:"A liberdade artística é a base para projetos verdadeiramente autênticos e disruptivos. Valorizamos ideias ousadas e investimos em profissionais com visões únicas e fora do convencional.",
+
+        titleOrgT:"Criatividade",
+        mainTituloOrgT:"Adaptação Econômica",
+        subTitleOrgT:"Estrutura econômica dinâmica",
+        contentOrgT:"Estruturas altamente flexíveis que se adaptam a diferentes faixas orçamentárias de produções menores a médias. Trabalhamos com métodos criativos que revelam novas possibilidades e perspectivas pouco exploradas."
       }
     },
     en: {
@@ -410,6 +504,100 @@ export const LanguageProvider = ({ children }) => {
         title3: "PRODUCTION SPECIALISTS",
         content3: "Count on the best professionals in the field, with experience, possibilities for greater performance and production optimization.",
         destaquesBotao: "Highlights"
+      },
+      homeLandingPage:{
+        titleText: "Make your imagination true",
+        descriptionText: "The new way of producing cinematic content",
+        watchButtonText: "Watch"
+      },
+      homeDescubraPage:{
+        titulo: "Discover TC|CINE",
+        descricao: "Creative Cinematic Technology (TC|CINE) is an audiovisual production & co-production company that combines technological methods and processes with cinematographic creativity.",
+        conteudoTituloUm: "AUDIOVISUAL CREATIVITY",
+        contuedoDescricaoUm: "TC|CINE is committed to creative innovation in the Brazilian audiovisual sector.",
+        conteudoTituloDois: "AUDIOVISUAL TECHNOLOGY",
+        contuedoDescricaoDois: "TC|CINE studies and applies new techniques and methods for structural, visual, and sound quality in its results.",
+        bottonUm: "Producer",
+        bottonDois: "Co-producer",
+        contentTitleUm: "Idea for copyright products",
+        contentDescriptionUm: "With an experienced team and efficient processes, TC|CINE participates in all stages of audiovisual production (Pre-Production and Post-Production), from large projects to productions with smaller budgets. We also offer technical and creative consulting for script development, planning and production execution.",
+        contentTitleDoisB: "Go further as a",
+        contentTitleDoisR: "Team",
+        contentDescriptionDois: "TC|CINE partners with independent production companies seeking support at specific stages of their projects. We work flexibly in pre-production, production and post-production, offering customized solutions that enhance the quality and impact of each project. Learn about all of our services and discover how we can transform ideas into high-quality audiovisual narratives.",
+        botaoGeral: "Hire",
+      },
+      homePrePosPage:{
+        titleUmP:"PRE & AUDIOVISUAL PRODUCTION",
+        descriptionUmP:"TC|CINE's Pre & Production department offers a variety of services for your audiovisual project. Click on Learn More and discover in detail our methods and solutions for each stage of production.",
+        accTitleUmP:"Various audiovisual formats",
+        accContentUmP:"We carry out projects for cinema and TV, with technical and creative support at all stages. We offer consultancy and project development for public notices.",
+        accTitleDoisP:"Various structures",
+        accContentDoisP:"TC|CINE adapts to different production realities, with effective solutions for low-budget or large-scale projects.",
+        accTitleTresP:"Unique production",
+        accContentTresP:"Our Executive team offers production, rentals, contracts, equipment rental and all the logistics needed to turn your idea into reality.",
+
+        titleUmS:"AUDIOVISUAL POST-PRODUCTION",
+        descriptionUmS:"TC|CINE's Post-Production department provides several tools to finalize your project. Click on Learn More and see how we can raise the quality of your production to the highest level.",
+        accTitleUmS:"Film editing",
+        accContentUmS:"TC|CINE has experienced editors, ready to deliver rhythm, narrative and authenticity to your audiovisual project.",
+        accTitleDoisS:"Color grading",
+        accContentDoisS:"Our specialized color department works to extract maximum visual quality, ensuring identity and impact in each scene.",
+        accTitleTresS:"Sonorização cinematográfica",
+        accContentTresS:"We offer complete audio services: editing, 3D mixing and original soundtracks that enhance the immersion and strength of your work.",
+        botaoGeral: "See More"
+      },
+      insightPos:{
+        title: "INSIGHT",
+        mainTitle: "THE BEST OPTION",
+        description: "Discover why Selo is the ideal choice in audiovisual production. Talk to us and see how Selo can turn your ideas into reality.",
+
+        bottonExp: "Pillars",
+        titleExpU: "Pillars",
+        mainTituloExpU: "Produce more with organization",
+        subTitleExpU: "Organization aligned with creativity",
+        contentExpU: "At TC|CINE, organization is the foundation of creativity. Well-structured projects unleash artistic potential, ensuring efficiency, clarity, and excellence from pre-production to final delivery.",
+
+        titleExpD: "Pillars",
+        mainTituloExpD: "Optimize technical stages",
+        subTitleExpD: "Optimization for better performance",
+        contentExpD: "Every process undergoes constant analysis and improvement. We seek efficiency without compromising quality, optimizing resources and stages to achieve high-performance technical results.",
+
+        titleExpT: "Pillars",
+        mainTituloExpT: "Achieve superior quality",
+        subTitleExpT: "Surprising Results",
+        contentExpT: "More than product results, TC|CINE provides experiences. Our structure is designed to deliver superior results that surprise and deeply connect with the audience in a memorable way.",
+
+        bottonOtm: "Science & Art",
+        titleOtmU: "Science & Art",
+        mainTituloOtmU: "Scientific foundations",
+        subTitleOtmU: "Scientific fundamentals in execution",
+        contentOtmU: "Selo's entire structure is based on scientific studies and practices. We believe Art is an essential extension of Science, and in audiovisual, this union translates into language, precision, and innovation.",
+
+        titleOtmD: "Science & Art",
+        mainTituloOtmD: "Pursuit of innovation",
+        subTitleOtmD: "Scientific practices for the best results",
+        contentOtmD: "Selo's team is in constant dialogue with scientific and creative processes, exploring new ways to apply science to art to enhance every stage of audiovisual production.",
+
+        titleOtmT: "Science & Art",
+        mainTituloOtmT: "Academic involvement",
+        subTitleOtmT: "Bridging the market and scientific academia",
+        contentOtmT: "Selo also acts as a bridge between the market and academia, developing and sharing new perspectives on audiovisual based on science, contributing to the evolution of the industry.",
+
+        bottonOrg: "Creativity",
+        titleOrgU: "Creativity",
+        mainTituloOrgU: "Saturated Market",
+        subTitleOrgU: "Understanding the Market",
+        contentOrgU: "The audiovisual market often appears saturated, especially due to creative limitations. We develop processes that prioritize originality, promoting innovative solutions that stand out.",
+
+        titleOrgD: "Creativity",
+        mainTituloOrgD: "Artistic Freedom",
+        subTitleOrgD: "Creative Values",
+        contentOrgD: "Artistic freedom is the foundation for truly authentic and disruptive projects. We value bold ideas and invest in professionals with unique and unconventional visions.",
+
+        titleOrgT: "Creativity",
+        mainTituloOrgT: "Economic Adaptation",
+        subTitleOrgT: "Dynamic economic structure",
+        contentOrgT: "Highly flexible structures that adapt to different budget ranges, from small to medium productions. We work with creative methods that reveal new possibilities and underexplored perspectives."
       }
     },
     /*fr: {

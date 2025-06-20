@@ -5,12 +5,20 @@ import styles from '../../styles/componentsStyles/reusedStyles/HomeLandingPage.m
 
 import video2 from "../../assets/homeMedia/homenavbar/videoDesign.mp4"
 
+import { useLanguage } from '../translationComponents/LanguageContext';
+
 export const HomeLandingPage = ({ 
   videoSrc = video2,
-  titleText = "Torne sua imaginação real",
-  descriptionText = "A nova forma de produzir conteúdo cinematográfico",
-  watchButtonText = "Assistir"
+  titleText,
+  descriptionText,
+  watchButtonText
 }) => {
+  const { t } = useLanguage();
+
+  const defaultTitleText = t("homeLandingPage.titleText");
+  const defaultDescriptionText = t("homeLandingPage.descriptionText");
+  const defaultWatchButtonText = t("homeLandingPage.watchButtonText");
+
   const [showVideoModal, setShowVideoModal] = useState(false);
   const videoRef = useRef(null);
   const modalVideoRef = useRef(null);
@@ -88,8 +96,8 @@ export const HomeLandingPage = ({
         </div>
 
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>{titleText}</h1>
-          <p className={styles.heroDescription}>{descriptionText}</p>
+          <h1 className={styles.heroTitle}>{titleText || defaultTitleText}</h1>
+          <p className={styles.heroDescription}>{descriptionText || defaultDescriptionText}</p>
           <div className={styles.arrowDownContainer}>
           <div className={styles.animatedCircle}>
           <svg className={styles.arrowDown} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +110,7 @@ export const HomeLandingPage = ({
         {/* Botão de assistir no canto inferior direito */}
         <button className={styles.watchButton} onClick={toggleVideoModal}>
           <FontAwesomeIcon icon={faPlay} className={styles.playIcon} />
-          <span>{watchButtonText}</span>
+          <span>{watchButtonText || defaultWatchButtonText}</span>
         </button>
       </div>
 

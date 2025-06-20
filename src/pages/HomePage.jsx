@@ -1,6 +1,6 @@
 import { HomeLandingPage } from "../components/reused/HomeLandingPage"
 import { HomeNavBar } from "../components/reused/HomeNavBar"
-import { LanguageProvider } from "../components/translationComponents/LanguageContext"
+import { LanguageProvider, useLanguage } from "../components/translationComponents/LanguageContext"
 import { Descubra } from "../componentsHomepage/Discover"
 import { HomePrePos } from "../componentsHomepage/HomePrePos"
 
@@ -12,6 +12,7 @@ import InsightPos from "../componentsHomepage/InsightPos"
 import Footer from "../components/reused/Footer"
 
 export const HomePage = () => {
+  const { t } = useLanguage();
     return(
         <>
         <LanguageProvider>
@@ -24,42 +25,42 @@ export const HomePage = () => {
           <HomePrePos
              items={[
                 {
-                  title: "PRÉ & PRODUÇÃO AUDIOVISUAL",
-                  description: "O departamento de Pré & Produção da TC|CINE oferece uma variedade de serviços para o seu projeto audiovisual. Clique em Saiba Mais e descubra em detalhes nossos métodos e soluções para cada etapa da produção.",
+                  title: t("homePrePosPage.titleUmP"),
+                  description: t("homePrePosPage.descriptionUmP"),
                   cartaz: imagem10,
                   link: "/producao",
                   accordionItems: [
                     {
-                      title: "Diversos formatos audiovisuais",
-                      content: "Realizamos projetos para cinema e TV, com suporte técnico e criativo em todas as etapas. Oferecemos consultoria e desenvolvimento de projetos para editais."
+                      title: t("homePrePosPage.accTitleUmP"),
+                      content: t("homePrePosPage.accContentUmP")
                     },
                     {
-                      title: "Variadas estruturas",
-                      content: "A TC|CINE se adapta a diferentes realidades de produção, com soluções eficazes para projetos de baixo orçamento ou de grande porte."
+                      title: t("homePrePosPage.accTitleDoisP"),
+                      content: t("homePrePosPage.accContentDoisP")
                     },
                     {
-                      title: "Produção única",
-                      content: "Nosso time Executivo, oferece produção, locações, contratos, aluguel de equipamentos e toda a logística necessária para transformar sua ideia em realidade. "
+                      title: t("homePrePosPage.accTitleTresP"),
+                      content: t("homePrePosPage.accContentTresP")
                     }
                   ]
                 },
                 {
-                    title: "PÓS-PRODUÇÃO AUDIOVISUAL",
-                    description: "O setor de Pós-Produção da TC|CINE disponibiliza diversas ferramentas para a finalização do seu projeto. Clique em Saiba Mais e veja como podemos elevar a qualidade da sua produção ao mais alto nível.",
+                    title:  t("homePrePosPage.titleUmS"),
+                    description:  t("homePrePosPage.descriptionUmS"),
                     cartaz: imagem1,
                     link: "/pos-producao",
                     accordionItems: [
                       {
-                        title: "Edição cinematográfica",
-                        content: "A TC|CINE conta com montadores experientes, prontos para entregar ritmo, narrativa e autenticidade ao seu projeto audiovisual."
+                        title:  t("homePrePosPage.accTitleUmS"),
+                        content:  t("homePrePosPage.accContentUmS")
                       },
                       {
-                        title: "Color grading",
-                        content: "Nosso departamento especializado em cor trabalha para extrair o máximo de qualidade visual, garantindo identidade e impacto em cada cena."
+                        title:  t("homePrePosPage.accTitleDoisS"),
+                        content:  t("homePrePosPage.accContentDoisS")
                       },
                       {
-                        title: "Sonorização cinematográfica",
-                        content: "Oferecemos serviços completos de áudio: edição, mixagem 3D e trilhas musicais originais que elevam a imersão e a força da sua obra."
+                        title:  t("homePrePosPage.accTitleTresS"),
+                        content:  t("homePrePosPage.accContentTresS")
                       }
                     ]
                   }

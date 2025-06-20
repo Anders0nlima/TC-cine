@@ -1,82 +1,91 @@
 import { useState } from 'react';
 import styles from "../styles/componentsStyles/homepageStyles/InsightPos.module.css";
+import { useLanguage } from '../components/translationComponents/LanguageContext';
 
-const InsightPos = ({
-  titulo = "INSIGHT",
-  tituloPrincipal = "A MELHOR OPÇÃO",
-  descricao = "Descubra por que a Selo é a escolha ideal na produção audiovisual. Fale com a gente e veja como a Selo pode transformar suas ideias em realidade.",
-  tabs = {
-    experiencia: {
-      nome: "Pilares",
-      cards: [
-        {
-          title: "Pilares",
-          mainTitulo: "Produza mais com organização",
-          subtitle: "Organização alinhada com criatividade",
-          content: "Na TC|CINE, a organização é a base da criatividade. Projetos bem estruturados liberam o potencial artístico, garantindo eficiência, clareza e excelência desde a pré-produção até a entrega final."
-        },
-        {
-          title: "Pilares",
-          mainTitulo: "Otimize etapas técnicas",
-          subtitle: "Otimização para melhores performance",
-          content: "Cada processo passa por constantes análises e melhorias. Buscamos eficiência sem abrir mão da qualidade, otimizando recursos e etapas para alcançar resultados de alto desempenho técnico."
-        },
-        {
-          title: "Pilares",
-          mainTitulo: "Obtenha qualidade superiores",
-          subtitle: "Resultados Supriendentes",
-          content: "Mais do que resultados em produtos, a TC|CINE proporciona experiências. Nossa estrutura é pensada para gerar resultados superiores, que surpreendem e conectam com o público de forma profunda e memorável."
-        }
-      ]
-    },
-    otimizacao: {
-      nome: "Ciência & Arte",
-      cards: [
-        {
-          title: "Ciência & Arte",
-          mainTitulo: "Bases científicas",
-          subtitle: "Fundamentos científicos em execução",
-          content: "Toda a estrutura da Selo é fundamentada em estudos e práticas científicas. Acreditamos que a Arte é uma extensão essencial da Ciência e no audiovisual, essa união se transforma em linguagem, precisão e inovação."
-        },
-        {
-          title: "Ciência & Arte",
-          mainTitulo: "Busca por inovação",
-          subtitle: "Práticas Cientícas os melhores resultados",
-          content: "A equipe da Selo está em constante diálogo com processos científicos e criativos, explorando novas formas de aplicar a ciência à arte para aprimorar cada etapa da produção audiovisual."
-        },
-        {
-          title: "Ciência & Arte",
-          mainTitulo: "Atuação acadêmica",
-          subtitle: "Pontos entre o mercado e a Acadêmia científica",
-          content: "A Selo também atua como ponte entre o mercado e a academia, desenvolvendo e compartilhando novas perspectivas sobre o audiovisual com base científica, contribuindo para a evolução do setor."
-        }
-      ]
-    },
-    organizacao: {
-      nome: "Criatividade",
-      cards: [
-        {
-          title: "Criatividade",
-          mainTitulo: "Mercado Saturado",
-          subtitle: "Compreendimento do Mercado",
-          content: "O mercado audiovisual muitas vezes se mostra saturado, especialmente por limitações criativas. Desenvolvemos processos que priorizam a originalidade, promovendo soluções inovadoras que se destacam."
-        },
-        {
-          title: "Criatividade",
-          mainTitulo: "Liberdade Artística",
-          subtitle: "Valores Criativos",
-          content: "A liberdade artística é a base para projetos verdadeiramente autênticos e disruptivos. Valorizamos ideias ousadas e investimos em profissionais com visões únicas e fora do convencional."
-        },
-        {
-          title: "Criatividade",
-          mainTitulo: "Adaptação Econômica",
-          subtitle: "Estrutura econômica dinâmica",
-          content: "Estruturas altamente flexíveis que se adaptam a diferentes faixas orçamentárias de produções menores a médias. Trabalhamos com métodos criativos que revelam novas possibilidades e perspectivas pouco exploradas."
-        }
-      ]
+const InsightPos = (props) => {
+  const { t } = useLanguage();
+  
+  // Objeto com os valores padrão traduzidos
+  const defaultProps = {
+    titulo: t("insightPos.title"),
+    tituloPrincipal: t("insightPos.mainTitle"),
+    descricao: t("insightPos.description"),
+    tabs: {
+      experiencia: {
+        nome: t("insightPos.bottonExp"),
+        cards: [
+          {
+            title: t("insightPos.titleExpU"),
+            mainTitulo: t("insightPos.mainTituloExpU"),
+            subtitle: t("insightPos.subTitleExpU"),
+            content: t("insightPos.contentExpU")
+          },
+          {
+            title: t("insightPos.titleExpD"),
+            mainTitulo: t("insightPos.mainTituloExpD"),
+            subtitle: t("insightPos.subTitleExpD"),
+            content: t("insightPos.contentExpD")
+          },
+          {
+            title: t("insightPos.titleExpT"),
+            mainTitulo: t("insightPos.mainTituloExpT"),
+            subtitle: t("insightPos.subTitleExpT"),
+            content: t("insightPos.contentExpT")
+          }
+        ]
+      },
+      otimizacao: {
+        nome: t("insightPos.bottonOtm"),
+        cards: [
+          {
+            title: t("insightPos.titleOtmU"),
+            mainTitulo: t("insightPos.mainTituloOtmU"),
+            subtitle: t("insightPos.subTitleOtmU"),
+            content: t("insightPos.contentOtmU")
+          },
+          {
+            title: t("insightPos.titleOtmD"),
+            mainTitulo: t("insightPos.mainTituloOtmD"),
+            subtitle: t("insightPos.subTitleOtmD"),
+            content: t("insightPos.contentOtmD")
+          },
+          {
+            title: t("insightPos.titleOtmT"),
+            mainTitulo: t("insightPos.mainTituloOtmT"),
+            subtitle: t("insightPos.subTitleOtmT"),
+            content: t("insightPos.contentOtmT")
+          }
+        ]
+      },
+      organizacao: {
+        nome: t("insightPos.bottonOrg"),
+        cards: [
+          {
+            title: t("insightPos.titleOrgU"),
+            mainTitulo: t("insightPos.mainTituloOrgU"),
+            subtitle: t("insightPos.subTitleOrgU"),
+            content: t("insightPos.contentOrgU")
+          },
+          {
+            title: t("insightPos.titleOrgD"),
+            mainTitulo: t("insightPos.mainTituloOrgD"),
+            subtitle: t("insightPos.subTitleOrgD"),
+            content: t("insightPos.contentOrgD")
+          },
+          {
+            title: t("insightPos.titleOrgT"),
+            mainTitulo: t("insightPos.mainTituloOrgT"),
+            subtitle: t("insightPos.subTitleOrgT"),
+            content: t("insightPos.contentOrgT")
+          }
+        ]
+      }
     }
-  }
-}) => {
+  };
+
+  // Combina as props recebidas com os valores padrão
+  const { titulo, tituloPrincipal, descricao, tabs } = { ...defaultProps, ...props };
+
   const [activeTab, setActiveTab] = useState('experiencia');
   const [currentIndex, setCurrentIndex] = useState(1);
 

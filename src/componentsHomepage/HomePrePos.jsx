@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { FaChevronDown, FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import styles from "../styles/componentsStyles/homepageStyles/HomePrePos.module.css"
 import { BotaoGeral } from '../components/reused/BotaoGeral';
+import { useLanguage } from '../components/translationComponents/LanguageContext';
 
 export const HomePrePos = ({ items = [] }) => {
+  const { t } = useLanguage();
   if (items.length === 0) return <div>Nenhum item para exibir</div>;
     // Estado para controlar o accordion
     const [activeIndex, setActiveIndex] = useState(0);
@@ -78,7 +80,7 @@ export const HomePrePos = ({ items = [] }) => {
             </div>
             
             <BotaoGeral
-            texto="Saiba mais"
+            texto={t("homePrePosPage.botaoGeral")}
             link={items[currentItem].link}
             />
             </div>
