@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import styles from "../styles/componentsStyles/suportStyles/SuporteComp.module.css";
 import ThankYouStep from './ThankYouStep';
+import { useLanguage } from '../components/translationComponents/LanguageContext';
 
 export default function ProjectStep({ 
   formData, 
@@ -11,6 +12,7 @@ export default function ProjectStep({
   prevStep, 
   handleSubmit: parentHandleSubmit 
 }) {
+  const { t } = useLanguage();
   const [state, handleFormspreeSubmit] = useForm("xgvkvrzk");
   const [showFeedback, setShowFeedback] = useState(false);
   const [showMidias, setShowMidias] = useState(false);
@@ -87,7 +89,7 @@ export default function ProjectStep({
       <form onSubmit={handleFormSubmit}>
         {/* Campo Tipo de Mídia */}
         <div className={styles.form_group}>
-          <label>Tipo de Mídia</label>
+          <label>{t("suporte.pSStep")}</label>
           <div className={styles.custom_dropdown}>
             <div 
               className={styles.dropdown_header}
@@ -96,7 +98,7 @@ export default function ProjectStep({
               <span>
                 {formData.midias?.length > 0 
                   ? formData.midias.join(', ')
-                  : 'Selecione os tipos de mídia'}
+                  : t("suporte.pSMidia")}
               </span>
               <span className={`${styles.dropdown_arrow} ${showMidias ? styles.rotated : ''}`}>
                 ▼
@@ -106,7 +108,7 @@ export default function ProjectStep({
             {showMidias && (
               <div className={`${styles.dropdown_options} ${styles.dropdown_container}`}>
                 <div className={styles.dropdown_content}>
-                  {['Vídeo Digital', 'TV/Cinema', 'Mídia Impressa', 'Redes Sociais'].map(option => (
+                  {[t("suporte.pSMidiaUm"), t("suporte.pSMidiaDois"), t("suporte.pSMidiaTres"), t("suporte.pSMidiaQuatro")].map(option => (
                     <div key={option} className={styles.checkbox_item}>
                       <input
                         type="checkbox"
@@ -122,13 +124,13 @@ export default function ProjectStep({
             )}
           </div>
           {formData.midias?.length === 0 && (
-            <p className={styles.error_message}>Selecione pelo menos um tipo de mídia</p>
+            <p className={styles.error_message}>{t("suporte.pSMsg")}</p>
           )}
         </div>
 
         {/* Campo Descrição do Projeto */}
         <div className={styles.form_group}>
-          <label htmlFor="descricaoProjeto">Descrição do Projeto</label>
+          <label htmlFor="descricaoProjeto">{t("suporte.pSDescricao")}</label>
           <textarea
             id="descricaoProjeto"
             name="descricaoProjeto"
@@ -136,7 +138,7 @@ export default function ProjectStep({
             onChange={handleChange}
             rows="5"
             required
-            placeholder="Descreva detalhes do seu projeto, objetivos, prazo, etc."
+            placeholder={t("suporte.pSPlaceholder")}
           />
           <ValidationError 
             prefix="Descrição" 
@@ -154,7 +156,7 @@ export default function ProjectStep({
               checked={formData.notificacoes || false}
               onChange={handleChange}
             />
-            Deseja receber notificações da Selo?
+            {t("suporte.pSNotificacao")}
           </label>
         </div>
 
@@ -166,19 +168,19 @@ export default function ProjectStep({
               checked={showFeedback}
               onChange={() => setShowFeedback(!showFeedback)}
             />
-            Dar feedback sobre o formulário (opcional)
+            {t("suporte.pSFeedBack")}
           </label>
           
           {showFeedback && (
             <div className={styles.form_group}>
-              <label htmlFor="feedback">Sua opinião</label>
+              <label htmlFor="feedback">{t("suporte.pSFeed")}</label>
               <textarea
                 id="feedback"
                 name="feedback"
                 value={formData.feedback || ''}
                 onChange={handleChange}
                 rows="3"
-                placeholder="O que achou da experiência de preenchimento?"
+                placeholder={t("suporte.pSOpiniao")}
               />
             </div>
           )}
@@ -194,7 +196,7 @@ export default function ProjectStep({
             <div className={styles.azulWrapper}>
               <FontAwesomeIcon icon={faChevronLeft} className={styles.btnIcone} />
             </div>
-            <span className={styles.btnTexto}><strong>Voltar</strong></span>
+            <span className={styles.btnTexto}><strong>{t("suporte.pSBotaoVolta")}</strong></span>
           </button>
 
           <button 
@@ -209,7 +211,7 @@ export default function ProjectStep({
             </div>
             <span className={styles.btnTexto}>
               <strong>
-                {state.submitting ? 'Enviando...' : 'Finalizar'}
+                {state.submitting ? t('suporte.pSBotaoEnviando') : t('suporte.pSBotaoFinalizado')}
               </strong>
             </span>
           </button>

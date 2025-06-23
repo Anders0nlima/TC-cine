@@ -3,8 +3,10 @@ import styles from "../styles/componentsStyles/suportStyles/SuporteComp.module.c
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { useLanguage } from '../components/translationComponents/LanguageContext';
 
 export default function PersonalDataStep({ formData, handleChange, nextStep }) {
+  const { t } = useLanguage();
   const [isValid, setIsValid] = useState(false);
   const [phoneDisplay, setPhoneDisplay] = useState('');
 
@@ -73,12 +75,12 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
     <div className={styles.form_step}>
       <form onSubmit={handleNextClick}>
         <div className={styles.form_group}>
-          <label htmlFor="nome">Nome</label>
+          <label htmlFor="nome">{t("suporte.pDNome")}</label>
           <input
             type="text"
             id="nome"
             name="nome"
-            placeholder='Escreva como você quer ser chamado(a)'
+            placeholder={t("suporte.placeholderName")}
             value={formData.nome || ''}
             onChange={handleChange}
             required
@@ -86,23 +88,23 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
         </div>
 
         <div className={styles.form_group}>
-          <label htmlFor="email">E-mail</label>
+          <label htmlFor="email">{t("suporte.pDEmail")}</label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder='Escreva seu Email'
+            placeholder={t("suporte.placeholderEmail")}
             value={formData.email || ''}
             onChange={handleChange}
             required
           />
           {formData.email && !validateEmail(formData.email) && (
-            <p className={styles.error_message}>Por favor, insira um e-mail válido</p>
+            <p className={styles.error_message}>{t("suporte.plDMsgE")}</p>
           )}
         </div>
 
         <div className={styles.form_group}>
-          <label htmlFor="telefone">Telefone</label>
+          <label htmlFor="telefone">{t("suporte.pDTel")}</label>
           <input
             type="tel"
             id="telefone"
@@ -114,7 +116,7 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
             required
           />
           {formData.telefone && formData.telefone.length !== 11 && (
-            <p className={styles.error_message}>Digite os 11 dígitos com DDD</p>
+            <p className={styles.error_message}>{t("suporte.pDMsgT")}</p>
           )}
         </div>
 
@@ -126,12 +128,12 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
               checked={formData.temEmpresa || false}
               onChange={handleChange}
             />
-            Possui empresa?
+            {t("suporte.pDEmpresa")}
           </label>
           
           {formData.temEmpresa && (
             <div className={styles.form_group}>
-              <label htmlFor="nomeEmpresa">Nome da Empresa</label>
+              <label htmlFor="nomeEmpresa">{t("suporte.pDNomeEmpresa")}</label>
               <input
                 type="text"
                 id="nomeEmpresa"
@@ -152,7 +154,7 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
            <div className={styles.amareloWrapper}>
            <FontAwesomeIcon icon={faChevronRight} className={styles.novoIcone} />
            </div>
-           <span className={styles.novoTexto}><strong>Próximo</strong></span>
+           <span className={styles.novoTexto}><strong>{t("suporte.pDBotao")}</strong></span>
            </button>
        </div>
       </form>

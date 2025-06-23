@@ -5,33 +5,36 @@ import imagem1 from "../assets/suportMedia/imgSuporte1.jpg"
 import imagem2 from "../assets/suportMedia/imgSuporte2.jpg"
 import imagem3 from "../assets/suportMedia/imgSuporte3.jpg"
 import Suport from '../componentsSuport/Suport';
-import Footer from '../componentsSuport/Footer';
+import Footer from '../components/reused/Footer';
+import { useLanguage } from '../components/translationComponents/LanguageContext';
+
 
 // Seu componente de formulário existente (PersonalDataStep, ServicesStep, ProjectStep)
 // ... (mantenha os componentes que já criamos anteriormente)
 
 const SuportPage = () => {
+  const { t } = useLanguage();
   // Estados para o carrossel de conteúdo
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Conteúdo dos slides
   const slides = [
     {
-      title: "Suporte ao cliente",
-      subtitle: "sobre a selo",
-      description: "Lorem ipsum dolor sit amet. Sed vero assumenda in veritatis vitae non veniam perferendis. Vel officiis voluptatem et excepturi modi sed libero ducimus et officia aliquid. Qui consequatur provident est voluptas recusandae est minima suscipit ut odit suscipit aut doloremque fugit aut maxime blanditiis.Lorem ipsum dolor sit amet. Sed vero assumenda in veritatis vitae non veniam perferendis. Vel officiis voluptatem et excepturi modi sed libero ducimus et officia aliquid. Qui consequatur provident est voluptas recusandae est minima suscipit ut odit suscipit aut doloremque fugit aut maxime blanditiis.",
+      title: t("suporte.title1"),
+      subtitle: t("suporte.subtitle1"),
+      description: t("suporte.description1"),
       image: imagem1
     },
     {
-      title: "Suporte ao cliente",
-      subtitle: "equipe da selo",
-      description: "Lorem ipsum dolor sit amet. Sed vero assumenda in veritatis vitae non veniam perferendis. Vel officiis voluptatem et excepturi modi sed libero ducimus et officia aliquid. Qui consequatur provident est voluptas recusandae est minima suscipit ut odit suscipit aut doloremque fugit aut maxime blanditiis.Lorem ipsum dolor sit amet. Sed vero assumenda in veritatis vitae non veniam perferendis. Vel officiis voluptatem et excepturi modi sed libero ducimus et officia aliquid. Qui consequatur provident est voluptas recusandae est minima suscipit ut odit suscipit aut doloremque fugit aut maxime blanditiis.",
+      title: t("suporte.title2"),
+      subtitle: t("suporte.subtitle2"),
+      description: t("suporte.description2"),
       image: imagem2
     },
     {
-      title: "Suporte ao cliente",
-      subtitle: "trabalhos da selo",
-      description: "Lorem ipsum dolor sit amet. Sed vero assumenda in veritatis vitae non veniam perferendis. Vel officiis voluptatem et excepturi modi sed libero ducimus et officia aliquid. Qui consequatur provident est voluptas recusandae est minima suscipit ut odit suscipit aut doloremque fugit aut maxime blanditiis.Lorem ipsum dolor sit amet. Sed vero assumenda in veritatis vitae non veniam perferendis. Vel officiis voluptatem et excepturi modi sed libero ducimus et officia aliquid. Qui consequatur provident est voluptas recusandae est minima suscipit ut odit suscipit aut doloremque fugit aut maxime blanditiis.",
+      title: t("suporte.title3"),
+      subtitle: t("suporte.subtitle3"),
+      description: t("suporte.description3"),
       image: imagem3
     }
   ];
@@ -57,10 +60,9 @@ const SuportPage = () => {
     <div className={styles.pageContainer}>
       {/* Lado Esquerdo - Formulário */}
       <div className={styles.formSide}>
-        <h1 className={styles.formTitle}>Entre em contato com os especialistas da Selo</h1>
+        <h1 className={styles.formTitle}>{t("suporte.formTitle")}</h1>
         <p className={styles.formDescription}>
-          Preencha o formulário abaixo e nossa equipe entrará em contato para entender
-          suas necessidades e oferecer a melhor solução para seu projeto audiovisual.
+          {t("suporte.formDescription")}
         </p>
 
         {/* Renderize seu componente de formulário existente aqui */}
