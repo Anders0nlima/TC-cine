@@ -251,9 +251,9 @@ export const LanguageProvider = ({ children }) => {
         botaoGeral: "Saiba Mais"
       },
       insightPos:{
-        titulo: "INSIGHT",
-        tituloPrincipal: "A MELHOR OPÇÃO",
-        descricao: "Descubra por que a Selo é a escolha ideal na produção audiovisual. Fale com a gente e veja como a Selo pode transformar suas ideias em realidade.",
+        title: "INSIGHT",
+        mainTitle: "A MELHOR OPÇÃO",
+        description: "Descubra por que a Selo é a escolha ideal na produção audiovisual. Fale com a gente e veja como a Selo pode transformar suas ideias em realidade.",
 
         bottonExp: "Pilares",
         titleExpU:"Pilares",
