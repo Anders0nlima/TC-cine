@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from "../styles/componentsStyles/homepageStyles/InsightPos.module.css";
 import { useLanguage } from '../components/translationComponents/LanguageContext';
 
@@ -88,6 +88,7 @@ const InsightPos = (props) => {
 
   const [activeTab, setActiveTab] = useState('experiencia');
   const [currentIndex, setCurrentIndex] = useState(1);
+  const carouselRef = useRef();
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -107,6 +108,33 @@ const InsightPos = (props) => {
     if (index === (currentIndex + 1) % 3) return 'right';
     return 'left';
   };
+
+  // Hook useSwipe corrigido
+  useEffect(() => {
+    const element = carouselRef.current;
+    if (!element) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const handleTouchStart = (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    };
+
+    const handleTouchEnd = (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 50) handleNext(); // Swipe left = next
+      if (touchEndX > touchStartX + 50) handlePrev(); // Swipe right = prev
+    };
+
+    element.addEventListener('touchstart', handleTouchStart, { passive: true });
+    element.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      element.removeEventListener('touchstart', handleTouchStart);
+      element.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [currentIndex, activeTab]); // Dependências necessárias
 
   return (
     <section id="insight" name="insight" className={styles.section}> 
@@ -129,7 +157,7 @@ const InsightPos = (props) => {
           ))}
         </div>
 
-        <div className={styles.cardsContainer}>
+        <div className={styles.cardsContainer} ref={carouselRef}>
           {[0, 1, 2].map((index) => {
             const position = getCardPosition(index);
             const card = tabs[activeTab].cards[index];

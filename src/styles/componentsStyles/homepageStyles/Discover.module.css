@@ -195,3 +195,76 @@
 .iconButton:hover .arrowIcon {
    color: #FFD700;
 }
+
+/*=== mobile ===*/
+@media (max-width: 768px) {
+  .section {
+    padding: 1rem;
+  }
+
+  .primeiroContudo {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+
+  .primeiroContudo h1 {
+    font-size: 2rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .primeiroContudo h1::after {
+    width: 90%;
+  }
+
+  .primeiroContudo p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .segundoContudo {
+    margin-top: 1rem;
+  }
+
+  .contentWrapper {
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+
+  .tabButton {
+    padding: 0.6rem 1rem;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .contentContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .textContent {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .contentTitle {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .contentDescription {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .imageContent {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .interesseWrapper {
+    margin: 0 auto;
+  }
+}

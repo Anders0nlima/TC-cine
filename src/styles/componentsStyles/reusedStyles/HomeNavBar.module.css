@@ -217,69 +217,66 @@ body.noScroll {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Responsividade ===== */
-@media (max-width: 767px) {
+/* ===== Responsividade - Mobile ===== */
+@media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
+    height: 50px;
   }
 
-  .searchButton {
-    display: none !important;
+  .navbarCenter {
+    position: static;
+    transform: none;
+    left: auto;
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-top: 10px;
+    flex-grow: 0;
   }
 
-  .navbarLeft,
+  .navbarCenter a.logoLink {
+    margin-top: 0;
+  }
+
+  .navbarLeft, 
   .navbarRight {
-    z-index: 2;
+    flex: 1;
   }
 
-  .menuButton .icon {
-    width: 30px;
-    height: 30px;
-    min-width: 30px; 
-    min-height: 30px;
-  }
-
-  .languageSelector {
-    margin-left: 0;
-    margin-right: 20px;
-    min-width: 120px;
-  }
-
-  .languagePill {
-    padding: 1px;
-    margin-left: 20px;
-    height: 30px;
-    min-width: 40px;
-    background: rgb(0, 0, 0);
-  }
-
-  .languageName,
-  .chevron {
-    display: none;
-  }
-
-  .flagContainer {
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
+  .navbarRight {
+    justify-content: flex-end;
   }
 
   .iconButton {
-    width: 32px;
-    height: 32px;
-    margin: 0 0.1rem;
-    padding: 0.3rem;
+    margin: 0 0.3rem;
+    width: 36px;
+    height: 36px;
   }
 
-  .icon {
-    font-size: 1rem;
+  .languageSelector {
+    margin-right: 10px;
   }
 
-  /* Reset de efeitos hover/active em mobile */
-  .iconButton:hover,
-  .iconButton:active,
-  .languagePill:hover {
-    background-color: transparent !important;
-    transform: none !important;
+  .languagePill {
+    padding: 6px 10px 6px 6px;
+    height: 36px;
+  }
+
+  .languageName {
+    display: none; /* Esconde o nome do idioma em mobile */
+  }
+
+  .menuOverlay {
+    top: 50px; /* Ajusta para a altura reduzida do navbar */
+    padding: 1rem;
+  }
+
+  /* Opcional: Menu hamburger se aplicável */
+  .desktopMenu {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
   }
 }

@@ -374,3 +374,93 @@
   background-color: #f8c537;
   transform: scale(1.2);
 }
+
+/*=== Mobile ===*/
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: 1rem 0 50px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 15px 0;
+  }
+
+  .leftSide, .rightSide {
+    width: 100%;
+    position: static;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .title {
+    margin-top: 10px;
+    font-size: 2rem;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: space-between; /*botoes nas extremidades*/
+  }
+
+  .controlButton {
+    width: 50px; /* Aumenta a largura */
+    height: 50px; /* Aumenta a altura */
+    border: 1px solid #f8c537; /* Borda mais grossa */
+    font-size: 1rem; /* Tamanho maior do ícone */
+  }
+
+  .description {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .accordionWrapper {
+    width: 100%;
+  }
+
+  .accordion {
+    width: 100%;
+    position: relative;
+  }
+
+  .accordionItem {
+    max-height: 150px;
+  }
+
+  .accordionButton {
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .tabButtons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .tabButton {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .cartazWrapper {
+    display: none; /*tirei o cartaz pois nao tem espaço*/
+  }
+
+  /*.cartazContainer {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .cartaz {
+    min-height: 400px;
+  }*/
+}

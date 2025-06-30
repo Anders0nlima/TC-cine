@@ -272,3 +272,111 @@
   color: #000;
   transform: scale(1.1);
 }
+
+/*=== mobile ===*/
+/*Hook para detectar swipe "useSwipe" vou usar o dedo*/
+
+@media (max-width: 768px) {
+  .section {
+    overflow: hidden;
+  }
+
+  .primeiroContudo {
+    padding-top: 30px;
+    margin-bottom: 2rem;
+  }
+
+  .primeiroContudo h1 {
+    font-size: 2rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .primeiroContudo p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carouselContainer {
+    height: 400px;
+    touch-action: pan-y; /* Habilita gestos de swipe */
+    user-select: none; /* Previne seleção de texto durante o swipe */
+  }
+
+  .cardsContainer {
+    height: 380px;
+    gap: 0;
+  }
+
+  .card {
+    width: 85%;
+    height: 320px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .centerCard {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .leftCard {
+    transform: translateX(-150%) scale(0.85);
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .rightCard {
+    transform: translateX(50%) scale(0.85);
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  /* Esconde os controles de navegação */
+  .navigationWrapper {
+    display: none;
+  }
+
+ .tabButtons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    gap: 3rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    padding: 0 1rem; /* Adiciona padding nas laterais */
+  }
+
+  .tabButton {
+    padding: 1rem; /* Reduz o padding */
+    font-size: 0.85rem; /* Reduz o tamanho da fonte */
+    min-width: 120px; /* Largura mínima para manter legibilidade */
+    flex: 1; /* Faz os botões se expandirem igualmente */
+    max-width: 45%; /* Limita a largura máxima para caber 2 por linha */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Indicadores de swipe */
+  .swipeIndicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  .swipeDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+  }
+
+  .swipeDot.active {
+    background-color: #f8c537;
+    transform: scale(1.2);
+  }
+}
