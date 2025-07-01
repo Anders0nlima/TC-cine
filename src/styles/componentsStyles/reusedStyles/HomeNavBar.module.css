@@ -229,8 +229,8 @@ body.noScroll {
     transform: none;
     left: auto;
     justify-content: flex-start;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 15px;
     flex-grow: 0;
   }
 
@@ -254,16 +254,18 @@ body.noScroll {
   }
 
   .languageSelector {
-    margin-right: 10px;
+    margin-left: 10px;
+
   }
 
   .languagePill {
+    display: none;
     padding: 6px 10px 6px 6px;
     height: 36px;
   }
 
   .languageName {
-    display: none; /* Esconde o nome do idioma em mobile */
+    display: none; 
   }
 
   .menuOverlay {

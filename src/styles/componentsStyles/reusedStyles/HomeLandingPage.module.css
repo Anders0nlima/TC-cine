@@ -263,12 +263,12 @@
 /*==== mobile ===*/
 @media (max-width: 768px) {
   .landingPageContainer, .heroSection {
-    height: 100vh;
+    height: 65vh;
     min-height: -webkit-fill-available; /* Para mobile browsers */
   }
 
   .heroContent {
-    margin-top: 50vh !important; /* Centraliza verticalmente */
+    margin-top: 20rem;
     transform: translateY(-50%);
     padding: 0 1rem;
     width: 90%;
@@ -286,7 +286,7 @@
   }
 
   .wordCube {
-    height: 30px;
+    height: 90px;
     width: 140px;
     perspective: 150px;
   }
@@ -306,7 +306,7 @@
   }
 
   .arrowDownContainer {
-    margin-top: 1.5rem;
+    margin-top: 6rem;
   }
 
   .animatedCircle {
@@ -335,32 +335,6 @@
     font-size: 1.2rem;
   }
 
-  /* Ajustes específicos para telas muito pequenas */
-  @media (max-width: 480px) {
-    .heroTitle {
-      font-size: 2rem;
-    }
-    
-    .heroDescription {
-      font-size: 1rem;
-    }
-    
-    .wordCube {
-      width: 120px;
-      height: 26px;
-    }
-    
-    .cubeFace {
-      line-height: 26px;
-    }
-    
-    .watchButton {
-      right: 0.5rem;
-      bottom: 0.5rem;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.8rem;
-    }
-  }
 }
 
 @media (max-width: 480px) {
