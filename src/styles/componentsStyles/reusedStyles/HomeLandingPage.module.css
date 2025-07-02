@@ -263,7 +263,7 @@
 /*==== mobile ===*/
 @media (max-width: 768px) {
   .landingPageContainer, .heroSection {
-    height: 65vh;
+    height: 85vh;
     min-height: -webkit-fill-available; /* Para mobile browsers */
   }
 
