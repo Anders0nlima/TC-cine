@@ -308,8 +308,8 @@
   }
 
   .card {
-    width: 81%;
-    height: 320px;
+    width: 80%;
+    height: 380px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
