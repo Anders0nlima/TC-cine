@@ -254,6 +254,10 @@
     text-align: center;
   }
 
+  .contentTitle br {
+    display: none; /* Isso remove a quebra de linha no mobile */
+  }
+
   .contentDescription {
     font-size: 0.95rem;
     text-align: center;

@@ -342,7 +342,7 @@
  .tabButtons {
     display: flex;
     flex-wrap: wrap; /* Permite que os botões quebrem linha */
-    gap: 3rem;
+    gap: 0.5rem;
     margin-bottom: 1rem;
     justify-content: center;
     padding: 0 1rem; /* Adiciona padding nas laterais */
@@ -350,8 +350,8 @@
 
   .tabButton {
     padding: 1rem; /* Reduz o padding */
-    font-size: 0.85rem; /* Reduz o tamanho da fonte */
-    min-width: 120px; /* Largura mínima para manter legibilidade */
+    font-size: 0.75rem; /* Reduz o tamanho da fonte */
+    min-width: 110px; /* Largura mínima para manter legibilidade */
     flex: 1; /* Faz os botões se expandirem igualmente */
     max-width: 45%; /* Limita a largura máxima para caber 2 por linha */
     white-space: nowrap;
