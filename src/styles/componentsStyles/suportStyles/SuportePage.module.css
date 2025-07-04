@@ -153,6 +153,69 @@
     }
     
     .formSide, .carouselSide {
-      padding: 1.5rem;
+      padding: 0rem;
     }
+
+    .carouselSide {
+    order: 1;
+    padding: 0rem;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .carouselContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .carouselImage {
+    max-height: 250px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .titleWithControls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .carouselTitle {
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .controlsWrapper {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+
+  .carouselButton {
+    font-size: 1.8rem;
+    padding: 0 0.8rem;
+  }
+
+  .carouselText h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .carouselText p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .carouselDots {
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
   }

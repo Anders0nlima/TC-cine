@@ -676,19 +676,124 @@
   transform: rotate(180deg);
 }
 
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .form-container {
-      padding: 1rem;
-    }
-    
-    .progress-nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .step-line {
-      display: none;
-    }
+
+@media (max-width: 768px) {
+  .form_container {
+    padding: 1rem;
+    max-width: 100%;
   }
+
+  .progressContainer {
+    margin-bottom: 1.5rem;
+  }
+
+  .progressNav {
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch; /* suaviza o scroll no mobile */
+}
+
+  .progressStep {
+  flex: 0 0 auto;
+  width: auto; /* NÃO fixa % para permitir conteúdo maior */
+  min-width: 110px; /* maior mínimo para textos longos */
+  max-width: 200px; /* limite máximo para evitar gigantismo */
+  padding: 0 0.4rem;
+  word-wrap: break-word; /* quebra palavras longas */
+  text-align: center;
+}
+
+  .stepNumber {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+    line-height: 28px;
+  }
+
+  .stepTitle {
+  font-size: 0.65rem;
+  margin-top: 0.3rem;
+  white-space: normal; /* permite quebra de linha */
+}
+
+  .stepLine {
+    height: 3px;
+    margin-top: 8px;
+  }
+
+  .form_step {
+    padding: 1.2rem;
+  }
+
+  .form_group {
+    margin-bottom: 1rem;
+   
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .form_actions {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .novoBotao,
+  .btn_secondary,
+  .btn_primary {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    font-size: 1rem;
+  }
+
+  .novoTexto,
+  .btnTexto {
+    font-size: 1rem;
+  }
+
+  .thank_you_content h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .thank_you_content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Dropdown mobile */
+  .custom_dropdown {
+    margin-bottom: 0.8rem;
+  }
+
+  .dropdown_header {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .dropdown_options {
+    max-height: 150px;
+  }
+
+  .checkbox_item {
+    padding: 0rem;
+    font-size: 0.75rem;
+  }
+
+  .checkbox_item input {
+    width: 1rem;
+    height: 1rem;
+  }
+}

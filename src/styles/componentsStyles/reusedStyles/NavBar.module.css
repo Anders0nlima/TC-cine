@@ -230,83 +230,72 @@ body.no-scroll {
 }
 
 /* ===== Responsividade ===== */
-/* ===== Reset para Mobile ===== */
-@media (max-width: 767px) {
+/* ===== Responsividade - Mobile ===== */
+@media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 1rem;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0.5rem;
+    height: 50px;
   }
-  
 
-  .navbarLeft {
-    display: flex;
-    z-index: 2; /* Acima do brand */
+  .navbarCenter {
+    position: static;
+    transform: none;
+    left: auto;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-left: 15px;
+    flex-grow: 0;
+  }
+
+  .navbarCenter a.logoLink {
+    margin-top: 0;
+  }
+
+  .navbarLeft, 
+  .navbarRight {
+    flex: 1;
   }
 
   .navbarRight {
-    display: flex;
-    z-index: 2; /* Acima do brand */
+    justify-content: flex-end;
   }
 
+  .iconButton {
+    margin: 0 0.3rem;
+    width: 36px;
+    height: 36px;
+  }
+  
   .searchButton{
-    display: none !important;
-  }
-
-  .menuButton .icon{
-    width: 30px;
-    height: 30px;
-    min-width: 30px; 
-    min-height: 30px;
+    display: none;
   }
 
   .languageSelector {
-    margin-left: 0;
+    margin-left: 10px;
+
   }
 
   .languagePill {
-    padding: 1px;
-    margin-left: 20px;
-    height: 30px;
-    min-width: 40px; /* Tamanho mínimo para touch */
-    background: rgb(0, 0, 0);
+    display: none;
+    padding: 6px 10px 6px 6px;
+    height: 36px;
   }
 
-  .languageName,
-  .chevron {
-    display: none; /* Esconde texto e seta */
+  .languageName {
+    display: none; 
   }
 
-  .flagContainer {
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
+  .menuOverlay {
+    top: 50px; /* Ajusta para a altura reduzida do navbar */
+    padding: 1rem;
   }
 
-   .iconButton {
-    width: 32px;
-    height: 32px;
-    margin: 0 0.1rem;
-    padding: 0.3rem;
+  /* Opcional: Menu hamburger se aplicável */
+  .desktopMenu {
+    display: none;
   }
 
-  .icon {
-    font-size: 1rem;
+  .mobileMenuButton {
+    display: block;
   }
-
-  .iconButton:hover {
-    background-color: transparent !important;
-    transform: none !important;
-  }
-
-  .languagePill:hover {
-    background: rgb(0, 0, 0) !important;
-  }
-
-  .iconButton:active {
-    transform: none !important;
-  }
-
 }
