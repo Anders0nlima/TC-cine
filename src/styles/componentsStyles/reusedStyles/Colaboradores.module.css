@@ -296,6 +296,123 @@
   pointer-events: none;
 }
 
+/*responsividade*/
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .section .primeiroContudo {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .section .primeiroContudo h4 {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .section .primeiroContudo h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(90deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .section .primeiroContudo p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .section .primeiroContudo h3 {
+    font-size: 1rem;
+    padding: 0.2rem 1.5rem;
+    margin: 1.5rem auto 0;
+    width: auto;
+    margin-left: auto;
+  }
+
+
+  .segundoContudo {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .accordionContainer, 
+  .cartazWrapper {
+    width: 100%;
+  }
+
+  .accordionButton {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .accordionIcon {
+    font-size: 1.2rem;
+  }
+
+  .accordionBody {
+    padding: 1rem;
+  }
+
+  .tabButtons {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .tabButton {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .cartazContainer {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .cartaz {
+    max-height: 400px;
+  }
+
+  /* Ajustes para telas muito pequenas */
+  @media (max-width: 480px) {
+    .section {
+      padding: 1.5rem 1rem;
+    }
+
+    .primeiroContudo h1 {
+      font-size: 1.8rem;
+    }
+
+    .primeiroContudo p {
+      font-size: 0.9rem;
+    }
+
+    .accordionButton {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+
+    .accordionItem {
+    max-height: 240px;
+    }
+
+    .cartazContainer {
+      max-width: 100%;
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .section {
     padding: 4rem 2rem;
@@ -312,24 +429,5 @@
   .cartazWrapper {
     margin-top: 3rem;
     width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 3rem 1.5rem;
-  }
-  
-  .primeiroContudo h1 {
-    font-size: 2.2rem;
-  }
-  
-  .primeiroContudo p {
-    font-size: 1rem;
-  }
-  
-  .accordionButton {
-    padding: 1.2rem;
-    font-size: 1rem;
   }
 }
