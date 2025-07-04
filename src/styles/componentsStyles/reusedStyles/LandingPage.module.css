@@ -325,148 +325,137 @@
 
 
 /* Responsividade */
-/* Tablets - entre 768px e 1199px */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .box {
-      height: 70vh;
-    }
-    
-    .box .frame {
-      left: 5%;
-      width: 40%;
-      gap: 50px;
-      top: 20%;
-    }
-    
-    .box .image_container,
-    .box .video_container {
-      width: 50%;
-    }
-    
-    .box .gradient_overlay {
-      width: 40%;
-    }
-    
-    .box .frame_8,
-    .box .play_button {
-      bottom: 15%;
-      right: 3%;
-    }
-    
-    .box .group {
-      height: 110px;
-    }
-    
-    .box .vector {
-      height: 50px;
-      top: 25px;
-    }
-    
-    .box .img {
-      height: 100px;
-      width: 100px;
-    }
-
 /* Celulares - até 767px */
-@media (max-width: 767px) {
-    .box {
-      height: 100vh;
-    }
-    
-    .box .home {
-      height: 100vh;
-    }
-    
-    .box .frame {
-      top: 15%;
-      left: 5%;
-      width: 90%;
-      gap: 30px;
-      max-width: none;
-    }
-    
-    .box .image_container,
-    .box .video_container {
-      width: 100%;
-      opacity: 0.3;
-    }
-    
-    .box .gradient_overlay {
-      display: none;
-    }
-    
-    .box .div {
-      gap: 10px;
-    }
-    
-    .box .group {
-      height: 80px;
-    }
-    
-    .box .vector {
-      height: 40px;
-      left: 20%;
-      top: 15px;
-      width: 80%;
-    }
-    
-    .box .img {
-      height: 60px;
-    }
-    
-    .box .text_wrapper,
-    .box .text_wrapper_2,
-    .box .escolha_a_melhor_op {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    
-    .box .frame_2 {
-      bottom: 30px;
-      gap: 10px;
-    }
-    
-    .box .frame_8,
-    .box .play_button {
-      height: 36px;
-      width: 110px;
-      padding: 4px 8px;
-      bottom: 10%;
-      right: 5%;
-    }
-    
-    .box .icon_play_circle,
-    .box .play_icon {
-      height: 24px;
-      width: 24px;
-    }
-    
-    .box .text_wrapper_5 {
-      font-size: 14px;
-    }
-    
-    /* Ajustes para o modal de vídeo em mobile */
-    .video_modal_container {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-    }
-    
-    .video_modal_content {
-      padding: 15px;
-      width: 100%;
-    }
-    
-    .close_button {
-      width: 40px;
-      height: 40px;
-      margin-top: 15px;
-    }
-    
-    .close_icon {
-      font-size: 16px;
-      width: 16px;
-      height: 16px;
-    }
+@media (max-width: 768px) {
+  .box {
+    height: 90vh;
+    min-height: -webkit-fill-available;
+  }
+
+  .box .home {
+    height: 100vh;
+  }
+
+  /* Layout de sobreposição para mobile */
+  .box .overlap_group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Imagem de fundo ocupa toda a tela */
+  .box .image_container,
+  .box .video_container {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    order: 1;
+    overflow: visible;
+  }
+
+  .box .gradient_overlay {
+    display: none; /* Remove o gradiente lateral */
+  }
+
+  /* Adiciona gradiente vertical para melhor legibilidade */
+  .box .image_container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to top,
+      rgba(19, 20, 28, 1) 0%,
+      rgba(19, 20, 28, 0) 100%
+    );
+    z-index: 1;
+  }
+
+  /* Conteúdo de texto reorganizado */
+  .box .frame {
+    position: relative;
+    width: 90%;
+    left: auto;
+    top: auto;
+    margin: -50px auto 0;
+    padding: 20px;
+    background-color: #13141c;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+    order: 2;
+    gap: 30px;
+    margin-top: -30px; /* Reduz o espaço para o botão se encaixar */
+    padding-top: 40px; /* Adiciona espaço para o botão */
+  }
+
+  /* Ajustes no texto */
+  .box .text_wrapper {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .box .group {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .box .vector {
+    height: 40px;
+  }
+
+  .box .img {
+    height: 120px;
+    margin-top: 20px;
+  }
+
+  .box .frame_2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .box .text_wrapper_2 {
+    font-size: 1rem;
+  }
+
+  .box .escolha_a_melhor_op {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* Botão de play reposicionado */
+  .box .play_button {
+    position: absolute;
+    bottom: 520px; /* Distância do fundo do container de vídeo */
+    right: 20px; /* Distância da direita do container de vídeo */
+    width: auto;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    margin: 0;
+    transform: none;
+  }
+
+  /* Modal de vídeo para mobile */
+  .video_modal_container {
+    flex-direction: column;
+    margin: 40px auto 0;
+    max-width: 95%;
+  }
+
+  .video_modal_content {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .modal_video_player {
+    max-height: calc(100vh - 200px);
+  }
+
+  .close_button {
+    width: 40px;
+    height: 40px;
+    margin: 15px auto 0;
   }
 }

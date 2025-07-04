@@ -65,3 +65,63 @@
   outline: none;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    padding: 0.5rem 1rem; /* Reduz o padding */
+    gap: 0; /* Remove espaçamento entre itens */
+    align-items: stretch; /* Estica os itens para largura total */
+  }
+
+  /* Mantém o navbar sticky/fixed */
+  .navbar.sticky {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navButton {
+    padding: 1rem; /* Aumenta o padding para toque fácil */
+    justify-content: center; /* Centraliza o texto */
+    font-size: 0.95rem; /* Ajuste de tamanho de fonte */
+    border-radius: 0; /* Remove bordas arredondadas */
+    height: auto; /* Altura automática */
+  }
+
+  /* Linha inferior ajustada para mobile */
+  .navButton::after {
+    bottom: 0; /* Alinha no fundo do botão */
+    height: 3px; /* Espessura reduzida */
+  }
+
+  /* Efeito de hover/ativo ajustado */
+  .navButton:hover::after,
+  .navButton.active::after {
+    width: 100%;
+  }
+
+  
+
+  /* Opcional: menu hamburger para muitos itens */
+  .mobileMenuButton {
+    display: none; /* Escondido por padrão */
+  }
+
+  /* Se precisar de menu hamburger (para muitos itens) */
+  @media (max-width: 480px) {
+    .navbar {
+      flex-direction: row; /* Volta para linha */
+      flex-wrap: wrap; /* Quebra linha se necessário */
+      justify-content: space-around; /* Distribui os itens */
+      padding: 0.5rem;
+    }
+
+    .navButton {
+      flex: 1; /* Itens ocupam espaço igual */
+      min-width: 100px; /* Largura mínima */
+      padding: 0.75rem 0.5rem;
+      font-size: 0.85rem;
+    }
+  }
+}
