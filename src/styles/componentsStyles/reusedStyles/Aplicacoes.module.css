@@ -254,4 +254,115 @@
     align-items: center;
   }
 }
- 
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1rem;
+  }
+
+  .primeiroContudo {
+    padding-top: 60px;
+    margin-bottom: 2rem;
+  }
+
+  .primeiroContudo h1 {
+    font-size: 2rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .primeiroContudo h1::after {
+    width: 90%;
+    height: 2px;
+  }
+
+  .primeiroContudo p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .segundoContudo {
+    padding: 20px 0;
+  }
+
+  .tabsContainer {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+
+  .tabButtons {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .tabButton {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .conteudoContainer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .imagemWrapper {
+    flex: 1;
+    width: 100%;
+    order: 1;
+  }
+
+  .textoWrapper {
+    order: 2;
+    text-align: center;
+  }
+
+  .tituloConteudo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .textoConteudo {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .interesseWrapper {
+    margin: 0 auto;
+    padding: 5px 8px;
+  }
+
+  .interesseText {
+    font-size: 0.85rem;
+    margin-right: 8px;
+  }
+
+  .iconButton {
+    width: 22px;
+    height: 22px;
+  }
+
+  .arrowIcon {
+    font-size: 10px;
+  }
+
+  /* Ajustes para telas muito pequenas */
+  @media (max-width: 480px) {
+    .primeiroContudo h1 {
+      font-size: 1.8rem;
+    }
+
+    .tabButtons {
+      max-width: 100%;
+    }
+
+    .tituloConteudo {
+      font-size: 1.3rem;
+    }
+  }
+}

@@ -531,24 +531,180 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .primeiroContudo {
+    margin-bottom: 2rem;
+  }
+
+  .primeiroContudo h1 {
+    font-size: 2rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .primeiroContudo h1::after {
+    width: 90%;
+  }
+
+  .primeiroContudo p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .segundoContudo {
+    flex-direction: column;
+    height: 35rem;
+    max-height: none;
+    margin: 1rem auto;
+    border-radius: 8px;
+  }
+
+  .segundoContudo::before {
+    border-radius: 8px;
+  }
+
+  .gradientOverlay {
+    display: none;
+  }
+
+  .contentLeft {
+    position: relative;
+    width: 100%;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .companyName {
+    font-size: 1.8rem;
+  }
+
+  .logoMetodo {
+    margin: 1.5rem auto;
+    max-width: 150px;
+  }
+
+  .videoContainer {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+  }
+
+  .playButton {
+    position: relative;
+    left: 7rem;
+    bottom: 23rem;
+    margin: 1rem auto;
+    display: inline-flex;
+  }
+
+  .terceiroContudo h3 {
+    margin: 3rem auto 1rem;
+    padding: 0.2rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .terceiroContudo p {
+    margin: 0;
+    padding: 0 1rem 2rem;
+  }
+
+  /* Quarto Contudo - Navbar */
+  .navbarContainer {
+    min-width: 100%;
+    border-radius: 0;
+  }
+
+  .navbar {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .itemNav {
+    flex: 1 0 50%;
+    height: 50px;
+  }
+
+  .botaoNav {
+    padding: 0 15px;
+    font-size: 0.9rem;
+  }
+
+  .separador {
+    display: none;
+  }
+
+  .conteudo {
+    margin-top: 20px;
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
   .conteudoContainer {
     flex-direction: column;
+    gap: 20px;
   }
-  
+
+  .textosContainer,
   .imagemContainer {
     flex: 1;
     max-width: 100%;
-    margin-top: 20px;
+    padding-right: 0;
   }
-  
-  .navbar {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 10px 0;
+
+  .titulo {
+    font-size: 1.3rem;
   }
-  
-  .botaoNav {
-    padding: 8px 15px;
-    font-size: 14px;
+
+  .texto {
+    font-size: 1rem;
+  }
+
+  .imagemContainer {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* Modal de Vídeo */
+  .videoModalContainer {
+    flex-direction: column;
+    margin: 40px auto 0;
+    max-width: 95%;
+  }
+
+  .videoModalContent {
+    padding: 15px;
+  }
+
+  .modalVideoPlayer {
+    max-height: calc(100vh - 200px);
+  }
+
+  .closeButton {
+    margin: 15px auto 0;
+  }
+
+  /* Ajustes para telas muito pequenas */
+  @media (max-width: 480px) {
+    .primeiroContudo h1 {
+      font-size: 1.7rem;
+    }
+
+    .videoContainer {
+      height: 200px;
+    }
+
+    .itemNav {
+      flex: 1 0 100%;
+    }
   }
 }

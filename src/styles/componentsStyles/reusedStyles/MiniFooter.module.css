@@ -84,3 +84,68 @@
   .iconButton:hover .arrowIcon {
     color: #FFD700;
   }
+
+  @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 40px;
+  }
+
+  .txt {
+    margin-right: 0; /* Remove margem lateral */
+  }
+
+  .txt h1 {
+    font-size: 20px; /* Reduz um pouco a fonte */
+  }
+
+  .txt p {
+    font-size: 15px;
+  }
+
+  .buttonsWrapper {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .interesseWrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .interesseText {
+    font-size: 13px;
+  }
+
+  .iconButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .arrowIcon {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+    gap: 24px;
+  }
+
+  .txt h1 {
+    font-size: 18px;
+  }
+
+  .txt p {
+    font-size: 14px;
+  }
+
+  .iconButton {
+    width: 28px;
+    height: 28px;
+  }
+}
