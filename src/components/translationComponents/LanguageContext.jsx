@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from 'react';
-import { MdTypeSpecimen } from 'react-icons/md';
+
 
 const LanguageContext = createContext();
 
@@ -377,7 +377,48 @@ export const LanguageProvider = ({ children }) => {
         tySh2: "Obrigado!",
         tySp: "Em breve nosso time entrará em contato pelo Email",
         tySHome:"Home"
+      },
+      menu:{
+       TDtituloUm:"Floresta Assombrada",
+       TDdescricaoUm:"filme de terror que explora o medo do sobrenatural em meio a uma floresta densa e misteriosa. A trama envolve um grupo de pessoas que se aventuram em uma floresta isolada, onde encontram criaturas sinistras, fenômenos inexplicáveis e uma atmosfera carregada de terror. O filme explora o medo do desconhecido, a fragilidade humana diante de forças sobrenaturais e a atmosfera opressiva da floresta.",
+       TDtituloDois:"O Ultimo Homem na Terra",
+       TDdescricaoDois:"O Último Homem na Terra é um filme de ficção científica pós-apocalíptica que acompanha a jornada de um homem que se torna o último sobrevivente da humanidade após uma praga misteriosa dizimar a população mundial. O filme explora temas como solidão, sobrevivência, e a luta pela esperança em um mundo devastado.",
 
+       VagaTituloUm:"Cameraman",
+       VagaDescricaoUm:"Responsável pela captação de imagens com alta qualidade para diferentes produções audiovisuais.",
+       VagaRequisitosUm:"Experiência com câmeras profissionais, conhecimento em iluminação e áudio.",
+       VagaCaracteristicasUm:"Salário competitivo, ambiente criativo, oportunidade de crescimento.",
+       VagaAplicaUm:"mande seu currico para o seguinte email: ",
+
+       VagaTituloDois:"Assistente de Roteiro",
+       VagaDescricaoDois:"Auxílio na elaboração de roteiros e organização de cenas para gravações.",
+       VagaRequisitosDois:"Boa escrita, criatividade e noções de narrativa audiovisual.",
+       VagaCaracteristicasDois:"Trabalho híbrido, horários flexíveis, equipe colaborativa.",
+       VagaAplicaDois:"mande seu currico para o seguinte email:",
+
+       VagaTituloTres:"Diretor Assistente",
+       VagaDescricaoTres:"Apoio ao diretor em todas as etapas da produção e coordenação da equipe.",
+       VagaRequisitosTres:"Experiência em liderança de equipes e noções de direção cinematográfica.",
+       VagaCaracteristicasTres:"Ambiente dinâmico, plano de carreira, benefícios completos.",
+       VagaAplicaTres:"mande seu currico para o seguinte email: ",
+
+       VagaTituloQuatro:"Editor de Videos",
+       VagaDescricaoQuatro:"Responsável pela edição e finalização de vídeos com criatividade.",
+       VagaRequisitosQuatro:"Domínio de Adobe Premiere, After Effects e noções de color grading.",
+       VagaCaracteristicasQuatro:"Trabalho remoto disponível, equipamentos fornecidos pela empresa.",
+       VagaAplicaQuatro:"mande seu currico para o seguinte email: ",
+
+       botaoAssitir:"Assista",
+       botaoAplicar:"Aplicar",
+       mensagemSuporte:"Suporte Da TC-CINE",
+
+       botaoMenuUm: "Trabalhos da TC-CINE",
+       botaoMenuDois: "Trabalhe Conosco",
+       botaoMenuTres: "Suporte",
+
+       applyModalUm:"O que esperamos de você",
+       applyModalDois:"Características da vaga",
+       applyModalTres:"Aplique para a vaga",
       }
     },
     en: {
@@ -750,7 +791,49 @@ export const LanguageProvider = ({ children }) => {
         tySh2: "Thanks!",
         tySp: "Our team will contact you shortly by email.",
         tySHome:"Home"
-        }
+        },
+       menu:{
+       TDtituloUm:"Haunted Forest",
+       TDdescricaoUm:"horror movie that explores the fear of the supernatural in the midst of a dense and mysterious forest. The plot involves a group of people who venture into an isolated forest, where they encounter sinister creatures, unexplained phenomena, and an atmosphere charged with terror. The film explores the fear of the unknown, human fragility in the face of supernatural forces, and the oppressive atmosphere of the forest.",
+       TDtituloDois:"The Last Man on Earth",
+       TDdescricaoDois:"The Last Man on Earth is a post-apocalyptic science fiction film that follows the journey of a man who becomes the last survivor of humanity after a mysterious plague wipes out the world's population. The film explores themes such as loneliness, survival, and the struggle for hope in a devastated world.",
+
+       VagaTituloUm:"Cameraman",
+       VagaDescricaoUm:"Responsible for capturing high-quality images for different audiovisual productions.",
+       VagaRequisitosUm:"Experience with professional cameras, knowledge of lighting and audio.",
+       VagaCaracteristicasUm:"Competitive salary, creative environment, growth opportunities.",
+       VagaAplicaUm:"send your resume to the following email: ",
+
+       VagaTituloDois:"Script Assistant",
+       VagaDescricaoDois:"Assistance in scriptwriting and scene organization for recordings.",
+       VagaRequisitosDois:"Good writing skills, creativity, and knowledge of audiovisual narrative.",
+       VagaCaracteristicasDois:"Hybrid work, flexible hours, collaborative team.",
+       VagaAplicaDois:"send your resume to the following email:",
+
+       VagaTituloTres:"Assistant Director",
+       VagaDescricaoTres:"Support the director in all stages of production and team coordination.",
+       VagaRequisitosTres:"Experience in team leadership and knowledge of film direction.",
+       VagaCaracteristicasTres:"Dynamic environment, career plan, full benefits.",
+       VagaAplicaTres:"send your resume to the following email: ",
+
+       VagaTituloQuatro:"Video Editor",
+       VagaDescricaoQuatro:"Responsible for creatively editing and finalizing videos.",
+       VagaRequisitosQuatro:"Proficiency in Adobe Premiere, After Effects, and knowledge of color grading.",
+       VagaCaracteristicasQuatro:"Remote work available, equipment provided by the company.",
+       VagaAplicaQuatro:"send your resume to the following email: ",
+
+       botaoAssitir:"Watch",
+       botaoAplicar:"Apply",
+       mensagemSuporte:"TC-CINE Support",
+
+       botaoMenuUm: "TC-CINE Works",
+       botaoMenuDois: "Work With Us",
+       botaoMenuTres: "Support",
+
+       applyModalUm:"What we expect from you",
+       applyModalDois:"Job characteristics",
+       applyModalTres:"Apply for the position",
+      }
     },
     /*fr: {
       producao: {

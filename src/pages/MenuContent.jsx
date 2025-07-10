@@ -12,7 +12,11 @@ import vaga2_2 from "../assets/menuMedia/vaga2.2.png";
 import vaga3_2 from "../assets/menuMedia/vaga3.2.png";
 import vaga4_2 from "../assets/menuMedia/vaga4.2.png";
 
+import { useLanguage } from "../components/translationComponents/LanguageContext";
+
 export const MenuContent = () => {
+  const { t } = useLanguage();
+
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [activeVideo, setActiveVideo] = useState(null);
   const modalVideoRef = useRef(null);
@@ -55,17 +59,15 @@ export const MenuContent = () => {
       {
         id: 1,
         imagem: imagem1,
-        titulo: "Floresta Assombrada",
-        descricao:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo possimus necessitatibus laborum animi velit placeat.",
+        titulo: t("menu.TDtituloUm"),
+        descricao: t("menu.TDdescricaoUm"),
         video: video2,
       },
       {
         id: 2,
         imagem: imagem2,
-        titulo: "O Ultimo Homem na Terra",
-        descricao:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo possimus necessitatibus laborum animi velit placeat.",
+        titulo: t("menu.TDtituloDois"),
+        descricao: t("menu.TDdescricaoDois"),
         video: video1,
       },
     ];
@@ -74,54 +76,38 @@ export const MenuContent = () => {
       {
         id: 3,
         imagem: vaga1_2,
-        titulo: "Cameraman",
-        descricao:
-          "Responsável pela captação de imagens com alta qualidade para diferentes produções audiovisuais.",
-        requisitos:
-          "Experiência com câmeras profissionais, conhecimento em iluminação e áudio.",
-        caracteristicas:
-          "Salário competitivo, ambiente criativo, oportunidade de crescimento.",
-        aplica:
-          "mande seu currico para o seguinte email: "
+        titulo: t("menu.VagaTituloUm"),
+        descricao: t("menu.VagaDescricaoUm"),
+        requisitos: t("menu.VagaRequisitosUm"),
+        caracteristicas: t("menu.VagaCaracteristicasUm"),
+        aplica: t("menu.VagaAplicaUm")
       },
       {
         id: 4,
         imagem: vaga2_2,
-        titulo: "Assistente de Roteiro",
-        descricao:
-          "Auxílio na elaboração de roteiros e organização de cenas para gravações.",
-        requisitos:
-          "Boa escrita, criatividade e noções de narrativa audiovisual.",
-        caracteristicas:
-          "Trabalho híbrido, horários flexíveis, equipe colaborativa.",
-        aplica:
-          "mande seu currico para o seguinte email: "
+        titulo: t("menu.VagaTituloDois"),
+        descricao: t("menu.VagaDescricaoDois"),
+        requisitos: t("menu.VagaRequisitosDois"),
+        caracteristicas: t("menu.VagaCaracteristicasDois"),
+        aplica: t("menu.VagaAplicaDois")
       },
       {
         id: 5,
         imagem: vaga3_2,
-        titulo: "Diretor Assistente",
-        descricao:
-          "Apoio ao diretor em todas as etapas da produção e coordenação da equipe.",
-        requisitos:
-          "Experiência em liderança de equipes e noções de direção cinematográfica.",
-        caracteristicas:
-          "Ambiente dinâmico, plano de carreira, benefícios completos.",
-        aplica:
-          "mande seu currico para o seguinte email: "
+        titulo: t("menu.VagaTituloTres"),
+        descricao: t("menu.VagaDescricaoTres"),
+        requisitos: t("menu.VagaRequisitosTres"),
+        caracteristicas: t("menu.VagaCaracteristicasTres"),
+        aplica: t("menu.VagaAplicaTres")
       },
       {
         id: 6,
         imagem: vaga4_2,
-        titulo: "Editor de Videos",
-        descricao:
-          "Responsável pela edição e finalização de vídeos com criatividade.",
-        requisitos:
-          "Domínio de Adobe Premiere, After Effects e noções de color grading.",
-        caracteristicas:
-          "Trabalho remoto disponível, equipamentos fornecidos pela empresa.",
-        aplica:
-          "mande seu currico para o seguinte email: "
+        titulo: t("menu.VagaTituloQuatro"),
+        descricao: t("menu.VagaDescricaoQuatro"),
+        requisitos: t("menu.VagaRequisitosQuatro"),
+        caracteristicas: t("menu.VagaCaracteristicasQuatro"),
+        aplica: t("menu.VagaAplicaQuatro")
       },
     ];
 
@@ -142,7 +128,7 @@ export const MenuContent = () => {
                   className={styles.watchButton}
                   onClick={() => toggleVideoModal(projeto.video)}
                 >
-                  Assista
+                  {t("menu.botaoAssitir")}
                 </button>
               </div>
             ))}
@@ -164,7 +150,7 @@ export const MenuContent = () => {
                   className={styles.applyButton}
                   onClick={() => toggleApplyModal(vaga)}
                 >
-                  Aplicar
+                  {t("menu.botaoAplicar")}
                 </button>
               </div>
             ))}
@@ -173,7 +159,7 @@ export const MenuContent = () => {
       case "suporte":
         return (
           <div className={styles.supportContainer}>
-            <p>Componente de Suporte:</p>
+            <p>{t("menu.mensagemSuporte")}</p>
             <div className={styles.supportBox}>
               <Suport />
             </div>
@@ -193,7 +179,7 @@ export const MenuContent = () => {
           }`}
           onClick={() => setSelected("trabalhos")}
         >
-          Trabalhos da tc_cine
+          {t("menu.botaoMenuUm")}
         </button>
         <button
           className={`${styles.sidebarButton} ${
@@ -201,7 +187,7 @@ export const MenuContent = () => {
           }`}
           onClick={() => setSelected("trabalhar")}
         >
-          Como trabalhar conosco
+          {t("menu.botaoMenuDois")}
         </button>
         <button
           className={`${styles.sidebarButton} ${
@@ -209,7 +195,7 @@ export const MenuContent = () => {
           }`}
           onClick={() => setSelected("suporte")}
         >
-          Suporte
+          {t("menu.botaoMenuTres")}
         </button>
       </div>
 
@@ -250,13 +236,13 @@ export const MenuContent = () => {
           />
           <div className={styles.applyModalContainer}>
             <h2 className={styles.applyModalTitle}>{activeVaga.titulo}</h2>
-            <h3>O que esperamos de você</h3>
+            <h3>{t("menu.applyModalUm")}</h3>
             <p className={styles.applyModalText}>{activeVaga.requisitos}</p>
-            <h3>Características da vaga</h3>
+            <h3>{t("menu.applyModalDois")}</h3>
             <p className={styles.applyModalText}>
               {activeVaga.caracteristicas}
             </p>
-            <h3>Aplique para a vaga</h3>
+            <h3>{t("menu.applyModalTres")}</h3>
             <p className={styles.applyModalText}>
               {activeVaga.aplica}
             </p>
@@ -264,7 +250,7 @@ export const MenuContent = () => {
               className={styles.closeButton}
               onClick={() => toggleApplyModal(null)}
             >
-              X
+              ✖
             </button>
           </div>
         </div>
