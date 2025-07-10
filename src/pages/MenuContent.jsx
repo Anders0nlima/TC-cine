@@ -7,10 +7,10 @@ import imagem2 from "../assets/menuMedia/filmeImagem2.jpg";
 import video1 from "../assets/menuMedia/filmeVideo1.mp4";
 import video2 from "../assets/menuMedia/filmeVideo2.mp4";
 
-import vaga1 from "../assets/menuMedia/vaga1.jpg";
-import vaga2 from "../assets/menuMedia/vaga2.jpg";
-import vaga3 from "../assets/menuMedia/vaga3.jpg";
-import vaga4 from "../assets/menuMedia/vaga4.jpg";
+import vaga1_2 from "../assets/menuMedia/vaga1.2.png";
+import vaga2_2 from "../assets/menuMedia/vaga2.2.png";
+import vaga3_2 from "../assets/menuMedia/vaga3.2.png";
+import vaga4_2 from "../assets/menuMedia/vaga4.2.png";
 
 export const MenuContent = () => {
   const [showVideoModal, setShowVideoModal] = useState(false);
@@ -58,7 +58,7 @@ export const MenuContent = () => {
         titulo: "Floresta Assombrada",
         descricao:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo possimus necessitatibus laborum animi velit placeat.",
-        video: video1,
+        video: video2,
       },
       {
         id: 2,
@@ -66,14 +66,14 @@ export const MenuContent = () => {
         titulo: "O Ultimo Homem na Terra",
         descricao:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo possimus necessitatibus laborum animi velit placeat.",
-        video: video2,
+        video: video1,
       },
     ];
 
     const trabalharData = [
       {
         id: 3,
-        imagem: vaga1,
+        imagem: vaga1_2,
         titulo: "Cameraman",
         descricao:
           "Responsável pela captação de imagens com alta qualidade para diferentes produções audiovisuais.",
@@ -81,10 +81,12 @@ export const MenuContent = () => {
           "Experiência com câmeras profissionais, conhecimento em iluminação e áudio.",
         caracteristicas:
           "Salário competitivo, ambiente criativo, oportunidade de crescimento.",
+        aplica:
+          "mande seu currico para o seguinte email: "
       },
       {
         id: 4,
-        imagem: vaga2,
+        imagem: vaga2_2,
         titulo: "Assistente de Roteiro",
         descricao:
           "Auxílio na elaboração de roteiros e organização de cenas para gravações.",
@@ -92,10 +94,12 @@ export const MenuContent = () => {
           "Boa escrita, criatividade e noções de narrativa audiovisual.",
         caracteristicas:
           "Trabalho híbrido, horários flexíveis, equipe colaborativa.",
+        aplica:
+          "mande seu currico para o seguinte email: "
       },
       {
         id: 5,
-        imagem: vaga3,
+        imagem: vaga3_2,
         titulo: "Diretor Assistente",
         descricao:
           "Apoio ao diretor em todas as etapas da produção e coordenação da equipe.",
@@ -103,10 +107,12 @@ export const MenuContent = () => {
           "Experiência em liderança de equipes e noções de direção cinematográfica.",
         caracteristicas:
           "Ambiente dinâmico, plano de carreira, benefícios completos.",
+        aplica:
+          "mande seu currico para o seguinte email: "
       },
       {
         id: 6,
-        imagem: vaga4,
+        imagem: vaga4_2,
         titulo: "Editor de Videos",
         descricao:
           "Responsável pela edição e finalização de vídeos com criatividade.",
@@ -114,6 +120,8 @@ export const MenuContent = () => {
           "Domínio de Adobe Premiere, After Effects e noções de color grading.",
         caracteristicas:
           "Trabalho remoto disponível, equipamentos fornecidos pela empresa.",
+        aplica:
+          "mande seu currico para o seguinte email: "
       },
     ];
 
@@ -247,6 +255,10 @@ export const MenuContent = () => {
             <h3>Características da vaga</h3>
             <p className={styles.applyModalText}>
               {activeVaga.caracteristicas}
+            </p>
+            <h3>Aplique para a vaga</h3>
+            <p className={styles.applyModalText}>
+              {activeVaga.aplica}
             </p>
             <button
               className={styles.closeButton}
