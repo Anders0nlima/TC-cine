@@ -1,0 +1,236 @@
+.menuContent {
+  display: flex;
+  height: 100%;
+  background-color: #13141c;
+  color: #fff;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1c1d25;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-right: 1px solid #333;
+}
+
+.sidebarButton {
+  background: transparent;
+  color: #ccc;
+  border: none;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebarButton:hover {
+ background-color: rgba(255, 255, 0, 0.644);
+  color: #fff;
+}
+
+.active {
+  background-color: rgba(235, 235, 7, 0.507);
+  color: #fff;
+}
+
+.contentArea {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #22232b;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; 
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.imagePlaceholder {
+  background: #3a3b45;
+  height: 150px;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.cardTitle {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.supportContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.supportBox {
+  margin-top: 1rem;
+  background: #292b36;
+  padding: 2rem;
+  width: 40rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #bbb;
+}
+
+.watchButton {
+  background-color: #5a2fc2;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.watchButton:hover {
+  background-color: #7d4cf6;
+}
+
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoBackdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.videoContainer {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modalVideoPlayer {
+  width: 100%;
+  height: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.applyButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.applyButton:hover {
+  background-color: #218838;
+}
+
+.applyModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.applyModalBackdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.applyModalContainer {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: #333;
+}
+
+.applyModalTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.applyModalText {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.closeButton {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+ 
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.closeButton:hover {
+  background: #c82333;
+}

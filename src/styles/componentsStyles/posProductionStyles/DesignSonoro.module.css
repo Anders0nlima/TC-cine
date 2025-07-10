@@ -430,3 +430,102 @@
       margin-left: 0;
     }
   }
+
+  @media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .primeiroContudo {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .primeiroContudo h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .primeiroContudo p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .segundoContudo h3 {
+    font-size: 1rem;
+    padding: 0.2rem 1.5rem;
+    margin: 0 auto 2rem;
+    margin-left: auto;
+  }
+
+  .segundoContudo {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .accordionColumn,
+  .cartazColumn {
+    flex: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .accordion {
+    min-height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .accordionButton {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .accordionIcon {
+    font-size: 1.2rem;
+  }
+
+  .accordionItem{
+    max-height: 220px;
+  }
+
+  .accordionBody {
+    padding: 0.6rem;
+  }
+
+  .cartazContainer {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .cartazImagemContainer {
+    height: 200px;
+  }
+
+  .cartazHeading {
+    font-size: 1.1rem;
+  }
+
+  .cartazText {
+    font-size: 0.9rem;
+  }
+
+  /* Ajustes para telas muito pequenas */
+  @media (max-width: 480px) {
+    .primeiroContudo h1 {
+      font-size: 1.8rem;
+    }
+
+    .accordionButton {
+      font-size: 1rem;
+    }
+
+    .cartazContainer {
+      max-width: 100%;
+    }
+  }
+}

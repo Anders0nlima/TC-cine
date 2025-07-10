@@ -114,14 +114,14 @@
       flex-direction: row; /* Volta para linha */
       flex-wrap: wrap; /* Quebra linha se necessário */
       justify-content: space-around; /* Distribui os itens */
-      padding: 0.5rem;
+      padding: 0rem; 
     }
 
     .navButton {
       flex: 1; /* Itens ocupam espaço igual */
-      min-width: 100px; /* Largura mínima */
-      padding: 0.75rem 0.5rem;
-      font-size: 0.85rem;
+      min-width: 90px; /* Largura mínima 100  */
+      padding: 0.75rem 0.5rem; /*0.75rem 0.5rem*/
+      font-size: 0.75rem; /*0.85rem*/
     }
   }
 }

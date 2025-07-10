@@ -9,6 +9,7 @@ import francaFlag from "../../assets/homeMedia/homenavbar/franca.webp"
 import china2Flag from "../../assets/homeMedia/homenavbar/china2.png"
 import logoCine3 from "../../assets/homeMedia/homenavbar/logoCine3.png"
 import styles from "../../styles/componentsStyles/reusedStyles/NavBar.module.css" 
+import { MenuContent } from '../../pages/MenuContent';
 
 export const NavBar = () => {
   const { language, changeLanguage } = useLanguage();
@@ -203,7 +204,7 @@ const currentLanguage = languageOptions[language] || languageOptions['pt'];
       {menuOpen && (
         <div className={styles.menuOverlay}>
           {/* Conteúdo do menu aqui */}
-          <p>Menu content</p>
+          <MenuContent/>
         </div>
       )}
     </>

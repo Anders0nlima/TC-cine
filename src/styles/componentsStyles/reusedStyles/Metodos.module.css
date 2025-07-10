@@ -558,7 +558,7 @@
 
   .segundoContudo {
     flex-direction: column;
-    height: 35rem;
+    height: 40rem; /*altura do video*/
     max-height: none;
     margin: 1rem auto;
     border-radius: 8px;
@@ -602,7 +602,7 @@
   .playButton {
     position: relative;
     left: 7rem;
-    bottom: 23rem;
+    bottom: 25rem; /*botao*/
     margin: 1rem auto;
     display: inline-flex;
   }
