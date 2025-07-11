@@ -11,6 +11,7 @@ import espanhaFlag from '../../assets/homeMedia/homenavbar/espanha.webp';
 import francaFlag from '../../assets/homeMedia/homenavbar/franca.webp';
 import china2Flag from '../../assets/homeMedia/homenavbar/china2.png';
 import logoCine3 from "../../assets/homeMedia/homenavbar/logoCine3.png"
+import { MenuContent } from '../../pages/MenuContent';
 
 export const HomeNavBar = ({ transparent = false }) => {
   const { language, changeLanguage } = useLanguage(); // Assume que você tem esse hook
@@ -212,7 +213,7 @@ export const HomeNavBar = ({ transparent = false }) => {
       {menuOpen && (
         <div className={styles.menuOverlay}>
           {/* Conteúdo do menu aqui */}
-          <p>Menu content</p>
+          <MenuContent/>
         </div>
       )}
     </>

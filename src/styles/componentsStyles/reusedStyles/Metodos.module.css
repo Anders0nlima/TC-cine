@@ -150,25 +150,19 @@
 }
 
 .closeButton {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.3s;
-  flex-shrink: 0;
-  margin-top: 20px;
+  position: relative;
+    top: -10px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .closeButton:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
+ transform: rotate(90deg);
 }
 
 .closeIcon {
