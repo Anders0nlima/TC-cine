@@ -26,9 +26,9 @@ export const Production = () => {
             />
             <NavBarRouter
             items={[
-                    { id: 'colaboradores', translationKey: 'navbarrouterteste.visaoGeral' },
-                    { id: 'metodos', translationKey: 'navbarrouterteste.ColorGrading' },
-                    { id: 'aplicacoes', translationKey: 'navbarrouterteste.DesighSonoro' }
+                    { id: 'colaboradores', translationKey: 'navbarrouter.visaoGeral' },
+                    { id: 'metodos', translationKey: 'navbarrouter.metodos' },
+                    { id: 'aplicacoes', translationKey: 'navbarrouter.aplicacoes' }
                     ]}
                    stickyOffset={490}
                    scrollOffset={-80}
