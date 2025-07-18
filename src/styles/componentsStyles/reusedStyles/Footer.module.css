@@ -22,8 +22,17 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
+
+.especifica {
+  transform: scale(3.0);
+  margin-left: 30px;
+  margin-right: 20px;
+  width: auto; /* Aumenta a largura */
+  height: auto; 
+}
+
 
 .logo_group {
   display: flex;
@@ -119,7 +128,7 @@
   display: flex;
   justify-content: space-between; /* ou 'center' para centralizar */
   align-items: center;
-  gap: 100px; /* espaço entre os elementos */
+  gap: 260px; /* espaço entre os elementos */
 
   border-top: 1px solid #444;
   padding-top: 20px;
@@ -127,7 +136,7 @@
 
 .footer_bottom .links{
   display: flex;
-  gap: 30px; /* espaço entre os links */
+  gap: 15px; /* espaço entre os links */
 }
 .footer_bottom .copyright{
   /* Espaço maior entre links e copyright */
@@ -175,6 +184,7 @@
 .languageSelector {
   position: relative;
   margin-left: 10px;
+ 
 }
 
 .languagePill {

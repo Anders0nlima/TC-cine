@@ -18,6 +18,8 @@ import china2Flag from "../../assets/homeMedia/homenavbar/china2.png"
 
 import { faBars, faTimes, faSearch, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+import { Biblioteca } from '../infoPages/bibliotecas';
+
 function Footer() {
   const { t } = useLanguage();
   const { language, changeLanguage } = useLanguage();
@@ -145,14 +147,14 @@ function Footer() {
       <div className={styles.footer_middle}>
         <div className={styles.links_grid}>
           <Link to="/suporte">{t("mainFooter.linkUm")}</Link>
-          <Link to="/bibliotecas">{t("mainFooter.linkDois")}</Link>
-          <Link to="/junte-se">{t("mainFooter.linkTres")}</Link>
-          <Link to="/servicos">{t("mainFooter.linkQuatro")}</Link>
-          <Link to="/projetos">{t("mainFooter.linkCinco")}</Link>
-          <Link to="/eventos">{t("mainFooter.linkSeis")}</Link>
-          <Link to="/equipe">{t("mainFooter.linkSete")}</Link>
-          <Link to="/parcerias">{t("mainFooter.linkOito")}</Link>
-          <Link to="/contato">{t("mainFooter.linkNove")}</Link>
+          <Link to="/infoPages/sobre">{t("mainFooter.linkDois")}</Link>
+          <Link to="/infoPages/servicos">{t("mainFooter.linkTres")}</Link>
+          <Link to="/infoPages/junte">{t("mainFooter.linkQuatro")}</Link>
+          <Link to="/infoPages/bibliotecas">{t("mainFooter.linkCinco")}</Link>
+          <Link to="/infoPages/equipe">{t("mainFooter.linkSeis")}</Link>
+          <Link to="/infoPages/profissionais">{t("mainFooter.linkSete")}</Link>
+          <Link to="/infoPages/parcerias">{t("mainFooter.linkOito")}</Link>
+          <Link to="/infoPages/contato">{t("mainFooter.linkNove")}</Link>
         </div>
         <div className={styles.newsletter}>
           <p>{t("mainFooter.newsletterText")}</p>
@@ -186,9 +188,9 @@ function Footer() {
       <div className={styles.footer_bottom}>
         
         <div className={styles.links}>
-        <Link to="/termos">{t("mainFooter.terms")}</Link>
-        <Link to="/cookies">{t("mainFooter.cookies")}</Link>
-        <Link to="/privacidade">{t("mainFooter.privacy")}</Link>
+        <Link to="/infoPages/termos">{t("mainFooter.terms")}</Link>
+        <Link to="/infoPages/cookies">{t("mainFooter.cookies")}</Link>
+        <Link to="/infoPages/privacidade">{t("mainFooter.privacy")}</Link>
         </div>
 
         <div className={styles.copyright}>

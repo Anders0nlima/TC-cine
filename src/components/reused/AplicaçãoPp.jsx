@@ -99,6 +99,7 @@ const AplicacoesPp = ({
             
             <BotaoGeral
             texto= {t("aplicacoesProduction.contBotao")}
+            link={"/infoPages/vejamaispro"}
             />
           </div>
         </div>
