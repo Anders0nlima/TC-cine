@@ -419,6 +419,25 @@ export const LanguageProvider = ({ children }) => {
        applyModalUm:"O que esperamos de você",
        applyModalDois:"Características da vaga",
        applyModalTres:"Aplique para a vaga",
+      },
+      mainFooter:{
+        linkUm:"Suporte",
+        linkDois:"Sobre Nós",
+        linkTres:"Servicos",
+        linkQuatro:"Junte-se",
+        linkCinco:"Bibliotecas",
+        linkSeis:"Equipe",
+        linkSete:"TC|CINE profissionais",
+        linkOito:"Parcerias",
+        linkNove:"Contato",
+        newsletterText:"Receba noticias e atualizações sobre os serviços e produtos da TC|CINE",
+        emailPlaceholder:"Endereço de Email",
+        redes: "Redes Sociais",
+        subscribe:"Registre-se",
+        terms:"Termos de Uso",
+        cookies:"Politicas de Cookie",
+        privacy:"Politicas de privacidade",
+        copyright:"Todas as marcas além da TC|CINE pertecem aos seus respectivos proprietarios. Algunsas imagens forem retiradas de bancos de dados gratuitos. Todos os direitos reservados, 2025 Tecnologia Criativa Cinematográfica (TC|CINE)"
       }
     },
     en: {
@@ -833,7 +852,26 @@ export const LanguageProvider = ({ children }) => {
        applyModalUm:"What we expect from you",
        applyModalDois:"Job characteristics",
        applyModalTres:"Apply for the position",
-      }
+      },
+      mainFooter: {
+      linkUm: "Support",
+      linkDois: "About Us",
+      linkTres: "Services",
+      linkQuatro: "Join Us",
+      linkCinco: "Libraries",
+      linkSeis: "Team",
+      linkSete: "TC|CINE Professionals",
+      linkOito: "Partnerships",
+      linkNove: "Contact",
+      newsletterText: "Receive news and updates about TC|CINE services and products",
+      emailPlaceholder: "Email Address",
+      redes: "Social Media",
+      subscribe: "Subscribe",
+      terms: "Terms of Use",
+      cookies: "Cookie Policy",
+      privacy: "Privacy Policy",
+      copyright: "All trademarks except TC|CINE belong to their respective owners. Some images were taken from free databases. All rights reserved, 2025 Creative Cinematic Technology (TC|CINE)"
+}
     },
     /*fr: {
       producao: {
