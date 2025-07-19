@@ -14,8 +14,6 @@ import { Sobre } from './components/infoPages/sobre';
 import { Privacidade } from './components/infoPages/privacidade';
 import { Servicos } from './components/infoPages/servicos';
 import { Termos } from './components/infoPages/termos';
-import { VejaMaisPre } from './components/infoPages/vejaMaisPre';
-import { VejaMaisPro } from './components/infoPages/vejaMaisPro';
 
 function AppRoutes() {
     return (
@@ -35,8 +33,6 @@ function AppRoutes() {
           <Route path="/infoPages/privacidade" element={<Privacidade/>}/>
           <Route path="/infoPages/servicos" element={<Servicos/>}/>
           <Route path="/infoPages/termos" element={<Termos/>}/>
-          <Route path="/infoPages/vejamaispre" element={<VejaMaisPre/>}/>
-          <Route path="/infoPages/vejamaispro" element={<VejaMaisPro/>}/>
           
           {/* Rota padrão ou redirecionamento, o teste-selo será mudado para "home" --- Navigate to="/producao" --- /*/}
           <Route path="/" element={<HomePage/>} />

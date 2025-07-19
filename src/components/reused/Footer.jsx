@@ -6,9 +6,9 @@ import styles from '../../styles/componentsStyles/reusedStyles/Footer.module.css
 import { useLanguage } from '../translationComponents/LanguageContext';
 import logo1 from '../../assets/footerMedia/logofooter2.png'
 import logo2 from '../../assets/footerMedia/logofooter1.png'
-import logo3 from '../../assets/homeMedia/homenavbar/descubraImg1.png'
-import logo4 from '../../assets/homeMedia/homenavbar/descubraImg2.png'
-import logo5 from '../../assets/homeMedia/homenavbar/logoCine3.png'
+import logo3 from '../../assets/footerMedia/log3.png'
+import logo4 from '../../assets/footerMedia/log4.png'
+import logo5 from '../../assets/footerMedia/log5.png'
 
 import brazilFlag from '../../assets/homeMedia/homenavbar/brazilFlag.webp';
 import ukFlag from '../../assets/homeMedia/homenavbar/ukFlag.png';

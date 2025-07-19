@@ -24,7 +24,7 @@ export const MenuContent = () => {
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [activeVaga, setActiveVaga] = useState(null);
 
-  const [selected, setSelected] = useState("trabalhos");
+  const [selected, setSelected] = useState("suporte"); //o menu vai começar em suporte 
 
   const toggleVideoModal = (videoSrc) => {
     if (showVideoModal) {
@@ -134,7 +134,7 @@ export const MenuContent = () => {
             ))}
           </div>
         );
-      case "trabalhar":
+      {/*case "trabalhar":
         return (
           <div className={styles.contentGrid}>
             {trabalharData.map((vaga) => (
@@ -155,7 +155,7 @@ export const MenuContent = () => {
               </div>
             ))}
           </div>
-        );
+        );*/}
       case "suporte":
         return (
           <div className={styles.supportContainer}>
@@ -173,22 +173,22 @@ export const MenuContent = () => {
   return (
     <div className={styles.menuContent}>
       <div className={styles.sidebar}>
-        <button
+        {/*<button
           className={`${styles.sidebarButton} ${
             selected === "trabalhos" ? styles.active : ""
           }`}
           onClick={() => setSelected("trabalhos")}
         >
           {t("menu.botaoMenuUm")}
-        </button>
-        <button
+        </button>*/}
+        {/*<button
           className={`${styles.sidebarButton} ${
             selected === "trabalhar" ? styles.active : ""
           }`}
           onClick={() => setSelected("trabalhar")}
         >
           {t("menu.botaoMenuDois")}
-        </button>
+        </button>*/}
         <button
           className={`${styles.sidebarButton} ${
             selected === "suporte" ? styles.active : ""

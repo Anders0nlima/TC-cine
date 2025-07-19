@@ -101,8 +101,8 @@ const Metodos = ({
           <p>{descricao}</p>
         </div>
 
-        {/* Segundo Conteúdo */}
-        <div className={styles.segundoContudo}>
+        {/* Segundo Conteúdo */} 
+        {/*<div className={styles.segundoContudo}>
           <div className={styles.videoContainer}>
             <div className={styles.gradientOverlay} />
             <video
@@ -134,7 +134,7 @@ const Metodos = ({
             <FontAwesomeIcon icon={faPlay} className={styles.playIcon} />
             <span>{watchButtonText}</span>
           </button>
-        </div>
+        </div>*/}
 
         {/* Terceiro Conteúdo */}
         <div className={styles.terceiroContudo}>
