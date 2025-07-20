@@ -235,8 +235,11 @@
   background-color: #e6b82e;
 }
 
+
 .cartazContainer {
-  width: 400px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
   border-radius: 10px;
   background-color: #1a1b24;

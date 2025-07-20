@@ -11,13 +11,13 @@ export const DescubraOpc = () => {
         <div className={styles.containeGeral}>
         <div className={styles.containerUm}>
           <h2 className={styles.title}>{t("homeDescubraPage.conteudoTituloUm")}</h2>
-          <img className={styles.img} src={descubraImg1} alt="" />
+          <img className={styles.img} src={descubraImg2} alt="" />
           <p className={styles.descricao}>{t("homeDescubraPage.contuedoDescricaoUm")}</p>
         </div>
 
         <div className={styles.containeUM}>
           <h2 className={styles.title}>{t("homeDescubraPage.conteudoTituloDois")}</h2>
-          <img className={styles.img} src={descubraImg2} alt="" />
+          <img className={styles.img} src={descubraImg1} alt="" />
           <p className={styles.descricao}>{t("homeDescubraPage.contuedoDescricaoDois")}</p>
         </div>
         </div>
