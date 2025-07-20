@@ -12,11 +12,11 @@ import thumb3 from "../assets/posProductionMedia/thumb3.png";
 
 import antes4 from "../assets/posProductionMedia/imgrind1_1.png";
 import depois4 from "../assets/posProductionMedia/imgrind1_2.png";
-import thumb4 from "../assets/posProductionMedia/imgrind1_1.png";
+import thumb4 from "../assets/posProductionMedia/thumb4.png";
 
 import antes5 from "../assets/posProductionMedia/imgring2_1.png";
 import depois5 from "../assets/posProductionMedia/imgrind2_2.png";
-import thumb5 from "../assets/posProductionMedia/imgrind2_2.png";
+import thumb5 from "../assets/posProductionMedia/thumb5.png";
 
 const BeforeAfterSlider = () => {
   const imagePairs = [

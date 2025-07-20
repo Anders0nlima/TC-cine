@@ -1,7 +1,7 @@
 import { NavBar } from "../components/reused/NavBar"
 import { useLanguage } from "../components/translationComponents/LanguageContext";
 import styles from "../styles/pagesStyles/Production.module.css"
-import video1 from "../assets/productionMedia/video1.mp4"
+import video1 from "../assets/homeMedia/homenavbar/tcVideo.mp4"
 import videoBase1 from "../assets/productionMedia/video1.mp4"
 import cartazfilme2 from "../assets/posProductionMedia/cartaz1.png"
 import { LandingPage } from "../components/reused/LandingPage";

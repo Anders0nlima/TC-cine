@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../styles/componentsStyles/reusedStyles/HomeLandingPage.module.css';
 
-import video2 from "../../assets/homeMedia/homenavbar/videoDesign.mp4"
+import video2 from "../../assets/homeMedia/homenavbar/tcVideo.mp4"
 
 import { useLanguage } from '../translationComponents/LanguageContext';
 

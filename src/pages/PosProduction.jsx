@@ -1,7 +1,7 @@
 import { LandingPage } from "../components/reused/LandingPage";
 import { NavBar } from "../components/reused/NavBar"
 import { useLanguage } from "../components/translationComponents/LanguageContext";
-import videopos from "../assets/posProductionMedia/videopos.mp4"
+import videopos from "../assets/homeMedia/homenavbar/tcVideo.mp4"
 import cartazfilme2 from "../assets/posProductionMedia/cartaz2.png";
 import videoposBase from "../assets/PosProductionMedia/videopos.mp4"
 import imagemcartaz1 from "../assets/posProductionMedia/cartazimagem1.jpg"
