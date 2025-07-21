@@ -437,7 +437,10 @@ export const LanguageProvider = ({ children }) => {
         terms:"Termos de Uso",
         cookies:"Politicas de Cookie",
         privacy:"Politicas de privacidade",
-        copyright:"Todas as marcas além da TC|CINE pertecem aos seus respectivos proprietarios. Algunsas imagens forem retiradas de bancos de dados gratuitos. Todos os direitos reservados, 2025 Tecnologia Criativa Cinematográfica (TC|CINE)"
+        copyright:"Todas as marcas além da TC|CINE pertecem aos seus respectivos proprietarios. Algunsas imagens forem retiradas de bancos de dados gratuitos. Todos os direitos reservados, 2025 Tecnologia Criativa Cinematográfica (TC|CINE)",
+        sending: "Enviando",
+        subscribed: "Registrado",
+        subscribe: "Registre-se",
       }
     },
     en: {
@@ -870,7 +873,10 @@ export const LanguageProvider = ({ children }) => {
       terms: "Terms of Use",
       cookies: "Cookie Policy",
       privacy: "Privacy Policy",
-      copyright: "All trademarks except TC|CINE belong to their respective owners. Some images were taken from free databases. All rights reserved, 2025 Creative Cinematic Technology (TC|CINE)"
+      copyright: "All trademarks except TC|CINE belong to their respective owners. Some images were taken from free databases. All rights reserved, 2025 Creative Cinematic Technology (TC|CINE)",
+      sending: "Sending",
+      subscribed: "Subscribed",
+      subscribe: "Subscribe",
 }
     },
     /*fr: {

@@ -16,22 +16,23 @@ import espanhaFlag from "../../assets/homeMedia/homenavbar/espanha.webp"
 import francaFlag from "../../assets/homeMedia/homenavbar/franca.webp"
 import china2Flag from "../../assets/homeMedia/homenavbar/china2.png"
 
-import { faBars, faTimes, faSearch, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-
-import { Biblioteca } from '../infoPages/bibliotecas';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
   const { t } = useLanguage();
   const { language, changeLanguage } = useLanguage();
   const [languageOpen, setLanguageOpen] = useState(false);
 
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   const languageOptions = {
-      pt: { code: 'pt', name: 'Português', flag: brazilFlag },
-      en: { code: 'en', name: 'English', flag: ukFlag },
-      es: { code: 'es', name: 'español', flag: espanhaFlag },
-      fr: { code: 'fr', name: 'français', flag: francaFlag },
-      zh: { code: 'zh', name: '中文', flag: china2Flag }
-    };
+    pt: { code: 'pt', name: 'Português', flag: brazilFlag },
+    en: { code: 'en', name: 'English', flag: ukFlag },
+    es: { code: 'es', name: 'español', flag: espanhaFlag },
+    fr: { code: 'fr', name: 'français', flag: francaFlag },
+    zh: { code: 'zh', name: '中文', flag: china2Flag }
+  };
 
   const currentLanguage = languageOptions[language] || languageOptions['pt'];
 
@@ -43,103 +44,98 @@ function Footer() {
     if (language === lang) {
       setLanguageOpen(false);
       return;
-  }
+    }
 
-  changeLanguage(lang);
-  setLanguageOpen(false);
+    changeLanguage(lang);
+    setLanguageOpen(false);
 
-  setTimeout(() => {
-    window.location.reload();
-  }, 100);
-};
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
+  };
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xgvkvrzk', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        alert('Erro ao enviar. Tente novamente.');
+      }
+    } catch (error) {
+      alert('Erro ao enviar. Tente novamente.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <footer className={styles.main_footer}>
       {/* Primeira parte: Logos e troca de idioma */}
       <div className={styles.footer_top}>
         <div className={styles.logo_group}>
-          {/* Substitua os src abaixo pelos caminhos das logos */}
           <img className={styles.especifica} src={logo1} alt="Logo 1" />
           <img src={logo2} alt="Logo 2" />
           <img src={logo3} alt="Logo 3" />
           <img src={logo4} alt="Logo 4" />
           <img src={logo5} alt="Logo 5" />
         </div>
-        {/* Substitua pelo componente de troca de idioma */}
         <div className={styles.language_switcher}>
-           
-
-             <div className={styles.languageSelector}>
-                         <button 
-                           className={`${styles.languagePill} ${languageOpen ? styles.active : ''}`}
-                           onClick={toggleLanguage}
-                         >
-                           <div className={styles.flagContainer}>
-                             <img 
-                               src={currentLanguage.flag} 
-                               alt={currentLanguage.name} 
-                               className={styles.flagImage}
-                             />
-                           </div>
-                           <span className={styles.languageName}>{currentLanguage.name}</span>
-                           <FontAwesomeIcon 
-                             icon={faChevronDown} 
-                             className={`${styles.chevron} ${languageOpen ? styles.rotate : ''}`}
-                           />
-                         </button>
-                         
-                         {languageOpen && (
-                           <div className={styles.languageDropdown}>
-                             <button 
-                               className={`${styles.languageOption} ${language === 'pt' ? styles.selected : ''}`}
-                               onClick={() => handleLanguageChange('pt')}
-                             >
-                               <div className={styles.flagContainer}>
-                                 <img src={brazilFlag} alt="Português" className={styles.flagImage} />
-                               </div>
-                               <span>Português</span>
-                             </button>
-                             <button 
-                               className={`${styles.languageOption} ${language === 'en' ? styles.selected : ''}`}
-                               onClick={() => handleLanguageChange('en')}
-                             >
-                               <div className={styles.flagContainer}>
-                                 <img src={ukFlag} alt="English" className={styles.flagImage} />
-                               </div>
-                               <span>English</span>
-                             </button>
-                             <button 
-                               className={`${styles.languageOption} ${language === 'fr' ? styles.selected : ''}`}
-                               onClick={() => handleLanguageChange('fr')}
-                             >
-                               <div className={styles.flagContainer}>
-                                 <img src={francaFlag} alt="Français" className={styles.flagImage} />
-                               </div>
-                               <span>Français</span>
-                             </button>
-                             <button 
-                               className={`${styles.languageOption} ${language === 'es' ? styles.selected : ''}`}
-                               onClick={() => handleLanguageChange('es')}
-                             >
-                               <div className={styles.flagContainer}>
-                                 <img src={espanhaFlag} alt="Español" className={styles.flagImage} />
-                               </div>
-                               <span>Español</span>
-                             </button>
-                             <button 
-                               className={`${styles.languageOption} ${language === 'zh' ? styles.selected : ''}`}
-                               onClick={() => handleLanguageChange('zh')}
-                             >
-                               <div className={styles.flagContainer}>
-                                 <img src={china2Flag} alt="中文" className={styles.flagImage} />
-                               </div>
-                               <span>中文</span>
-                             </button>
-                           </div>
-                         )}
-                       </div>
-
-
+          <div className={styles.languageSelector}>
+            <button
+              className={`${styles.languagePill} ${languageOpen ? styles.active : ''}`}
+              onClick={toggleLanguage}
+            >
+              <div className={styles.flagContainer}>
+                <img
+                  src={currentLanguage.flag}
+                  alt={currentLanguage.name}
+                  className={styles.flagImage}
+                />
+              </div>
+              <span className={styles.languageName}>{currentLanguage.name}</span>
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className={`${styles.chevron} ${languageOpen ? styles.rotate : ''}`}
+              />
+            </button>
+            {languageOpen && (
+              <div className={styles.languageDropdown}>
+                <button
+                  className={`${styles.languageOption} ${language === 'pt' ? styles.selected : ''}`}
+                  onClick={() => handleLanguageChange('pt')}
+                >
+                  <div className={styles.flagContainer}>
+                    <img src={brazilFlag} alt="Português" className={styles.flagImage} />
+                  </div>
+                  <span>Português</span>
+                </button>
+                <button
+                  className={`${styles.languageOption} ${language === 'en' ? styles.selected : ''}`}
+                  onClick={() => handleLanguageChange('en')}
+                >
+                  <div className={styles.flagContainer}>
+                    <img src={ukFlag} alt="English" className={styles.flagImage} />
+                  </div>
+                  <span>English</span>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -158,11 +154,25 @@ function Footer() {
         </div>
         <div className={styles.newsletter}>
           <p>{t("mainFooter.newsletterText")}</p>
-          <form>
-            <input type="email" placeholder={t("mainFooter.emailPlaceholder")} />
-            <button type="submit">{t("mainFooter.subscribe")}</button>
+          <form onSubmit={handleNewsletterSubmit}>
+            <input
+              type="email"
+              name="email"
+              placeholder={t("mainFooter.emailPlaceholder")}
+              required
+              disabled={submitted}
+            />
+            <button
+              type="submit"
+              disabled={submitting || submitted}
+            >
+              {submitting
+                ? t("mainFooter.sending") // exemplo: “Enviando...”
+                : submitted
+                ? t("mainFooter.subscribed") // exemplo: “Registrado”
+                : t("mainFooter.subscribe")} {/* exemplo: “Inscrever-se” */}
+            </button>
           </form>
-
           <h4 className={styles.redesSociaisText}>{t("mainFooter.redes")}</h4>
           <div className={styles.social_icons}>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
@@ -186,17 +196,14 @@ function Footer() {
 
       {/* Terceira parte: Políticas */}
       <div className={styles.footer_bottom}>
-        
         <div className={styles.links}>
-        <Link to="/infoPages/termos">{t("mainFooter.terms")}</Link>
-        <Link to="/infoPages/cookies">{t("mainFooter.cookies")}</Link>
-        <Link to="/infoPages/privacidade">{t("mainFooter.privacy")}</Link>
+          <Link to="/infoPages/termos">{t("mainFooter.terms")}</Link>
+          <Link to="/infoPages/cookies">{t("mainFooter.cookies")}</Link>
+          <Link to="/infoPages/privacidade">{t("mainFooter.privacy")}</Link>
         </div>
-
         <div className={styles.copyright}>
           <p>{t("mainFooter.copyright")}</p>
         </div>
-       
       </div>
     </footer>
   );

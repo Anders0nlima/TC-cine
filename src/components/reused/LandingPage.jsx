@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from "../../styles/componentsStyles/reusedStyles/LandingPage.module.css";
 
-import logoCine4 from "../../assets/productionMedia/logofooter2.png";
+import logoCine4 from "../../assets/homeMedia/homenavbar/logoCine3.png";
 import video1 from "../../assets/productionMedia/video1.mp4";
 
 export const LandingPage = ({ 

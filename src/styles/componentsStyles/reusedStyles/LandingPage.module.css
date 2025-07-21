@@ -91,7 +91,7 @@
     color: #acacac;
     font-family: "Inter", Helvetica;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
     position: relative;
     margin-left: 25px;
@@ -108,6 +108,7 @@
     
 }
 
+
 .box .vector {
     height: 60px; /*87*/
     width: auto;
@@ -119,8 +120,9 @@
 }
 
 .box .img {
-    margin-top: 50px;
-    height: 200px; 
+    margin-top: 30px;
+    margin-left: 20px;
+    height: 120px; 
     width: auto;
     /*position: absolute;
     width: 25%;*/
@@ -379,7 +381,7 @@
     order: 2;
     gap: 30px;
     margin-top: -30px; /* Reduz o espaço para o botão se encaixar */
-    padding-top: 40px; /* Adiciona espaço para o botão */
+    padding-top: 20px; /* Adiciona espaço para o botão */
   }
 
   /* Ajustes no texto */
@@ -399,7 +401,7 @@
   }
 
   .box .img {
-    height: 120px;
+    height: 50px;
     margin-top: 20px;
   }
 
@@ -420,7 +422,7 @@
   /* Botão de play reposicionado */
   .box .play_button {
     position: absolute;
-    bottom: 520px; /* Distância do fundo do container de vídeo */
+    bottom: 560px; /* Distância do fundo do container de vídeo */
     right: 20px; /* Distância da direita do container de vídeo */
     width: auto;
     padding: 8px 15px;
