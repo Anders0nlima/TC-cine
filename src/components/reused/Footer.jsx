@@ -83,6 +83,11 @@ function Footer() {
     }
   };
 
+  const handleNotReady = (e) => {
+  e.preventDefault(); // impede a navegação
+  alert("Esta página ainda não está pronta.");
+};
+
   return (
     <footer className={styles.main_footer}>
       {/* Primeira parte: Logos e troca de idioma */}
@@ -143,14 +148,14 @@ function Footer() {
       <div className={styles.footer_middle}>
         <div className={styles.links_grid}>
           <Link to="/suporte">{t("mainFooter.linkUm")}</Link>
-          <Link to="/infoPages/sobre">{t("mainFooter.linkDois")}</Link>
-          <Link to="/infoPages/servicos">{t("mainFooter.linkTres")}</Link>
-          <Link to="/infoPages/junte">{t("mainFooter.linkQuatro")}</Link>
-          <Link to="/infoPages/bibliotecas">{t("mainFooter.linkCinco")}</Link>
-          <Link to="/infoPages/equipe">{t("mainFooter.linkSeis")}</Link>
-          <Link to="/infoPages/profissionais">{t("mainFooter.linkSete")}</Link>
-          <Link to="/infoPages/parcerias">{t("mainFooter.linkOito")}</Link>
-          <Link to="/infoPages/contato">{t("mainFooter.linkNove")}</Link>
+          <Link to="/infoPages/sobre" onClick={handleNotReady}>{t("mainFooter.linkDois")}</Link>
+          <Link to="/infoPages/servicos" onClick={handleNotReady}>{t("mainFooter.linkTres")}</Link>
+          <Link to="/infoPages/junte" onClick={handleNotReady}>{t("mainFooter.linkQuatro")}</Link>
+          <Link to="/infoPages/bibliotecas" onClick={handleNotReady}>{t("mainFooter.linkCinco")}</Link>
+          <Link to="/infoPages/equipe" onClick={handleNotReady}>{t("mainFooter.linkSeis")}</Link>
+          <Link to="/infoPages/profissionais" onClick={handleNotReady}>{t("mainFooter.linkSete")}</Link>
+          <Link to="/infoPages/parcerias" onClick={handleNotReady}>{t("mainFooter.linkOito")}</Link>
+          <Link to="/infoPages/contato" onClick={handleNotReady}>{t("mainFooter.linkNove")}</Link>
         </div>
         <div className={styles.newsletter}>
           <p>{t("mainFooter.newsletterText")}</p>

@@ -1,5 +1,3 @@
-/* BeforeAfterSlider.module.css */
-
 .before_after_container {
   width: 100%;
   margin: 0 auto;
@@ -9,32 +7,23 @@
 .slider_container {
   position: relative;
   width: 100%;
-  height: 300px; /* Valor padrão (mobile first) */
+  height: 400px; /* altura base global */
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  
 }
 
 .slider_content {
   position: relative;
   width: 100%;
-  height: 100%; /* Herda do container */
+  height: 100%;
   overflow: hidden;
 }
 
-.image_container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
+.image_container,
 .after_image_container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
 }
@@ -58,8 +47,7 @@
 
 .slider_line {
   position: absolute;
-  top: 0;
-  left: 50%;
+  top: 0; left: 50%;
   width: 2px;
   height: 100%;
   background: white;
@@ -69,10 +57,8 @@
 
 .scan_indicator {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40px;
-  height: 40px;
+  top: 50%; left: 50%;
+  width: 40px; height: 40px;
   background: white;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -97,9 +83,7 @@
 
 .thumbnails {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -110,8 +94,8 @@
 }
 
 .thumbnail {
-  width: 60px;
-  height: 54px;
+  width: 80px; /* largura base */
+  height: 45px; /* altura base */
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
@@ -128,7 +112,7 @@
   opacity: 1;
   border-color: #ffffff;
   box-shadow: 0 0 10px rgba(180, 180, 180, 0.5);
-  transform:  scale(1.10);
+  transform: scale(1.10);
 }
 
 .thumbnail img {
@@ -137,49 +121,31 @@
   object-fit: cover;
 }
 
-/* Media Queries - Abordagem Mobile First */
 
-/* Telas pequenas (acima de 480px) */
-@media (min-width: 481px) {
-  .slider_container {
-    height: 400px;
-    
-  }
-  
-  .thumbnail {
-    width: 80px;
-    height: 45px;
-  }
-}
+/* Ajustes responsivos opcionais */
 
-/* Tablets (acima de 768px) */
-@media (min-width: 769px) {
+/* Tablets */
+@media (min-width: 768px) {
   .slider_container {
     height: 550px;
-    
   }
-}
-
-/* meu computador */
-@media (min-width: 1300px) {
-  .slider_container {
-    height: 600px;
-  }
-
   .thumbnail {
     width: 110px;
     height: 60px;
   }
 }
 
-/* compudador do luca */
+/* Desktops grandes  meu computador*/
+@media (min-width: 1300px) { 
+  .slider_container {
+    margin: 0 auto;
+    height: 520px;
+    width: 1200px;
+  }
+}
+
 @media (min-width: 1867px) {
   .slider_container {
     height: 900px;
-  }
-  
-  .thumbnail {
-    width: 140px;
-    height: 80px;
   }
 }

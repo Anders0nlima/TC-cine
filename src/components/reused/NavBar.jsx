@@ -125,9 +125,9 @@ const currentLanguage = languageOptions[language] || languageOptions['pt'];
         </div>
         
         <div className={styles.navbarRight}>
-          <button className={`${styles.iconButton} ${styles.searchButton}`}>
+          {/*<button className={`${styles.iconButton} ${styles.searchButton}`}>
             <FontAwesomeIcon icon={faSearch} className={styles.icon} />
-          </button>
+          </button>*/}
           
           <div className={styles.languageSelector}>
             <button 

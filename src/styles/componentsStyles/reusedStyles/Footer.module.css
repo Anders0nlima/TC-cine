@@ -66,12 +66,16 @@
   grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 10px 20px;
   flex: 1;
+ 
 }
 
 .links_grid a {
   color: #b3b3b3;
   text-decoration: none;
   transition: color 0.3s ease;
+  
+  margin-right: 180px;
+  margin-bottom: 30px;
 }
 
 .links_grid a:hover {
@@ -364,6 +368,11 @@ input[type="email"]:focus {
   .links_grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+  }
+
+  .links_grid a{
+  margin-right: 60px;
+  margin-bottom: 5px;
   }
 
   .newsletter {
