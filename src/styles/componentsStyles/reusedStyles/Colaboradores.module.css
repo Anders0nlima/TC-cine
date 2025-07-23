@@ -285,6 +285,12 @@
   display: block;
 }
 
+.cartazNovo{
+  width: 590px;
+  height: 100%;
+  margin: 0;
+}
+
 .cartazContainer::after {
   content: '';
   position: absolute;
@@ -383,7 +389,7 @@
     padding: 10px;
   }
 
-  .cartaz {
+  .cartazNovo {
     max-height: 400px;
   }
 

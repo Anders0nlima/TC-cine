@@ -10,7 +10,7 @@ export const Cookies = () => {
     return(
         <>
        <NavBar/>
-        <div className={styles.termsContainer} style={{ height: "230vh" }}>
+        <div className={styles.termsContainer} style={{ height: "240vh" }}>
             <div className={styles.logoimagem}>
                 <img src={logo2}  alt="logo" />
             </div>

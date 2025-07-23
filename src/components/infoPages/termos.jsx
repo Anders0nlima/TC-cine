@@ -9,7 +9,7 @@ export const Termos = () => {
     return(
         <>
         <NavBar/>
-        <div className={styles.termsContainer} style={{ height: "200vh" }}>
+        <div className={styles.termsContainer} style={{ height: "220vh" }}>
             <div className={styles.logoimagem}>
                 <img src={logo2}  alt="logo" />
             </div>

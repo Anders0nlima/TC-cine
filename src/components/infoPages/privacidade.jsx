@@ -10,7 +10,7 @@ export const Privacidade = () => {
     return(
         <>
         <NavBar/>
-                <div className={styles.termsContainer} style={{ height: "250vh" }}> 
+                <div className={styles.termsContainer} style={{ height: "260vh" }}> 
                     <div className={styles.logoimagem}>
                         <img src={logo2}  alt="logo" />
                     </div>
