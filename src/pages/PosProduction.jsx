@@ -3,7 +3,7 @@ import { NavBar } from "../components/reused/NavBar"
 import { useLanguage } from "../components/translationComponents/LanguageContext";
 import videopos from "../assets/homeMedia/homenavbar/tcVideo.mp4" 
 import cartazfilme2 from "../assets/posProductionMedia/posternovo1.png";
-import videoposBase from "../assets/PosProductionMedia/videopos.mp4"
+import videoposBase from "../assets/homeMedia/homenavbar/tcVideo.mp4"
 import imagemcartaz1 from "../assets/posProductionMedia/cartazimagem1.jpg"
 import imagem5 from "../assets/posProductionMedia/imagem5.jpg"
 import styles from "../styles/pagesStyles/PosProduction.module.css"
