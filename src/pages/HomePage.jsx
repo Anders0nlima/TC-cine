@@ -6,8 +6,9 @@ import { HomePrePos } from "../componentsHomepage/HomePrePos"
 
 import styles from "../styles/pagesStyles/HomePage.module.css"
 
-import imagem10 from "../assets/homeMedia/homenavbar/imagem10.jpg"
-import imagem1 from "../assets/homeMedia/homenavbar/imagem1.jpg"
+import imagem10 from "../assets/homeMedia/homenavbar/imgcartazat.png"
+import imagem1 from "../assets/homeMedia/homenavbar/imgcartazat.png"
+
 import InsightPos from "../componentsHomepage/InsightPos"
 import Footer from "../components/reused/Footer"
 

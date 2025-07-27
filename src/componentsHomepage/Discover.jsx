@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import styles from '../styles/componentsStyles/homepageStyles/Discover.module.css';
-import imagem1 from "../assets/homeMedia/homenavbar/imagem9.jpg";
-import imagem2 from "../assets/homeMedia/homenavbar/imagem7.jpg";
+import imagem1 from "../assets/homeMedia/homenavbar/homedisc1.png";
+import imagem2 from "../assets/homeMedia/homenavbar/homedisc1.png";
 
 import { BotaoGeral } from '../components/reused/BotaoGeral';
 import {DescubraOpc} from '../componentsHomepage/DescubraOpc';
