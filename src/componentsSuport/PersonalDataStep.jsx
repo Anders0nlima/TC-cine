@@ -10,11 +10,11 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
   const [isValid, setIsValid] = useState(false);
   const [phoneDisplay, setPhoneDisplay] = useState('');
 
-  // Função para formatar o telefone como (XX) XXXXX-XXXX
-  const formatPhone = (input) => {
+  // Função para formatar o telefone (ainda no padrão BR, opcionalmente remova)
+  {/*const formatPhone = (input) => {
     const numbers = input.replace(/\D/g, '');
     let formatted = '';
-    
+
     if (numbers.length > 0) {
       formatted = `(${numbers.substring(0, 2)}`;
     }
@@ -24,23 +24,23 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
     if (numbers.length > 7) {
       formatted += `-${numbers.substring(7, 11)}`;
     }
-    
+
     return formatted;
-  };
+  };*/}
 
   // Manipulador de mudança para o campo de telefone
   const handlePhoneChange = (e) => {
     const input = e.target.value;
     const numbers = input.replace(/\D/g, '');
-    
+
     // Aplica a máscara visual
-    setPhoneDisplay(formatPhone(input));
-    
-    // Atualiza o formData com apenas números (11 dígitos)
+    //setPhoneDisplay(formatPhone(input));
+
+    // Atualiza o formData com todos os números (sem limitar)
     handleChange({
       target: {
         name: 'telefone',
-        value: numbers.substring(0, 11) // Limita a 11 dígitos
+        value: numbers.substring(0, 20)
       }
     });
   };
@@ -50,8 +50,8 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
     const valid = (
       formData.nome?.trim() !== '' &&
       formData.email?.trim() !== '' &&
-      validateEmail(formData.email) &&
-      formData.telefone?.length === 11 // Exige 11 dígitos
+      validateEmail(formData.email)
+      // Telefone é opcional
     );
     setIsValid(valid);
   }, [formData]);
@@ -109,15 +109,11 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
             type="tel"
             id="telefone"
             name="telefone"
-            value={phoneDisplay}
+            //value={phoneDisplay}
             onChange={handlePhoneChange}
             placeholder="(...) ..."
-            maxLength={15} // (XX) XXXXX-XXXX = 15 caracteres
-            required
+            maxLength={20} // Aumentado para suportar formatos internacionais
           />
-          {formData.telefone && formData.telefone.length !== 11 && (
-            <p className={styles.error_message}>{t("suporte.pDMsgT")}</p>
-          )}
         </div>
 
         <div className={styles.form_group}>
@@ -130,7 +126,7 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
             />
             {t("suporte.pDEmpresa")}
           </label>
-          
+
           {formData.temEmpresa && (
             <div className={styles.form_group}>
               <label htmlFor="nomeEmpresa">{t("suporte.pDNomeEmpresa")}</label>
@@ -146,17 +142,17 @@ export default function PersonalDataStep({ formData, handleChange, nextStep }) {
         </div>
 
         <div className={styles.form_actions}>
-            <button
-             type="submit"
-             className={`${styles.novoBotao} ${!isValid ? styles.disabled : ''}`}
-             disabled={!isValid}
-            >
-           <div className={styles.amareloWrapper}>
-           <FontAwesomeIcon icon={faChevronRight} className={styles.novoIcone} />
-           </div>
-           <span className={styles.novoTexto}><strong>{t("suporte.pDBotao")}</strong></span>
-           </button>
-       </div>
+          <button
+            type="submit"
+            className={`${styles.novoBotao} ${!isValid ? styles.disabled : ''}`}
+            disabled={!isValid}
+          >
+            <div className={styles.amareloWrapper}>
+              <FontAwesomeIcon icon={faChevronRight} className={styles.novoIcone} />
+            </div>
+            <span className={styles.novoTexto}><strong>{t("suporte.pDBotao")}</strong></span>
+          </button>
+        </div>
       </form>
     </div>
   );

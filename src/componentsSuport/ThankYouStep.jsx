@@ -7,7 +7,7 @@ import { useLanguage } from '../components/translationComponents/LanguageContext
 export default function ThankYouStep() {
   const { t } = useLanguage();
   const handleGoHome = () => {
-    window.location.href = '/TC-cine'; 
+    window.location.href = '/'; 
   };
 
   return (

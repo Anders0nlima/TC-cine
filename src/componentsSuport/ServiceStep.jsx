@@ -82,7 +82,7 @@ export default function ServicesStep({ formData, handleChange, nextStep, prevSte
             {showServicos && (
               <div className={`${styles.dropdown_options} ${styles.dropdown_container}`}>
                 <div className={styles.dropdown_content}>
-                  {[t("suporte.sSServicoUm"), t("suporte.sSServicoDois"), t("suporte.sSServicoTres"), t("suporte.sSServicoQuatro"), t("suporte.sSServicoCinco"), t("suporte.sSServicoSeis"), t("suporte.sSServicoSete")].map(option => (
+                  {[t("suporte.sSServicoUm"), t("suporte.sSServicoDois"), t("suporte.sSServicoTres"), t("suporte.sSServicoQuatro"), t("suporte.sSServicoCinco"), t("suporte.sSServicoSeis")].map(option => (
                     <div key={option} className={styles.checkbox_item}>
                       <input
                         type="checkbox"
@@ -120,7 +120,7 @@ export default function ServicesStep({ formData, handleChange, nextStep, prevSte
             {showProdutos && (
               <div className={`${styles.dropdown_options} ${styles.dropdown_container}`}>
                 <div className={styles.dropdown_content}>
-                  {[t("suporte.sSProdutoUm"), t("suporte.sSProdutoDois"), t("suporte.sSProdutoTres")].map(option => (
+                  {[t("suporte.sSProdutoUm"), t("suporte.sSProdutoDois"), t("suporte.sSProdutoTres"), t("suporte.sSProdutoQuatro")].map(option => (
                     <div key={option} className={styles.checkbox_item}>
                       <input
                         type="checkbox"

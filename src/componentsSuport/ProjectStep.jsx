@@ -48,6 +48,23 @@ export default function ProjectStep({
     return () => document.removeEventListener('click', handleClickOutside);
   }, [showMidias]);
 
+  // ✅ NOVO useEffect: inscreve o usuário ao marcar notificações
+  useEffect(() => {
+    if (formData.notificacoes && formData.email) {
+      console.log(`Inscrevendo ${formData.email} para notificações`);
+      
+      // Exemplo real:
+      // fetch('/api/subscribe', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email: formData.email })
+      // })
+      // .then(res => res.json())
+      // .then(data => console.log("Inscrição confirmada", data))
+      // .catch(err => console.error("Erro ao inscrever", err));
+    }
+  }, [formData.notificacoes, formData.email]);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
@@ -67,10 +84,8 @@ export default function ProjectStep({
       _replyto: formData.email
     };
 
-    // Primeiro envia para o Formspree
     await handleFormspreeSubmit(formDataToSend);
     
-    // Depois chama o handler do pai (se necessário)
     if (parentHandleSubmit) {
       parentHandleSubmit(e);
     }
@@ -163,12 +178,12 @@ export default function ProjectStep({
         {/* Feedback Opcional */}
         <div className={styles.form_group}>
           <label className={styles.checkbox_item}>
-            <input
+            {/*<input
               type="checkbox"
               checked={showFeedback}
               onChange={() => setShowFeedback(!showFeedback)}
             />
-            {t("suporte.pSFeedBack")}
+            {t("suporte.pSFeedBack")}*/}
           </label>
           
           {showFeedback && (
