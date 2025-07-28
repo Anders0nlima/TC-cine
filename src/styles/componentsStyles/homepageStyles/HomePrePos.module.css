@@ -37,7 +37,6 @@
   position: sticky;
   top: 20px;
   align-self: flex-start;
-  height: 100%;
 }
 
 /* Estilos do cabeçalho */
@@ -242,6 +241,13 @@
 }
 
 /* Cartaz Styles */
+.cartazNovo{
+  width: 400px; /*590*/
+  height: auto;
+  object-fit: contain;
+  
+}
+
 .cartazWrapper {
   display: flex;
   flex-direction: column;

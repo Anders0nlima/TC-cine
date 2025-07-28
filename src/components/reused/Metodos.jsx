@@ -5,6 +5,7 @@ import styles from "../../styles/componentsStyles/reusedStyles/Metodos.module.cs
 import video1 from "../../assets/productionMedia/video1.mp4";
 import logoCine3 from "../../assets/productionMedia/logoCine3.png";
 import { getConteudos } from "../conteudoMetodo/MetodosConteudos";
+import logo3 from "../../assets/homeMedia/homenavbar/logoCine3.png"
 
 const ConteudoSeguro = ({ conteudo, className }) => {
   const conteudoAtual = conteudo || {
@@ -16,6 +17,7 @@ const ConteudoSeguro = ({ conteudo, className }) => {
   return (
     <div className={className}>
       <div className={styles.textosContainer}>
+        <img src={logo3} alt="logo" className={styles.logoimg}/>
         <h2 className={styles.titulo}>{conteudoAtual.titulo}</h2>
         <p className={styles.texto}>{conteudoAtual.texto}</p>
       </div>

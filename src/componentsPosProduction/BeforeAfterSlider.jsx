@@ -9,34 +9,41 @@ import depois3 from "../assets/posProductionMedia/depois3.png";
 import thumb1 from "../assets/posProductionMedia/thumb1.png";
 import thumb2 from "../assets/posProductionMedia/thumb2.png";
 import thumb3 from "../assets/posProductionMedia/thumb3.png";
-
 import antes4 from "../assets/posProductionMedia/imgrind1_1.png";
 import depois4 from "../assets/posProductionMedia/imgrind1_2.png";
 import thumb4 from "../assets/posProductionMedia/thumb4.png";
-
 import antes5 from "../assets/posProductionMedia/imgring2_1.png";
 import depois5 from "../assets/posProductionMedia/imgrind2_2.png";
 import thumb5 from "../assets/posProductionMedia/thumb5.png";
+import antes6 from "../assets/posProductionMedia/imgring3_1.png";
+import depois6 from "../assets/posProductionMedia/imgrind3_2.png";
+import thumb6 from "../assets/posProductionMedia/thumb6.png";
+import antes7 from "../assets/posProductionMedia/imgrind7_1.png"
+import depois7 from "../assets/posProductionMedia/imgrind7_2.png"
+
+import antes8 from "../assets/posProductionMedia/imgrind8_1.png"
+import depois8 from "../assets/posProductionMedia/imgrind8_2.png"
+
 
 const BeforeAfterSlider = () => {
   const imagePairs = [
     {
       id: 1,
-      before: antes1, /*semEfeitoImg1*/
-      after: depois1, /*comEfeitoImg1*/
-      thumbnail: thumb1 /*comEfeitoImg1*/
-    },
-    {
-      id: 2,
-      before: antes4, /*semEfeitoImg1*/
-      after: depois4, /*comEfeitoImg1*/
+      before: antes7, /*semEfeitoImg1*/
+      after: depois7, /*comEfeitoImg1*/
       thumbnail: thumb4 /*comEfeitoImg1*/
     },
     {
-      id: 3,
-      before: antes5, /*semEfeitoImg1*/
-      after: depois5, /*comEfeitoImg1*/
+      id: 2,
+      before: antes8, /*semEfeitoImg1*/
+      after: depois8, /*comEfeitoImg1*/
       thumbnail: thumb5 /*comEfeitoImg1*/
+    },
+    {
+      id: 3,
+      before: antes6, /*semEfeitoImg1*/
+      after: depois6, /*comEfeitoImg1*/
+      thumbnail: thumb6 /*comEfeitoImg1*/
     }
   ];
 

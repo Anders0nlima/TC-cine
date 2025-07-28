@@ -3,7 +3,7 @@ import { useLanguage } from "../components/translationComponents/LanguageContext
 import styles from "../styles/pagesStyles/Production.module.css"
 import video1 from "../assets/homeMedia/homenavbar/tcVideo.mp4"
 import videoBase1 from "../assets/productionMedia/video1.mp4"
-import cartazfilme2 from "../assets/posProductionMedia/cartaz1.png"
+import cartazfilme2 from "../assets/posProductionMedia/posternovo2.png"
 import { LandingPage } from "../components/reused/LandingPage";
 import { NavBarRouter } from "../components/reused/NavBarRouter";
 import Colaboradores from "../components/reused/Colaboradores";

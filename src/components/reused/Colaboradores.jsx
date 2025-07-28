@@ -92,7 +92,8 @@ const Colaboradores = ({
       </div>
 
       {/* Cartaz do filme - ocupa 6 colunas */}
-      <div className={styles.cartazWrapper}>
+      {/* antigo cartaz */}
+      {/*<div className={styles.cartazWrapper}>
         <div className={styles.cartazContainer}>
           <img 
             src={filmeCartaz} 
@@ -100,7 +101,19 @@ const Colaboradores = ({
             className={styles.cartaz}
           />
         </div>
-      </div>
+      </div>*/}
+
+      {/* novo cartaz */}
+      <div className={styles.cartazWrapper}>
+        {/*<div className={styles.cartazContainer}>*/}
+          <img 
+            src={filmeCartaz} 
+            alt="Cartaz do Filme" 
+            className={styles.cartazNovo}
+          />
+        </div>
+      {/*</div>*/}
+
     </div>
   </section>
   );

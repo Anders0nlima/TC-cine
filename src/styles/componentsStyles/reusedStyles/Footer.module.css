@@ -66,12 +66,16 @@
   grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 10px 20px;
   flex: 1;
+ 
 }
 
 .links_grid a {
   color: #b3b3b3;
   text-decoration: none;
   transition: color 0.3s ease;
+  
+  margin-right: 180px;
+  margin-bottom: 30px;
 }
 
 .links_grid a:hover {
@@ -129,7 +133,6 @@
   justify-content: space-between; /* ou 'center' para centralizar */
   align-items: center;
   gap: 260px; /* espaço entre os elementos */
-
   border-top: 1px solid #444;
   padding-top: 20px;
 }
@@ -282,6 +285,67 @@
   .social_icons a:nth-child(4):hover { background: #333; }    /* GitHub */
   .social_icons a:nth-child(5):hover { background: #5865F2; } /* Discord */
 
+
+/* Container principal do formulário */
+.form_container {
+  max-width: 350px; /* menor porque está no footer */
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Grupo do formulário */
+.form_group {
+  margin-bottom: 0.8rem;
+}
+
+/* Campo de entrada (email) */
+input[type="email"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Área de ações (botão) */
+.form_actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+/* Botão primário */
+.btn_primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn_primary:hover {
+  background-color: #45a049;
+}
+
+.btn_primary:disabled {
+  background-color: #a3a3a3;
+  cursor: not-allowed;
+}
+
+
 /* Responsivo */
 @media (max-width: 768px) {
   .footer_top {
@@ -303,6 +367,12 @@
 
   .links_grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .links_grid a{
+  margin-right: 60px;
+  margin-bottom: 5px;
   }
 
   .newsletter {
@@ -312,5 +382,18 @@
   .footer_bottom {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
+
+  .form_container {
+    max-width: 100%;
+    padding: 0.8rem;
+  }
+
+  .btn_primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  
 }

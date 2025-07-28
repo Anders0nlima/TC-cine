@@ -88,15 +88,15 @@ export const HomePrePos = ({ items = [] }) => {
             {/* Lado direito */}
             <div className={styles.rightSide}>
               <div className={styles.cartazWrapper}>
-                <div className={styles.cartazContainer}>
+                {/*<div className={styles.cartazContainer}>*/}
                   <img 
                     src={items[currentItem].cartaz} 
                     alt="Cartaz do Filme" 
-                    className={styles.cartaz}
+                    className={styles.cartazNovo}
                   />
-                </div>
+                {/*</div>*/}
                 {/* Indicador de paginação */}
-                 <div className={styles.dotsContainer}>
+                 {/*<div className={styles.dotsContainer}>
                  {items.map((_, index) => (
                   <button
                    key={index}
@@ -104,7 +104,7 @@ export const HomePrePos = ({ items = [] }) => {
                    onClick={() => setCurrentItem(index)}
                   />
                   ))}
-                 </div>
+                 </div>*/}
               </div>
             </div>
           </div>

@@ -121,7 +121,7 @@ export const HomeNavBar = ({ transparent = false }) => {
         </div>
         
        <div className={styles.navbarCenter}> {/*.navbarCenter a.logoLink*/}
-                 <a href="/teste-selo" className={styles.logoLink}>
+                 <a href="/" className={styles.logoLink}>
                  <img 
                    src={logoCine3}
                    alt="Microsoft Logo"
@@ -177,7 +177,7 @@ export const HomeNavBar = ({ transparent = false }) => {
                   </div>
                   <span>English</span>
                 </button>
-                <button 
+                {/*<button 
                   className={`${styles.languageOption} ${language === 'fr' ? styles.selected : ''}`}
                   onClick={() => handleLanguageChange('fr')}
                 >
@@ -203,7 +203,7 @@ export const HomeNavBar = ({ transparent = false }) => {
                     <img src={china2Flag} alt="中文" className={styles.flagImage} />
                   </div>
                   <span>中文</span>
-                </button>
+                </button>*/}
               </div>
             )}
           </div>

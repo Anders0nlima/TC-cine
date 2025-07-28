@@ -125,9 +125,9 @@ const currentLanguage = languageOptions[language] || languageOptions['pt'];
         </div>
         
         <div className={styles.navbarRight}>
-          <button className={`${styles.iconButton} ${styles.searchButton}`}>
+          {/*<button className={`${styles.iconButton} ${styles.searchButton}`}>
             <FontAwesomeIcon icon={faSearch} className={styles.icon} />
-          </button>
+          </button>*/}
           
           <div className={styles.languageSelector}>
             <button 
@@ -168,7 +168,7 @@ const currentLanguage = languageOptions[language] || languageOptions['pt'];
                   </div>
                   <span>English</span>
                 </button>
-                <button 
+                {/*<button 
                   className={`${styles.languageOption} ${language === 'fr' ? styles.selected : ''}`}
                   onClick={() => handleLanguageChange('fr')}
                 >
@@ -194,7 +194,7 @@ const currentLanguage = languageOptions[language] || languageOptions['pt'];
                     <img src={china2Flag} alt="中文" className={styles.flagImage} />
                   </div>
                   <span>中文</span>
-                </button>
+                </button>*/}
               </div>
             )}
           </div>

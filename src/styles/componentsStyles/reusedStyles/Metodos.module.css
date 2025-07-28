@@ -469,13 +469,21 @@
   margin-bottom: 2rem;
 }
 
+.logoimg {
+  display: block;      
+  width: 300px; 
+  margin-bottom: 25px;       
+  height: auto;        
+  margin-left: 0;      
+}
+
 /* Imagem */
 .imagemContainer {
   flex: 0 0 60%;
   max-width: 580px;
   margin: 10px;
   border-radius: 6px;
-  background: #2a2a2a;
+  
   align-self: flex-start;
   position: relative;
   padding: 2px; 
