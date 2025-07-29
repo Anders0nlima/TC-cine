@@ -62,7 +62,7 @@ function Footer() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('https://formspree.io/f/xgvkvrzk', {
+      const response = await fetch('https://formspree.io/f/xblkyowv', {
         method: 'POST',
         body: formData,
         headers: {
