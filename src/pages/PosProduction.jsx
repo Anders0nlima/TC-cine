@@ -4,7 +4,7 @@ import { useLanguage } from "../components/translationComponents/LanguageContext
 import videopos from "../assets/homeMedia/homenavbar/tcVideo.mp4" 
 import cartazfilme2 from "../assets/posProductionMedia/posternovo1.png";
 import videoposBase from "../assets/homeMedia/homenavbar/tcVideo.mp4"
-import imagemcartaz1 from "../assets/posProductionMedia/cartazimagem1.jpg"
+import imagemcartaz1 from "../assets/posProductionMedia/cartazimagem2.png"
 import imagem5 from "../assets/posProductionMedia/imagem5.jpg"
 import styles from "../styles/pagesStyles/PosProduction.module.css"
 import Colaboradores from "../components/reused/Colaboradores";
@@ -128,13 +128,13 @@ export const PosProduction = () => {
                         },
                         {
                             cartazImagem: imagemcartaz1,
-                            cartazTitulo: t("designSonoro.cartazTituloDois"),
-                            cartazDescricao: t("designSonoro.cartazDescricaoDois")
+                            cartazTitulo: t("designSonoro.cartazTituloUm"), //designSonoro.cartazTituloUm
+                            cartazDescricao: t("designSonoro.cartazDescricaoUm") //designSonoro.cartazDescricaoDois
                         },
                         {
                             cartazImagem: imagemcartaz1,
-                            cartazTitulo: t("designSonoro.cartazTituloTres"),
-                            cartazDescricao: t("designSonoro.cartazDescricaoTres")
+                            cartazTitulo: t("designSonoro.cartazTituloUm"), //designSonoro.cartazTituloTres
+                            cartazDescricao: t("designSonoro.cartazDescricaoUm") //designSonoro.cartazDescricaoTres
                         }
                     ]}
                     itensAccordion={[

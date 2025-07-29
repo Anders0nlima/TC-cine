@@ -11,18 +11,21 @@ import thumb2 from "../assets/posProductionMedia/thumb2.png";
 import thumb3 from "../assets/posProductionMedia/thumb3.png";
 import antes4 from "../assets/posProductionMedia/imgrind1_1.png";
 import depois4 from "../assets/posProductionMedia/imgrind1_2.png";
-import thumb4 from "../assets/posProductionMedia/thumb4.png";
 import antes5 from "../assets/posProductionMedia/imgring2_1.png";
 import depois5 from "../assets/posProductionMedia/imgrind2_2.png";
-import thumb5 from "../assets/posProductionMedia/thumb5.png";
-import antes6 from "../assets/posProductionMedia/imgring3_1.png";
-import depois6 from "../assets/posProductionMedia/imgrind3_2.png";
-import thumb6 from "../assets/posProductionMedia/thumb6.png";
-import antes7 from "../assets/posProductionMedia/imgrind7_1.png"
-import depois7 from "../assets/posProductionMedia/imgrind7_2.png"
 
-import antes8 from "../assets/posProductionMedia/imgrind8_1.png"
-import depois8 from "../assets/posProductionMedia/imgrind8_2.png"
+import thumb4 from "../assets/posProductionMedia/thumb4.png";
+import thumb5 from "../assets/posProductionMedia/thumb5.png";
+import thumb6 from "../assets/posProductionMedia/thumb6.png";
+
+import antes6 from "../assets/posProductionMedia/antes6.png"; //imgring3_1.png
+import depois6 from "../assets/posProductionMedia/depois6.png"; //imgrind3_2.png
+
+import antes7 from "../assets/posProductionMedia/antes7.png" //imgrind7_1.png
+import depois7 from "../assets/posProductionMedia/depois7.png" //imgrind7_2.png
+
+import antes8 from "../assets/posProductionMedia/antes8.png" //imgrind8_1.png
+import depois8 from "../assets/posProductionMedia/depois8.png" //imgrind8_2.png
 
 
 const BeforeAfterSlider = () => {

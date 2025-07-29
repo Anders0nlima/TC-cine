@@ -132,7 +132,7 @@
   display: flex;
   justify-content: space-between; /* ou 'center' para centralizar */
   align-items: center;
-  gap: 260px; /* espaço entre os elementos */
+  gap: 200px; /* espaço entre os elementos */
   border-top: 1px solid #444;
   padding-top: 20px;
 }
@@ -144,7 +144,7 @@
 .footer_bottom .copyright{
   /* Espaço maior entre links e copyright */
   color: #b3b3b3;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .footer_bottom a {
