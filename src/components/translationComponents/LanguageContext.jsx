@@ -128,7 +128,7 @@ export const LanguageProvider = ({ children }) => {
         cartazDescricaoTres:"Conte com os melhores proposicionistas da área, e com experiências, possibilitando maior rendimento e otimização da pridução",
         accordionTitleUm:"Imprecione o público com conceitos sonoros originais",
         accodionContentUm:"A equipe TC|CINE de Sound Design atua em parceria com outros departamentos criativos do projeto, estudos acadêmicos e tendências do mercado audiovisual, garantido maior integração e potencializa a imersão",
-        accordionTitleDois:"Trage o público para seu universos com a mixagem",
+        accordionTitleDois:"Leve o público para seu universos com a mixagem",
         accodionContentDois:"A TC|CINE não constroi apenas cenas que impactam pelo visual, mas que podem ser sentidas pela audição. Utilizamos tecnologias de pontas, como mixagem 3D e Áudio Binaural para criar espaços tridimensionais",
         accordionTitleTres:"Eletrize o público com composições originais",
         accodionContentTres:"Na TC|CINE Cada nota é pensada no impacto, ritmo, originalidade e identidade do projeto, tornando a experiência do público inesquecível."
