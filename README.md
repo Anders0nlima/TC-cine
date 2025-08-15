@@ -37,7 +37,8 @@ Esse processo garantiu que o projeto ficasse acessível ao público de forma rá
 
 Este README é apenas um **resumo simplificado** do projeto TCCINE. Caso você tenha interesse em entender com mais profundidade **como a plataforma foi construída**, quais foram as **decisões de desenvolvimento**, os **desafios de implementação**, além de ver **imagens ilustrativas**, **explicações detalhadas** e **diagramas**, recomendo acessar a documentação completa no link abaixo:
 
-👉 **[Clique aqui para acessar o PDF com a documentação completa - em breve -]**
+👉 **[acesso ao PDF com a documentação completa]**[Documentação TCCINE.pdf](https://github.com/user-attachments/files/21797982/Documentacao.TCCINE.pdf)
+
 
 ---
 
