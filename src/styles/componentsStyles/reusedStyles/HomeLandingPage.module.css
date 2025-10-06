@@ -35,6 +35,8 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    /* Transição de opacidade para o efeito de fade suave */
+    transition: opacity 0.5s ease-in-out; 
 }
 
 .videoOverlay {
@@ -47,31 +49,38 @@
     z-index: 1;
 }
 
+/* CORREÇÃO PRINCIPAL: Centralização do Conteúdo (Geral) */
 .heroContent {
-    position: relative;
+    /* Centraliza o bloco na tela */
+    position: absolute; 
+    top: 60%; /* Posiciona o topo em 50% da altura da tela */
+    left: 50%; /* Posiciona a esquerda em 50% da largura da tela */
+    transform: translate(-50%, -50%); /* Ajusta 50% para trás para centralizar o bloco */
+    
+    /* Outros estilos */
     z-index: 2;
     text-align: center;
     color: white;
     padding: 0 1.5rem;
     max-width: 1200px;
-    margin-top: 500px;
+    width: 100%;
 }
 
 .heroTitle {
-    font-size: 6rem;
+    font-size: 3rem;
     font-weight: 580;
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .heroDescription {
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: -4rem; /*botao 3's baixo*/
     color: rgb(192, 192, 192);
     text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Rotação de imaginação */
+/* Rotação de imaginação (mantido) */
 .wordCube {
     display: inline-block;
     position: relative;
@@ -161,7 +170,7 @@
     100% { transform: translateY(100%); opacity: 0; }
 }
 
-/* Botão de assistir */
+/* Botão de assistir (mantido) */
 .watchButton {
     position: absolute;
     right: 2rem;
@@ -189,7 +198,7 @@
     font-size: 0.8rem;
 }
 
-/* Modal do vídeo */
+/* Modal do vídeo (mantido) */
 .videoModal, .videoModalBackdrop {
     position: fixed;
     top: 0;
@@ -243,32 +252,17 @@
     overflow: hidden;
 }
 
-/*novo css dos 3 butoes abaixo*/
-
-/* Adicione esta regra de transição para o background video */
-.backgroundVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    /* Transição de opacidade para o efeito de fade suave */
-    transition: opacity 0.5s ease-in-out; 
-}
-
-/* Classe aplicada durante a troca de vídeo */
+/* Estilos de vídeo e botões de categoria (mantido) */
 .videoFading {
-    opacity: 0.3; /* Define uma opacidade baixa durante a transição */
+    opacity: 0.3;
 }
-
-/* Novos Estilos para os Botões de Categoria */
 .categoryButtonsContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Espaçamento entre os botões */
-    margin-top: 0rem; /* Espaçamento abaixo da descrição */
+    gap: 1.5rem;
     position: absolute;
-    bottom: 0rem; /* Posiciona os botões acima do 'watchButton' */
+    bottom: -180px; /*botao para baixo*/
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -284,7 +278,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 140px; /* Largura mínima para padronizar o tamanho */
+    min-width: 140px;
     text-align: center;
 }
 
@@ -292,142 +286,105 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Estilo para o botão selecionado (ativo) */
 .categoryButton.active {
-    background-color: #ffc107; /* Amarelo como na sua imagem 'Publicidade' */
+    background-color: #ffc107;
     color: #000;
     box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
     transform: translateY(-2px);
 }
 
-/* ... Seu restante do código CSS (media queries, etc.) ... */
+/* O bloco de @media (min-width: 1024px) and (max-width: 1366px) FOI REMOVIDO */
 
-/* Ajuste o watchButton para coexistir com os categoryButtons */
-.watchButton {
-    /* Mantido o seu estilo original: */
-    position: absolute;
-    right: 2rem;
-    bottom: 2rem; /* Já estava em 2rem, vamos manter para ficar alinhado com o container */
-    z-index: 3;
-    /* ... */
-}
+/*==== mobile ===*/
+@media (max-width: 768px) {
+    .landingPageContainer, .heroSection {
+        height: 90vh;
+        min-height: -webkit-fill-available;
+    }
 
-/* Responsividade */
-@media (min-width: 1024px) and (max-width: 1366px) {
     .heroContent {
-        max-width: 750px;
-        margin-top: 360px;
+        top: 55%; 
+        padding: 0 1rem;
+        width: 90%;
+        transform: translate(-50%, -50%);
     }
 
     .heroTitle {
-        font-size: 2.7rem;
-        font-weight: 700;
-        margin-bottom: 30px;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
     }
 
     .heroDescription {
         font-size: 1.1rem;
-        margin-bottom: 80px;
+        margin-bottom: 1.5rem;
     }
 
-}
+    .wordCube {
+        height: 90px;
+        width: 140px;
+        perspective: 150px;
+    }
 
-/*==== mobile ===*/
-@media (max-width: 768px) {
-  .landingPageContainer, .heroSection {
-    height: 90vh;
-    min-height: -webkit-fill-available; /* Para mobile browsers */
-  }
+    .cubeFace {
+        line-height: 30px;
+        font-size: 0.9em;
+    }
 
-  .heroContent {
-    margin-top: 20rem;
-    transform: translateY(-50%);
-    padding: 0 1rem;
-    width: 90%;
-  }
+    .videoOverlay {
+        background: linear-gradient(
+            to bottom, 
+            transparent 0%, 
+            rgba(19, 20, 28, 0.5) 70%, 
+            #13141c 100%
+        );
+    }
 
-  .heroTitle {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
+    .arrowDownContainer {
+        margin-top: 6rem;
+    }
 
-  .heroDescription {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
+    .animatedCircle {
+        width: 40px;
+        height: 40px;
+    }
 
-  .wordCube {
-    height: 90px;
-    width: 140px;
-    perspective: 150px;
-  }
+    .arrowDown {
+        width: 20px;
+        height: 20px;
+    }
 
-  .cubeFace {
-    line-height: 30px;
-    font-size: 0.9em;
-  }
+    .watchButton {
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 
-  .videoOverlay {
-    background: linear-gradient(
-      to bottom, 
-      transparent 0%, 
-      rgba(19, 20, 28, 0.5) 70%, 
-      #13141c 100%
-    );
-  }
+    .categoryButtonsContainer{
+        gap: 0.5em; 
+        margin-bottom: 0;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
-  .arrowDownContainer {
-    margin-top: 6rem;
-  }
+    .categoryButton{
+        padding: 0.6rem 1.5rem;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        min-width: 0px; 
+    }
 
-  .animatedCircle {
-    width: 40px;
-    height: 40px;
-  }
+    .videoModalContent {
+        width: 95%;
+    }
 
-  .arrowDown {
-    width: 20px;
-    height: 20px;
-  }
-
-  .watchButton {
-    right: 1rem;
-    bottom: 0rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .categoryButtonsContainer{
-    gap: 0.5em; /* Espaçamento entre os botões */
-    margin-bottom: -5rem; /* Espaçamento abaixo da descrição */
-    position: absolute;
-    bottom: 0rem; /* Posiciona os botões acima do 'watchButton' */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    
-
-  }
-
-  .categoryButton{
-    padding: 0.6rem 2rem;
-    border-radius: 30px;
-    font-size: 0.6rem;
-    font-weight: 400;
-    min-width: 0px; 
-    
-  }
-
-  
-  .videoModalContent {
-    width: 95%;
-  }
-
-  .closeButton {
-    top: -30px;
-    font-size: 1.2rem;
-  }
+    .closeButton {
+        top: -30px;
+        font-size: 1.2rem;
+    }
 
 }
 
