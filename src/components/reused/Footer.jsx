@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faYoutube, faLinkedinIn, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faFacebook, faLinkedinIn, faTiktok, faXTwitter  } from '@fortawesome/free-brands-svg-icons';
 import styles from '../../styles/componentsStyles/reusedStyles/Footer.module.css';
 import { useLanguage } from '../translationComponents/LanguageContext';
 import logo1 from '../../assets/footerMedia/logofooter2.png'
@@ -180,20 +180,20 @@ function Footer() {
           </form>
           <h4 className={styles.redesSociaisText}>{t("mainFooter.redes")}</h4>
           <div className={styles.social_icons}>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/tccinelabs/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faYoutube} />
+            <a href="https://www.facebook.com/people/Tecnologia-Criativa-Cinematogr%C3%A1fica/61578880891041/?locale=pt_BR" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/tccine-tecnologia-criativa-cinematogr%C3%A1fica/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faGithub} />
+            <a href="https://www.tiktok.com/@tccine" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faTiktok} />
             </a>
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faDiscord} />
+            <a href="https://x.com/TCCINELABS" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faXTwitter} />
             </a>
           </div>
         </div>

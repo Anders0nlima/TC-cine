@@ -12,15 +12,17 @@ export default function FormProgress({ currentStep, allStepsCompleted }) {
           <div className={`${styles.stepLine} ${allStepsCompleted || currentStep > 1 ? styles.completed : ''}`}></div>
         </div>
 
-        <div className={styles.stepDivider}>|</div>
+       
+        {/* <div className={styles.stepDivider}>|</div>
 
-        {/* Passo 2 */}
+        ----Passo 2--- 
         <div className={`${styles.progressStep} ${currentStep >= 2 ? styles.completed : ''}`}>
           <div className={styles.stepTitle}>{t("suporte.progressDois")}</div>
           <div className={`${styles.stepLine} ${allStepsCompleted || currentStep > 2 ? styles.completed : ''}`}></div>
         </div>
 
-        <div className={styles.stepDivider}>|</div>
+        <div className={styles.stepDivider}>|</div> */}
+        
 
         {/* Passo 3 */}
         <div className={`${styles.progressStep} ${currentStep >= 3 ? styles.completed : ''}`}>

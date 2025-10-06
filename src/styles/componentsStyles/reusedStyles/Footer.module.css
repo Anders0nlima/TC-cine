@@ -280,10 +280,10 @@
   
   /* Ícones individuais com cores de marca */
   .social_icons a:nth-child(1):hover { background: #E1306C; } /* Instagram */
-  .social_icons a:nth-child(2):hover { background: #FF0000; } /* YouTube */
+  .social_icons a:nth-child(2):hover { background: #3b5998; } /* YouTube */
   .social_icons a:nth-child(3):hover { background: #0077B5; } /* LinkedIn */
-  .social_icons a:nth-child(4):hover { background: #333; }    /* GitHub */
-  .social_icons a:nth-child(5):hover { background: #5865F2; } /* Discord */
+  .social_icons a:nth-child(4):hover { background: #ff0050; } /* GitHub */
+  .social_icons a:nth-child(5):hover { background: #333333; } /* Discord */
 
 
 /* Container principal do formulário */

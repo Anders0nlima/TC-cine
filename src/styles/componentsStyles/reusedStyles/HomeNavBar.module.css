@@ -220,27 +220,32 @@ body.noScroll {
 /* ===== Responsividade - Mobile ===== */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem;
+    padding: 0.1rem; /* 0.5 */
     height: 50px;
   }
+
+  .navbarLeft, 
+  .navbarRight {
+    flex-shrink: 0; 
+  }
+
+  .navbarRight {
+      justify-content: flex-end; /* Garante que botões fiquem na extrema direita */
+  }
+
 
   .navbarCenter {
     position: static;
     transform: none;
     left: auto;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 20px;
     margin-left: 15px;
-    flex-grow: 0;
+    flex-grow: 1;
   }
 
   .navbarCenter a.logoLink {
     margin-top: 0;
-  }
-
-  .navbarLeft, 
-  .navbarRight {
-    flex: 1;
   }
 
   .navbarRight {

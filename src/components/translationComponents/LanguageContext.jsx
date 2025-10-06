@@ -212,7 +212,10 @@ export const LanguageProvider = ({ children }) => {
       homeLandingPage:{
         titleText: "Torne sua imaginação real",
         descriptionText: "A nova forma de produzir conteúdo cinematográfico",
-        watchButtonText: "Assistir"
+        watchButtonText: "Assistir",
+        cat1: "Publicidade",
+        cat2: "Documentário ",
+        cat3: "Ficção",
       },
       homeDescubraPage:{
         titulo: "Descubra a TC|CINE",
@@ -221,14 +224,14 @@ export const LanguageProvider = ({ children }) => {
         contuedoDescricaoUm: "A TC|CINE tem o compromisso com a inovação criativa no setor audiovisual Brasileiro.",
         conteudoTituloDois: "TECNOLOGIA AUDIOVISUAL",
         contuedoDescricaoDois: "A TC|CINE estuda e aplica novas tecnicas e métodos para a qualidade estrutural, visual, e sonora em seus resultados.",
-        bottonUm: "Produtora",
-        bottonDois: "Coprodutora",
+        bottonUm: "Publicidade",
+        bottonDois: "Cinema",
         contentTitleUm: "Ideial para produtos autorais",
-        contentDescriptionUm: "Com uma equipe experiente e processos eficientes, a TC|CINE participa de todas as etapas da produção audiovisual (Pre & Produção e Pós-produção), desde grandes projetos até produções com orçamentos menores. Também oferecemos consultorias técnicas e criativas para o desenvolvimento de roteiros, planejamento e execução de produções.",
+        contentDescriptionUm: "Transforme seu negócio ou produto em uma verdadeira experiência cinematográfica. Nossa equipe cria campanhas audiovisuais que destacam sua identidade, elevam sua marca ao nível Premium e despertam emoção no público.Clique em Saiba Mais e descubra como podemos impulsionar sua presença no mercado com publicidade de impacto.",
         contentTitleDoisB: "Vá mais longe",
         contentTitleDoisR: "em Equipe!",
-        contentDescriptionDois: "A TC|CINE é parceira de produtoras independentes que buscam suporte em etapas específicas de seus projetos. Atuamos com flexibilidade em pré-produção, produção e pós-produção, oferecendo soluções personalizadas que elevam a qualidade e o impacto de cada obra. Conheça todos os nossos serviços e descubra como podemos transformar ideias em narrativas audiovisuais de alto padrão.",
-        botaoGeral: "Contrate",
+        contentDescriptionDois: "Levamos sua produção para outro nível, seja em televisão, documentários ou cinema. Nossa equipe transforma ideias em narrativas audiovisuais impactantes, capazes de emocionar, informar e envolver o público do começo ao fim.Clique em Saiba Mais e descubra como transformar sua obra em uma experiência cinematográfica inesquecível.",
+        botaoGeral: "Saiba Mais",
       },
       homePrePosPage:{
         titleUmP:"PRÉ & PRODUÇÃO AUDIOVISUAL",
@@ -737,7 +740,10 @@ export const LanguageProvider = ({ children }) => {
       homeLandingPage:{
         titleText: "Turn your imagination into reality",
         descriptionText: "The new way of producing cinematic content",
-        watchButtonText: "Watch"
+        watchButtonText: "Watch",
+        cat1: "Advertising",
+        cat2: "Documentary",
+        cat3: "Fiction",
       },
       homeDescubraPage:{
         titulo: "Discover TC|CINE",
@@ -746,14 +752,14 @@ export const LanguageProvider = ({ children }) => {
         contuedoDescricaoUm: "TC|CINE is committed to creative innovation in the Brazilian audiovisual sector.",
         conteudoTituloDois: "AUDIOVISUAL TECHNOLOGY",
         contuedoDescricaoDois: "TC|CINE studies and applies new techniques and methods for structural, visual, and sound quality in its results.",
-        bottonUm: "Producer",
-        bottonDois: "Co-producer",
+        bottonUm: "Advertising",
+        bottonDois: "Cinema",
         contentTitleUm: "Ideal for original productions",
-        contentDescriptionUm: "With an experienced team and efficient processes, TC|CINE participates in all stages of audiovisual production (Pre-Production and Post-Production), from large projects to productions with smaller budgets. We also offer technical and creative consulting for script development, planning and production execution.",
+        contentDescriptionUm: "Transform your business or product into a true cinematic experience. Our team creates audiovisual campaigns that highlight your identity, elevate your brand to a premium level, and spark emotion in your audience. Click Learn More and discover how we can boost your market presence with impactful advertising.",
         contentTitleDoisB: "Go further,",
         contentTitleDoisR: "together!",
-        contentDescriptionDois: "TC|CINE partners with independent production companies seeking support at specific stages of their projects. We work flexibly in pre-production, production and post-production, offering customized solutions that enhance the quality and impact of each project. Learn about all of our services and discover how we can transform ideas into high-quality audiovisual narratives.",
-        botaoGeral: "Hire",
+        contentDescriptionDois: "We take your production to the next level, whether for television, documentaries, or film. Our team transforms ideas into impactful audiovisual narratives capable of moving, informing, and engaging audiences from start to finish. Click Learn More and discover how we can transform your work into an unforgettable cinematic experience.",
+        botaoGeral: "See More",
       },
       homePrePosPage:{
         titleUmP:"PRE & AUDIOVISUAL PRODUCTION",

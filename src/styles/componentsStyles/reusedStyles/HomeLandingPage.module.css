@@ -41,7 +41,7 @@
     background: linear-gradient(
         to bottom, 
         transparent 0%, 
-        rgba(19, 20, 28, 0.3) 85%, 
+        rgba(19, 20, 28, 0.055) 85%,
         #13141c 100%
     );
     z-index: 1;
@@ -243,21 +243,93 @@
     overflow: hidden;
 }
 
+/*novo css dos 3 butoes abaixo*/
+
+/* Adicione esta regra de transição para o background video */
+.backgroundVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Transição de opacidade para o efeito de fade suave */
+    transition: opacity 0.5s ease-in-out; 
+}
+
+/* Classe aplicada durante a troca de vídeo */
+.videoFading {
+    opacity: 0.3; /* Define uma opacidade baixa durante a transição */
+}
+
+/* Novos Estilos para os Botões de Categoria */
+.categoryButtonsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Espaçamento entre os botões */
+    margin-top: 0rem; /* Espaçamento abaixo da descrição */
+    position: absolute;
+    bottom: 0rem; /* Posiciona os botões acima do 'watchButton' */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.categoryButton {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px; /* Largura mínima para padronizar o tamanho */
+    text-align: center;
+}
+
+.categoryButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo para o botão selecionado (ativo) */
+.categoryButton.active {
+    background-color: #ffc107; /* Amarelo como na sua imagem 'Publicidade' */
+    color: #000;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ... Seu restante do código CSS (media queries, etc.) ... */
+
+/* Ajuste o watchButton para coexistir com os categoryButtons */
+.watchButton {
+    /* Mantido o seu estilo original: */
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem; /* Já estava em 2rem, vamos manter para ficar alinhado com o container */
+    z-index: 3;
+    /* ... */
+}
+
 /* Responsividade */
 @media (min-width: 1024px) and (max-width: 1366px) {
     .heroContent {
         max-width: 750px;
-        margin-top: 300px;
+        margin-top: 360px;
     }
 
     .heroTitle {
-        font-size: 3.5rem;
+        font-size: 2.7rem;
         font-weight: 700;
+        margin-bottom: 30px;
     }
 
     .heroDescription {
         font-size: 1.1rem;
+        margin-bottom: 80px;
     }
+
 }
 
 /*==== mobile ===*/
@@ -326,6 +398,28 @@
     font-size: 0.9rem;
   }
 
+  .categoryButtonsContainer{
+    gap: 0.5em; /* Espaçamento entre os botões */
+    margin-bottom: -5rem; /* Espaçamento abaixo da descrição */
+    position: absolute;
+    bottom: 0rem; /* Posiciona os botões acima do 'watchButton' */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    
+
+  }
+
+  .categoryButton{
+    padding: 0.6rem 2rem;
+    border-radius: 30px;
+    font-size: 0.6rem;
+    font-weight: 400;
+    min-width: 0px; 
+    
+  }
+
+  
   .videoModalContent {
     width: 95%;
   }

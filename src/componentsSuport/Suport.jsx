@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useForm } from '@formspree/react';
 import styles from "../styles/componentsStyles/suportStyles/SuporteComp.module.css";
 import PersonalDataStep from './PersonalDataStep';
-import ServicesStep from './ServiceStep';
+//import ServicesStep from './ServiceStep';
 import ProjectStep from './ProjectStep';
 import FormProgress from './FormProgress';
 import ThankYouStep from './ThankYouStep';
@@ -19,9 +19,9 @@ export default function Suport() {
     nomeEmpresa: '',
     
     // Serviços e Produtos
-    servicos: [],
-    produtos: [],
-    servicoPersonalizado: '',
+    //servicos: [],
+    //produtos: [],
+    //servicoPersonalizado: '',
     
     // Descrição do Projeto
     midias: [],
@@ -65,9 +65,9 @@ export default function Suport() {
       email: formData.email,
       telefone: formData.telefone,
       empresa: formData.temEmpresa ? formData.nomeEmpresa : '',
-      servicos: formData.servicos.join(', '),
-      produtos: formData.produtos.join(', '),
-      servicoPersonalizado: formData.servicoPersonalizado,
+      //servicos: formData.servicos.join(', '),
+      //produtos: formData.produtos.join(', '),
+      //servicoPersonalizado: formData.servicoPersonalizado,
       midias: formData.midias.join(', '),
       descricaoProjeto: formData.descricaoProjeto,
       notificacoes: formData.notificacoes ? 'Sim' : 'Não',
@@ -85,15 +85,15 @@ export default function Suport() {
                  handleChange={handleChange} 
                  nextStep={nextStep} 
                />;
-      case 2:
-        return <ServicesStep 
-                 formData={formData} 
-                 handleChange={handleChange}
-                 handleCheckboxChange={handleCheckboxChange}
-                 nextStep={nextStep} 
-                 prevStep={prevStep} 
-               />;
-      case 3:
+      //case 2:
+        //return <ServicesStep 
+                 //formData={formData} 
+                 //handleChange={handleChange}
+                 //handleCheckboxChange={handleCheckboxChange}
+                 //nextStep={nextStep} 
+                 //prevStep={prevStep} 
+               ///>;
+      case 2: //3
         return <ProjectStep
                  formData={formData} 
                  handleChange={handleChange}
@@ -112,7 +112,7 @@ export default function Suport() {
 
   return (
     <div className={styles.form_container}>
-      {step <= 3 && (
+      {step <= 2 && ( //3
         <FormProgress 
           currentStep={step}
           allStepsCompleted={allStepsCompleted || state.succeeded}
