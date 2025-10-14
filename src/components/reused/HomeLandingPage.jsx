@@ -4,8 +4,8 @@ import { faPlay, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../styles/componentsStyles/reusedStyles/HomeLandingPage.module.css';
 
 // Importe seus 3 vídeos aqui. Substitua pelos caminhos reais.
-import video1 from "../../assets/homeMedia/homenavbar/Timeline2.mov"; // Exemplo: Publicidade Timeline2.mov
-import video2 from "../../assets/homeMedia/homenavbar/doc2.mov"; // Exemplo: Documentário  Trailertccine.mov
+import video1 from "../../assets/homeMedia/homenavbar/publi.mov"; // Exemplo: Publicidade Timeline2.mov
+import video2 from "../../assets/homeMedia/homenavbar/doc.mov"; // Exemplo: Documentário  Trailertccine.mov
 import video3 from "../../assets/homeMedia/homenavbar/fic2.mov"; // Exemplo: Ficção
 
 import { useLanguage } from '../translationComponents/LanguageContext';
