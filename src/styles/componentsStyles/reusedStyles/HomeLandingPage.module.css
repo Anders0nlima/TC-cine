@@ -254,7 +254,7 @@
 
 /* Estilos de vídeo e botões de categoria (mantido) */
 .videoFading {
-    opacity: 0.3;
+    opacity: 1;  /*backgraud*/
 }
 .categoryButtonsContainer {
     display: flex;

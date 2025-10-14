@@ -5,7 +5,7 @@ import styles from '../../styles/componentsStyles/reusedStyles/HomeLandingPage.m
 
 // Importe seus 3 vídeos aqui. Substitua pelos caminhos reais.
 import video1 from "../../assets/homeMedia/homenavbar/Timeline2.mov"; // Exemplo: Publicidade Timeline2.mov
-import video2 from "../../assets/homeMedia/homenavbar/doc.mov"; // Exemplo: Documentário  Trailertccine.mov
+import video2 from "../../assets/homeMedia/homenavbar/doc2.mov"; // Exemplo: Documentário  Trailertccine.mov
 import video3 from "../../assets/homeMedia/homenavbar/fic2.mov"; // Exemplo: Ficção
 
 import { useLanguage } from '../translationComponents/LanguageContext';
@@ -183,7 +183,7 @@ export const HomeLandingPage = ({
                     <video
                         ref={videoRef}
                         key={currentVideoSrc}
-                        className={`${styles.backgroundVideo} ${styles.videoFading}`}
+                        className={`${styles.backgroundVideo} ${styles.videoFading}`} 
                         src={currentVideoSrc}
                         loop
                         muted
