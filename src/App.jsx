@@ -1,6 +1,6 @@
 import './App.css'
 import AppRoutes from './routes'
-import { LanguageProvider } from './components/translationComponents/LanguageContext'
+import { LanguageProvider } from './components/context/LanguageContext'
 import { Analytics } from '@vercel/analytics/react';
 
 function App() {

@@ -1,712 +1,265 @@
 .section {
-  padding: 4rem 9rem;
-  background-color: #13141c;
+  padding: 0;
+  background-color: transparent;
   color: white;
-  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .primeiroContudo {
-  max-width: 1200px;
-  margin: 0 auto 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.quartoContudo {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
   width: 100%;
-  text-align: center; /* Alterado para center */
+}
+
+/* Dashboard Content Container */
+.conteudoContainer {
+  background: #1a1a1e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  min-height: 550px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.textosContainer {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center;
+  gap: 25px;
 }
 
-.primeiroContudo h4 {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.5rem;
+.cardMetaLabel {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
+  width: fit-content;
 }
 
-.primeiroContudo h1 {
-  font-size: 45px;
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.2;
-  background: linear-gradient(90deg, #ffffff, #e0e0e0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative; /* Adicionado para posicionar a linha */
-  padding-bottom: 1rem; /* Espaço para a linha */
+.logoimg {
+  width: 80px;
+  margin-bottom: -10px;
+  opacity: 0.8;
 }
 
-.primeiroContudo h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%; /* Largura da linha */
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(255, 255, 255, 0.3) 20%, 
-    rgba(255, 255, 255, 0.6) 50%, 
-    rgba(255, 255, 255, 0.3) 80%, 
-    transparent 100%);
+.titulo {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
 }
 
-.primeiroContudo p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 800px;
-  margin-bottom: 2rem;
+.texto {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
 }
 
-
-.segundoContudo {
-  position: relative;
-  max-width: 1200px;
-  max-height: 350px;
-  width: 100%;
-  margin: 2rem auto; /* Reduzi a margem para diminuir espaço */
-  height: 400px; /* Altura reduzida */
-  background-color: #1a1b24;
-  border-radius: 10px;
-  overflow: hidden;
+.chipsContainer {
   display: flex;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.segundoContudo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: 10px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.144),
-    rgba(255, 255, 255, 0.05)
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  z-index: 1;
-  pointer-events: none;
+.chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 20px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.videoModal {
-  position: fixed;
-  top: 0;
-  left: 0;
+.chipLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.chipValue {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.imagemContainer {
+  border-radius: 20px;
+  overflow: hidden;
   width: 100%;
   height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.conteudoContainer:hover .imagem {
+  transform: scale(1.05);
+}
+
+/* Additional Content */
+.terceiroContudo {
+  margin-top: 50px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.terceiroContudo h3 {
+  color: #d4af37;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.watchButton {
+  margin-top: 20px;
+  padding: 15px 35px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.watchButton:hover {
+  background: #d4af37;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Video Modal */
+.videoModal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
 }
 
 .videoModalBackdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
 }
 
 .videoModalContainer {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  max-width: 90%;
-  width: fit-content;
-  margin: 80px auto 0;
   position: relative;
-  z-index: 1001;
-}
-
-.videoModalContent {
-  background-color: #000;
-  padding: 20px;
-  border-radius: 4px;
-  flex-grow: 1;
+  width: 90%;
+  max-width: 1000px;
+  aspect-ratio: 16/9;
 }
 
 .modalVideoPlayer {
   width: 100%;
-  max-width: 1200px;
-  height: auto;
-  max-height: calc(100vh - 160px);
-  display: block;
+  height: 100%;
+  border-radius: 12px;
 }
 
 .closeButton {
-  position: relative;
-    top: -10px;
-    right: 0;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.closeButton:hover {
- transform: rotate(90deg);
-}
-
-.closeIcon {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
-
-/* Garante que o vídeo principal toque automaticamente */
-.videoPlayer {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.videoContainer {
-  padding: 15px;
   position: absolute;
+  top: -60px;
   right: 0;
-  width: 60%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0 10px 10px 0;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
-
-.gradientOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    to right, 
-    rgba(26, 27, 36, 1) 0%,
-    rgba(26, 27, 36, 1) 5%,
-    rgba(26, 27, 36, 0.99) 7%,
-    rgba(26, 27, 36, 0.97) 10%,
-    rgba(26, 27, 36, 0.95) 13%,
-    rgba(26, 27, 36, 0.92) 16%,
-    rgba(26, 27, 36, 0.88) 20%,
-    rgba(26, 27, 36, 0.84) 25%,
-    rgba(26, 27, 36, 0.79) 30%,
-    rgba(26, 27, 36, 0.72) 35%,
-    rgba(26, 27, 36, 0.65) 40%,
-    rgba(26, 27, 36, 0.57) 45%,
-    rgba(26, 27, 36, 0.48) 50%,
-    rgba(26, 27, 36, 0.39) 55%,
-    rgba(26, 27, 36, 0.31) 60%,
-    rgba(26, 27, 36, 0.23) 65%,
-    rgba(26, 27, 36, 0.16) 70%,
-    rgba(26, 27, 36, 0.11) 75%,
-    rgba(26, 27, 36, 0.07) 80%,
-    rgba(26, 27, 36, 0.04) 85%,
-    rgba(26, 27, 36, 0.02) 90%,
-    rgba(26, 27, 36, 0.01) 95%,
-    rgba(26, 27, 36, 0) 100%
-  );
-  z-index: 1;
-}
-
-.videoPlayer {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  
-}
-
-.contentLeft {
-  position: absolute;
-  left: 5%;
-  top: 30%;
-  transform: translateY(-50%);
-  width: 40%;
-  z-index: 2;
-  color: white;
-}
-
-.companyName {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, #ffffff, #e0e0e0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.logoMetodo{
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-.companyDescription {
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-}
-
-.companyText {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-}
-
-.playButton {
-  align-items: center;
-  border: 1px solid;
-  border-color: #d9d9d9;
-  border-radius: 95px;
-  display: flex;
-  gap: 15px;
-  height: 44px;
-  padding: 6px 15px;
-  position: absolute;
-  left: 5%;
-  bottom: 10%;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #d9d9d9;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-}
-
-.playButton:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-  transform: scale(1.05);
-}
-
-.playIcon {
-  height: 20px;
-  width: 20px;
-}
-
-/*terceiroContudo*/
-
-.terceiroContudo h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #000; /* Texto preto */
-  background-color: #f8c537; /* Cor de fundo amarela */
-  padding: 0.2rem 2.6rem;
-  border-radius: 30px; /* Bordas arredondadas */
-  margin: 5rem auto 1.5rem; /* Centraliza horizontalmente */
-  display: block; /* Mudamos para block para centralizar */
-  width: fit-content; /* Largura conforme conteúdo */
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: default; /* Ou pointer se for clicável */
+  background: none;
   border: none;
-  position: relative;
-}
-.terceiroContudo p{
-  text-align: center;
-  padding-bottom: 60px;
-  margin: 0px 120px 0px 120px;
-}
-
-
-/*quartoContudo*/
-
-/* Estrutura Principal */
-.quartoContudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Navbar */
-.navbarContainer {
-  width: fit-content;
-  min-width: 400px;
-  background-color: white;
-  border-top: 1px solid #333;
-  border-radius: 10px 10px 0 0;
-  margin: 60px auto 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  height: 60px;
-  margin: 0 auto;
-  max-width: 1100px;
-}
-
-.itemNav {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.botaoNav {
-  padding: 0 30px;
-  flex: 1;
-  justify-content: center;
-  border: none;
-  background: transparent;
-  color: #000;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  transition: all 0.3s ease;
 }
 
-.botaoNav:hover {
-  color: #4dabf7;
-  transform: translateY(-2px);
-}
-
-.botaoNav:active {
-  transform: translateY(1px);
-}
-
-
-.botaoNav.ativo::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #FFD700;
-  border-radius: 3px 3px 0 0;
-  animation: aparecer 0.3s ease-out;
-}
-
-.separador {
-  width: 1px;
-  height: 100%;
-  background: #333;
-  margin: 0 5px;
-}
-
-/* Área de Conteúdo */
-.conteudo {
-  width: 100%;
-  border: 1px solid #333;
-  border-top: none;
-  margin-top: 50px;
-  border-radius: 8px;
-  padding: 25px;
-  box-sizing: border-box;
-  background: #13141c;
-  color: #f0f0f0;
-  min-height: 300px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease-out;
-}
-
-.conteudo.saindo {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.conteudoContainer {
-  display: flex;
-  gap: 30px;
-  width: 100%;
-}
-
-/* Textos */
-.textosContainer {
-  flex: 0 0 40%;
-  max-width: 40%;
-  padding-right: 20px;
-  box-sizing: border-box;
-}
-
-.marca {
-  font-size: 14px;
-  color: #a0a0a0;
-  font-weight: 600;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.titulo {
-  margin: 0 0 15px;
-  color: #fff;
-  font-size: 24px;
-}
-
-.texto {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 800px;
-  margin-bottom: 2rem;
-}
-
-.logoimg {
-  display: block;      
-  width: 300px; 
-  margin-bottom: 25px;       
-  height: auto;        
-  margin-left: 0;      
-}
-
-/* Imagem */
-.imagemContainer {
-  flex: 0 0 60%;
-  max-width: 580px;
-  margin: 10px;
-  border-radius: 6px;
-  
-  align-self: flex-start;
-  position: relative;
-  padding: 2px; 
-  box-sizing: border-box;
-}
-
-.imagem {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px; 
-}
-
-.group {
-   width: 100%;
-   height: auto;
-  display: block;       
-  object-fit: cover;
-  align-items: center;    
-
-}
-
-.vector {
-  width: 100px;           
-  height: 140px;        
-  object-fit: contain;  
-  margin-top: 40px;
-}
-
-.img {
-  width: 30px;           
-  height: auto;       
-  max-height: 30px;  
-  margin-top: 40px;   
-}
-
-/* Animações */
-@keyframes aparecer {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .section {
-    padding: 2rem 1rem;
-    min-height: auto;
-  }
-
-  .primeiroContudo {
-    margin-bottom: 2rem;
-  }
-
-  .primeiroContudo h1 {
-    font-size: 2rem;
-    padding-bottom: 0.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .primeiroContudo h1::after {
-    width: 90%;
-  }
-
-  .primeiroContudo p {
-    font-size: 1rem;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .segundoContudo {
-    flex-direction: column;
-    height: 40rem; /*altura do video*/
-    max-height: none;
-    margin: 1rem auto;
-    border-radius: 8px;
-  }
-
-  .segundoContudo::before {
-    border-radius: 8px;
-  }
-
-  .gradientOverlay {
-    display: none;
-  }
-
-  .contentLeft {
-    position: relative;
-    width: 100%;
-    top: auto;
-    left: auto;
-    transform: none;
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .companyName {
-    font-size: 1.8rem;
-  }
-
-  .logoMetodo {
-    margin: 1.5rem auto;
-    max-width: 150px;
-  }
-
-  .videoContainer {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    border-radius: 0 0 8px 8px;
-    padding: 0;
-  }
-
-  .playButton {
-    position: relative;
-    left: 7rem;
-    bottom: 25rem; /*botao*/
-    margin: 1rem auto;
-    display: inline-flex;
-  }
-
-  .terceiroContudo h3 {
-    margin: 3rem auto 1rem;
-    padding: 0.2rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .terceiroContudo p {
-    margin: 0;
-    padding: 0 1rem 2rem;
-  }
-
-  /* Quarto Contudo - Navbar */
-  .navbarContainer {
-    min-width: 100%;
-    border-radius: 0;
-  }
-
-  .navbar {
-    height: auto;
-    flex-wrap: wrap;
-  }
-
-  .itemNav {
-    flex: 1 0 50%;
-    height: 50px;
-  }
-
-  .botaoNav {
-    padding: 0 15px;
-    font-size: 0.9rem;
-  }
-
-  .separador {
-    display: none;
-  }
-
-  .conteudo {
-    margin-top: 20px;
-    padding: 1.5rem;
-    min-height: auto;
-  }
-
+@media (max-width: 1200px) {
   .conteudoContainer {
-    flex-direction: column;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    padding: 40px;
+    gap: 40px;
+    min-height: auto;
   }
+}
 
-  .textosContainer,
-  .imagemContainer {
-    flex: 1;
-    max-width: 100%;
-    padding-right: 0;
+@media (max-width: 992px) {
+  .quartoContudo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .conteudoContainer {
+    padding: 30px 20px;
+    border-radius: 24px;
+    gap: 30px;
   }
 
   .titulo {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 
   .texto {
     font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .chip {
+    padding: 10px 15px;
+    flex: 1 1 120px;
   }
 
   .imagemContainer {
-    margin: 0 auto;
-    max-width: 100%;
+    height: 250px;
   }
 
-  /* Modal de Vídeo */
-  .videoModalContainer {
-    flex-direction: column;
-    margin: 40px auto 0;
-    max-width: 95%;
+  .terceiroContudo {
+    padding: 30px 20px;
+    margin-top: 30px;
   }
 
-  .videoModalContent {
-    padding: 15px;
+  .terceiroContudo h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .primeiroContudo h1 {
+    font-size: 2rem;
+  }
+  
+  .cardMetaLabel {
+    font-size: 10px;
   }
 
-  .modalVideoPlayer {
-    max-height: calc(100vh - 200px);
-  }
-
-  .closeButton {
-    margin: 15px auto 0;
-  }
-
-  /* Ajustes para telas muito pequenas */
-  @media (max-width: 480px) {
-    .primeiroContudo h1 {
-      font-size: 1.7rem;
-    }
-
-    .videoContainer {
-      height: 200px;
-    }
-
-    .itemNav {
-      flex: 1 0 100%;
-    }
+  .watchButton {
+    width: 100%;
+    padding: 15px 20px;
   }
 }

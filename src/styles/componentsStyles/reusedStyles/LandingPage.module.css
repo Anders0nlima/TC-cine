@@ -1,37 +1,36 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .box {
-    height: 73vh; /*100*/
-    width: 100vw;
-    background-color: #13141c;
+    height: 85vh; /* Reduced height to show subnav */
+    width: 100%;
+    background-color: var(--bg-dark);
     overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .box .home {
-    height: 73vh; /*100*/
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: relative;
+    z-index: 2;
 }
 
 .box .overlap_group {
     height: 100%; 
     width: 100%;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
-/* Container da imagem ajustado */
-.box .image_container {
+.box .video_container {
     position: absolute;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 70%; /* Wider video for better integration */
     height: 100%;
     overflow: hidden;
+    z-index: 1;
 }
 
 .box .gradient_overlay {
@@ -39,418 +38,225 @@
     top: 0;
     left: 0;
     height: 100%; 
-    width: 30%;
+    width: 100%;
+    /* Subtle gradient for cleaner integration */
     background: linear-gradient(
         90deg,
-        rgba(19, 20, 28, 1) 0%,
-        rgba(19, 20, 28, 0.95) 10%,
-        rgba(19, 20, 28, 0.85) 25%,
-        rgba(19, 20, 28, 0.6) 50%,
-        rgba(19, 20, 28, 0.3) 75%,
-        rgba(14, 15, 23, 0) 100%
+        var(--bg-dark) 0%,
+        rgba(18, 18, 20, 0.45) 30%,
+        rgba(18, 18, 20, 0.02) 60%,
+        transparent 90%
     );
-    z-index: 1;
-}
-
-.box .phantom_thread {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%; 
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.box .frame {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 75px;
-    left: 10%;
-    position: absolute;
-    top: 10%;
-    width: 40%;
-    max-width: 705px;
     z-index: 2;
-}
-
-.box .div {
-    align-items: flex-start;
-    align-self: stretch;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 15.54px;
-    position: relative;
-    width: 100%;
-}
-
-.box .text_wrapper {
-    align-self: stretch;
-    color: #acacac;
-    font-family: "Inter", Helvetica;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-    position: relative;
-    margin-left: 25px;
-    
-}
-
-.box .group {
-    display: flex;
-    align-items: center; 
-    gap: 20px;
-    height: 133.46px;
-    width: 100%;
-    max-width: 690px;
-    
-}
-
-
-.box .vector {
-    height: 60px; /*87*/
-    width: auto;
-
-    /*left: 27%; 
-    position: absolute;
-    top: 30px; 
-    width: 72%;*/
-}
-
-.box .img {
-    margin-top: 30px;
-    margin-left: 20px;
-    height: 120px; 
-    width: auto;
-    /*position: absolute;
-    width: 25%;*/
-}
-
-.box .frame_2 {
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 16px;
-    position: relative;
-    width: 100%;
-    margin-left: 25px;
-}
-
-.box .text_wrapper_2 {
-    align-self: stretch;
-    color: #fbbc09;
-    font-size: 1.2rem;
-    font-weight: 600;
-    position: relative;
-}
-
-.box .escolha_a_melhor_op {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 800px;
-  margin-bottom: 0rem;
-}
-
-.box .frame_8 {
-    align-items: center;
-    border: 1px solid;
-    border-color: #d9d9d9;
-    border-radius: 95px;
-    display: flex;
-    gap: 15px;
-    height: 44px;
-    right: 5%;
-    padding: 6px 5px;
-    position: absolute;
-    bottom: 20%;
-    width: 132px;
-    z-index: 2;
-}
-
-.box .icon_play_circle {
-    height: 32px;
-    position: relative;
-    width: 32px;
-}
-
-.box .text_wrapper_5 {
-    color: #d9d9d9;
-    font-family: "Inter", Helvetica;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: normal;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-
-
-/* Container do vídeo */
-.box .video_container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    overflow: hidden;
 }
 
 .box .video_player {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%; 
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
+    filter: brightness(1);
+    transform: scale(1.3);
 }
 
-/* Botão de play/pause */
-.box .play_button {
-    align-items: center;
-    border: 1px solid;
-    border-color: #d9d9d9;
-    border-radius: 95px;
-    display: flex;
-    gap: 15px;
-    height: 44px; 
-    right: 5%;
-    padding: 6px 15px;
-    position: absolute;
-    bottom: 20%;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #d9d9d9;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.box .play_button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.05);
-}
-
-.box .play_icon {
-    height: 20px;
-    width: 20px;
-}
-
-.video_modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .video_modal_backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  
-  .video_modal_container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    max-width: 90%;
-    width: fit-content;
-    margin: 80px auto 0;
+.box .frame {
     position: relative;
-    z-index: 1001;
-  }
-  
-  .video_modal_content {
-    background-color: #000;
-    padding: 30px;
-    border-radius: 4px;
-    flex-grow: 1;
-  }
-  
-  .modal_video_player {
-    width: 100%;
-    height: auto;
-    max-height: calc(100vh - 160px);
-    display: block;
-  }
-  
-  /* Botão Close - Versão Corrigida */
-  .close_button {
-    position: relative;
-    top: -10px;
-    right: 0;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .close_button:hover {
-    transform: rotate(90deg);
-  }
-  
-  .close_icon {
-    font-size: 20px; /* Tamanho do ícone */
-    width: 20px;
-    height: 20px;
-    display: block;
-    transition: inherit; /* Herda a transição do botão */
-  }
-  
-  /* Garante que o box-sizing está correto */
-  /*.close_button * {
-    box-sizing: border-box;
-  }*/
-
-
-/* Responsividade */
-/* Celulares - até 767px */
-@media (max-width: 768px) {
-  .box {
-    height: 90vh;
-    min-height: -webkit-fill-available;
-  }
-
-  .box .home {
-    height: 100vh;
-  }
-
-  /* Layout de sobreposição para mobile */
-  .box .overlap_group {
+    z-index: 10;
+    padding-left: 5%;
+    width: 55%;
     display: flex;
     flex-direction: column;
-  }
+    gap: 32px;
+}
 
-  /* Imagem de fundo ocupa toda a tela */
-  .box .image_container,
+.box .text_wrapper {
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.box .img {
+  max-width: 240px;
+  height: auto;
+  margin-left: -5px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.box .frame_2 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.box .text_wrapper_2 {
+  font-family: 'Inter', sans-serif; /* Clean Google-like font */
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.box .escolha_a_melhor_op {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 520px;
+  font-weight: 400;
+}
+
+.button_group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cta_primary {
+  background: #fff;
+  color: #000;
+  padding: 16px 36px;
+  border-radius: 100px; /* Fully rounded Google style */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+}
+
+.cta_primary:hover {
+  background: var(--accent-gold);
+  color: #fff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
+}
+
+.play_button {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.play_button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+
+.video_modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 12, 0.98);
+  backdrop-filter: blur(30px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video_modal_container {
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal_video_player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.close_button {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.close_button:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 968px) {
+  .box {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+  
+  .box .overlap_group {
+    flex-direction: column;
+    padding-top: 80px;
+  }
+  
   .box .video_container {
     position: relative;
     width: 100%;
-    height: 40vh;
-    order: 1;
-    overflow: visible;
+    height: 45vh;
+    border-radius: 20px;
+    margin: 0 20px;
+    width: calc(100% - 40px);
   }
-
+  
   .box .gradient_overlay {
-    display: none; /* Remove o gradiente lateral */
+    background: linear-gradient(to top, var(--bg-dark) 10%, transparent 60%);
   }
-
-  /* Adiciona gradiente vertical para melhor legibilidade */
-  .box .image_container::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(
-      to top,
-      rgba(19, 20, 28, 1) 0%,
-      rgba(19, 20, 28, 0) 100%
-    );
-    z-index: 1;
-  }
-
-  /* Conteúdo de texto reorganizado */
+  
   .box .frame {
-    position: relative;
-    width: 90%;
-    left: auto;
-    top: auto;
-    margin: -50px auto 0;
-    padding: 20px;
-    background-color: #13141c;
-    border-radius: 20px 20px 0 0;
-    z-index: 2;
-    order: 2;
-    gap: 30px;
-    margin-top: -30px; /* Reduz o espaço para o botão se encaixar */
-    padding-top: 20px; /* Adiciona espaço para o botão */
-  }
-
-  /* Ajustes no texto */
-  .box .text_wrapper {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .box .group {
-    flex-direction: column;
-    height: auto;
-    gap: 10px;
-  }
-
-  .box .vector {
-    height: 40px;
-  }
-
-  .box .img {
-    height: 50px;
-    margin-top: 20px;
-  }
-
-  .box .frame_2 {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .box .text_wrapper_2 {
-    font-size: 1rem;
-  }
-
-  .box .escolha_a_melhor_op {
-    font-size: 0.9rem;
-    text-align: center;
-  }
-
-  /* Botão de play reposicionado */
-  .box .play_button {
-    position: absolute;
-    bottom: 560px; /* Distância do fundo do container de vídeo */
-    right: 20px; /* Distância da direita do container de vídeo */
-    width: auto;
-    padding: 8px 15px;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 3;
-    margin: 0;
-    transform: none;
-  }
-
-  /* Modal de vídeo para mobile */
-  .video_modal_container {
-    flex-direction: column;
-    margin: 40px auto 0;
-    max-width: 95%;
-  }
-
-  .video_modal_content {
-    padding: 15px;
     width: 100%;
+    padding: 40px 24px;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .box .img {
+    margin: 0 auto;
+    max-width: 180px;
+  }
+  
+  .box .escolha_a_melhor_op {
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  
+  .button_group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .cta_primary, .play_button {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
   }
 
-  .modal_video_player {
-    max-height: calc(100vh - 200px);
-  }
-
-  .close_button {
-    width: 40px;
-    height: 40px;
-    margin: 15px auto 0;
+  .scroll_indicator {
+    display: none;
   }
 }

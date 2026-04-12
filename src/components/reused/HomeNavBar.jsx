@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useLanguage } from '../translationComponents/LanguageContext'; 
+import { useLanguage } from '../context/LanguageContext'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faSearch, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../styles/componentsStyles/reusedStyles/HomeNavBar.module.css';
 
 // Importe suas bandeiras aqui (substitua pelos imports reais)

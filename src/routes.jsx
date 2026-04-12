@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom'; 
-import { Production } from './pages/Production';
-import { PosProduction } from './pages/PosProduction';
+import { Solutions } from './pages/Solutions';
+import { MarketingPage } from './pages/MarketingPage';
 import { HomePage } from './pages/HomePage';
-import SuportPage from './pages/SuportPage';
+import SupportPage from './pages/SupportPage';
 import { Biblioteca } from './components/infoPages/bibliotecas';
 import { Contato } from './components/infoPages/contato';
 import { Cookies } from './components/infoPages/cookies';
@@ -18,9 +18,9 @@ import { Termos } from './components/infoPages/termos';
 function AppRoutes() {
     return (
         <Routes>
-          <Route path="/producao" element={<Production/>} />
-          <Route path="/pos-producao" element={<PosProduction/>} />
-          <Route path="/suporte" element={<SuportPage/>} />
+          <Route path="/producao" element={<Solutions/>} />
+          <Route path="/pos-producao" element={<MarketingPage/>} />
+          <Route path="/suporte" element={<SupportPage/>} />
 
           <Route path="/infoPages/bibliotecas" element={<Biblioteca/>}/>
           <Route path="/infoPages/contato" element={<Contato/>}/>

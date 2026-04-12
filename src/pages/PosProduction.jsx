@@ -1,18 +1,17 @@
 import { LandingPage } from "../components/reused/LandingPage";
-import { NavBar } from "../components/reused/NavBar"
-import { useLanguage } from "../components/translationComponents/LanguageContext";
+import { NavbarPremium } from "../components/reused/NavbarPremium"
+import { useLanguage } from "../components/context/LanguageContext";
 import videopos from "../assets/homeMedia/homenavbar/tcVideo.mp4" 
 import cartazfilme2 from "../assets/posProductionMedia/posternovo1.png";
 import videoposBase from "../assets/homeMedia/homenavbar/tcVideo.mp4"
 import imagemcartaz1 from "../assets/posProductionMedia/cartazimagem2.png"
 import imagem5 from "../assets/posProductionMedia/imagem5.jpg"
-import styles from "../styles/pagesStyles/PosProduction.module.css"
 import Colaboradores from "../components/reused/Colaboradores";
 import Metodos from "../components/reused/Metodos";
-import BeforeAfterSlider from "../componentsPosProduction/BeforeAfterSlider";
-import DesignSonoro from "../componentsPosProduction/DesignSonoro";
+import BeforeAfterSlider from "../components/pos-production/BeforeAfterSlider";
+import DesignSonoro from "../components/pos-production/DesignSonoro";
 import Aplicacoes from "../components/reused/Aplicacoes";
-import { MiniFooter } from "../components/reused/MiniFooter";
+import Footer from "../components/reused/Footer";
 import { NavBarRouter } from "../components/reused/NavBarRouter";
 import AplicacoesPp from "../components/reused/AplicaçãoPp";
 
@@ -21,7 +20,7 @@ export const PosProduction = () => {
     const { t } = useLanguage();
     return (
         <>
-            <NavBar />
+            <NavbarPremium />
             <LandingPage
                 videoSrc={videopos}
                 businessText={t("posProducao.business")}
@@ -175,14 +174,7 @@ export const PosProduction = () => {
             </section>
            
 
-            <MiniFooter
-                tx1= {t("minifooter.tx1")}
-                tx2={t("minifooter.tx2")}
-                txbutton1={t("minifooter.txbutton1")}
-                txbutton2={t("minifooter.txbutton2Pp")}
-                link1="/suporte"
-                link2="/producao"
-            />
+            <Footer />
 
 
         </>

@@ -2,7 +2,7 @@ import styles from "../../styles/componentsStyles/infoStyles/TermsOfUse.module.c
 import logo2 from "../../assets/homeMedia/homenavbar/logoCine2.png"
 import Footer from "../reused/Footer";
 import { NavBar } from "../reused/NavBar";
-import { useLanguage } from "../translationComponents/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 export const Termos = () => {
     const { t } = useLanguage();

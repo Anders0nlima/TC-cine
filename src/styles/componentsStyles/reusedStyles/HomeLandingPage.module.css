@@ -1,399 +1,262 @@
-/* Estilos gerais */
-.landingPageContainer, .heroSection {
+.landingPageContainer {
     width: 100%;
     height: 100vh;
-}
-
-.landingPageContainer {
+    background-color: var(--bg-dark);
     position: relative;
-    background: #13141c;
     overflow: hidden;
 }
 
-/* Seção hero com vídeo de fundo */
 .heroSection {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.videoContainer, .videoOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: flex-end; /* Conteúdo para baixo */
+    justify-content: center;
+    position: relative;
 }
 
 .videoContainer {
-    overflow: hidden;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 }
 
 .backgroundVideo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    /* Transição de opacidade para o efeito de fade suave */
-    transition: opacity 0.5s ease-in-out; 
+    filter: none; /* Brilho original (1) */
 }
 
 .videoOverlay {
-    background: linear-gradient(
-        to bottom, 
-        transparent 0%, 
-        rgba(19, 20, 28, 0.055) 85%,
-        #13141c 100%
-    );
-    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 40%, rgba(18, 18, 20, 1) 100%);
+    z-index: 2;
 }
 
-/* CORREÇÃO PRINCIPAL: Centralização do Conteúdo (Geral) */
 .heroContent {
-    /* Centraliza o bloco na tela */
-    position: absolute; 
-    top: 60%; /* Posiciona o topo em 50% da altura da tela */
-    left: 50%; /* Posiciona a esquerda em 50% da largura da tela */
-    transform: translate(-50%, -50%); /* Ajusta 50% para trás para centralizar o bloco */
-    
-    /* Outros estilos */
-    z-index: 2;
-    text-align: center;
-    color: white;
-    padding: 0 1.5rem;
-    max-width: 1200px;
+    position: relative;
+    z-index: 10;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Voltou a ser centralizado */
+    justify-content: flex-end;
+    padding: 0 20px;
+    margin-bottom: 110px; /* Mais para baixo conforme solicitado */
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizado */
+    text-align: center; /* Centralizado */
+    max-width: 900px;
 }
 
 .heroTitle {
-    font-size: 3rem;
-    font-weight: 580;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-size: clamp(2.5rem, 8vw, 4.2rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    letter-spacing: -0.03em;
+    font-family: 'Inter', sans-serif;
 }
 
 .heroDescription {
-    font-size: 1rem;
-    margin-bottom: -4rem; /*botao 3's baixo*/
-    color: rgb(192, 192, 192);
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 10px; /* Reduzido pq o container já tem o espaçamento */
+    max-width: 550px;
 }
 
-/* Rotação de imaginação (mantido) */
-.wordCube {
-    display: inline-block;
-    position: relative;
-    height: 40px;
-    width: 180px;
-    perspective: 200px;
-    transform-style: preserve-3d;
-    vertical-align: middle;
-    animation: cubeRotate 12s infinite linear;
-}
-
-.cubeFace {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: #4fc3f7;
-    font-weight: bold;
-    text-align: center;
-    line-height: 40px;
-    backface-visibility: hidden;
-    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes cubeRotate {
-    0% { transform: rotateX(0deg); }
-    25% { transform: rotateX(-90deg); }
-    50% { transform: rotateX(-180deg); }
-    75% { transform: rotateX(-270deg); }
-    100% { transform: rotateX(-360deg); }
-}
-
-/* Circunferência */
-.arrowDownContainer {
+.categoryButtonsContainer {
     display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 2rem;
 }
 
-.animatedCircle {
-    width: 50px;
-    height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    opacity: 0.5;
-    transition: all 0.3s ease;
-}
-
-.animatedCircle::after {
-    content: '';
-    position: absolute;
-    top: -40%;
-    left: -25%;
-    width: 150%;
-    height: 150%;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-    );
-    transform: translateY(-100%);
-    animation: shine 3s infinite;
-    border-radius: 50%;
-    opacity: 0;
-}
-
-.arrowDown {
-    width: 24px;
-    height: 24px;
-    color: white;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
-@keyframes shine {
-    0% { transform: translateY(-100%); opacity: 0; }
-    20% { opacity: 0.5; }
-    100% { transform: translateY(100%); opacity: 0; }
-}
-
-/* Botão de assistir (mantido) */
-.watchButton {
-    position: absolute;
-    right: 2rem;
-    bottom: 2rem;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: 1px solid white;
-    padding: 0.6rem 1.5rem;
-    border-radius: 30px;
-    font-size: 1rem;
+.categoryButton {
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.categoryButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.categoryButton.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.watchButtonWrapper {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.watchButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px; /* Mais compacto como solicitado */
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.82rem; /* Menor como solicitado */
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .watchButton:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    transform: scale(1.05);
+    background: #f0f0f0;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
-.playIcon {
-    font-size: 0.8rem;
-}
-
-/* Modal do vídeo (mantido) */
-.videoModal, .videoModalBackdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
+/* Modal Stylings */
 .videoModal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    inset: 0;
     z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .videoModalBackdrop {
-    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 .videoModalContent {
     position: relative;
-    width: 80%;
-    max-width: 1000px;
-    z-index: 2001;
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
 }
 
 .modalVideo {
     width: 100%;
-    height: auto;
-    max-height: 80vh;
-    display: block;
+    height: 100%;
+    object-fit: contain;
 }
 
 .closeButton {
     position: absolute;
-    top: -40px;
-    right: 0;
-    background: none;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
     border: none;
-    color: white;
-    font-size: 1.5rem;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s;
+    z-index: 10;
 }
 
 .closeButton:hover {
+    background: rgba(255, 255, 255, 0.2);
     transform: rotate(90deg);
 }
 
-.noScroll {
-    overflow: hidden;
-}
-
-/* Estilos de vídeo e botões de categoria (mantido) */
-.videoFading {
-    opacity: 1;  /*backgraud*/
-}
-.categoryButtonsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    position: absolute;
-    bottom: -180px; /*botao para baixo*/
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-}
-
-.categoryButton {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    padding: 0.6rem 2rem;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 140px;
-    text-align: center;
-}
-
-.categoryButton:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.categoryButton.active {
-    background-color: #ffc107;
-    color: #000;
-    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
-    transform: translateY(-2px);
-}
-
-/* O bloco de @media (min-width: 1024px) and (max-width: 1366px) FOI REMOVIDO */
-
-/*==== mobile ===*/
 @media (max-width: 768px) {
-    .landingPageContainer, .heroSection {
-        height: 90vh;
-        min-height: -webkit-fill-available;
+    .landingPageContainer {
+        height: 100svh;
     }
-
+    
     .heroContent {
-        top: 55%; 
-        padding: 0 1rem;
-        width: 90%;
-        transform: translate(-50%, -50%);
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 24px;
+        margin-bottom: 80px;
     }
 
+    .textContent {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    
     .heroTitle {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-    }
-
-    .heroDescription {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .wordCube {
-        height: 90px;
-        width: 140px;
-        perspective: 150px;
-    }
-
-    .cubeFace {
-        line-height: 30px;
-        font-size: 0.9em;
-    }
-
-    .videoOverlay {
-        background: linear-gradient(
-            to bottom, 
-            transparent 0%, 
-            rgba(19, 20, 28, 0.5) 70%, 
-            #13141c 100%
-        );
-    }
-
-    .arrowDownContainer {
-        margin-top: 6rem;
-    }
-
-    .animatedCircle {
-        width: 40px;
-        height: 40px;
-    }
-
-    .arrowDown {
-        width: 20px;
-        height: 20px;
-    }
-
-    .watchButton {
-        right: 1rem;
-        bottom: 1rem;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .categoryButtonsContainer{
-        gap: 0.5em; 
-        margin-bottom: 0;
-        bottom: -100px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .categoryButton{
-        padding: 0.6rem 1.5rem;
-        border-radius: 30px;
-        font-size: 0.7rem;
-        font-weight: 500;
-        min-width: 0px; 
-    }
-
-    .videoModalContent {
-        width: 95%;
-    }
-
-    .closeButton {
-        top: -30px;
-        font-size: 1.2rem;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .heroTitle {
-        font-size: 2rem;
+        margin-bottom: 12px;
+        font-size: clamp(2rem, 10vw, 2.8rem);
     }
     
     .heroDescription {
-        font-size: 1rem;
+        margin-bottom: 24px;
+        font-size: 0.95rem;
+        max-width: 100%;
+        line-height: 1.5;
+    }
+    
+    .categoryButtonsContainer {
+        margin-bottom: 20px;
+        gap: 6px;
+        justify-content: center;
+    }
+    
+    .watchButtonWrapper {
+        margin-top: 24px;
+    }
+
+    .watchButton {
+        position: relative;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        margin-top: 0;
     }
 }
+
+@media (max-width: 480px) {
+    .heroContent {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+    
+    .heroTitle {
+        font-size: 2.2rem;
+    }
+    
+    .heroDescription {
+        font-size: 0.9rem;
+    }
+}

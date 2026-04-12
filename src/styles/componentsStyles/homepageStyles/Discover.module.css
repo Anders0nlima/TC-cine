@@ -1,274 +1,178 @@
 .section {
-   background-color: #13141c;
-   color: rgb(255, 255, 255);
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
- }
- 
- .primeiroContudo {
-   max-width: 1200px;
-   margin: 3rem auto 2rem;
-   width: 100%;
-   text-align: center; /* Alterado para center */
-   display: flex;
-   flex-direction: column;
-   align-items: center; /* Centraliza horizontalmente */
- }
- 
- .primeiroContudo h1 {
-   font-size: 45px;
-   font-weight: 700;
-   margin: 0 0 1.5rem 0;
-   line-height: 1.2;
-   background: linear-gradient(90deg, #ffffff, #e0e0e0);
-   -webkit-background-clip: text;
-   background-clip: text;
-   color: transparent;
-   position: relative; /* Adicionado para posicionar a linha */
-   padding-bottom: 1rem; /* Espaço para a linha */
- }
- 
- .primeiroContudo h1::after {
-   content: "";
-   position: absolute;
-   bottom: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 80%; /* Largura da linha */
-   height: 1px;
-   background: linear-gradient(90deg, 
-     transparent 0%, 
-     rgba(255, 255, 255, 0.3) 20%, 
-     rgba(255, 255, 255, 0.6) 50%, 
-     rgba(255, 255, 255, 0.3) 80%, 
-     transparent 100%);
- }
- 
- .primeiroContudo p {
-   font-size: 1.2rem;
-   line-height: 1.6;
-   color: rgba(255, 255, 255, 0.8);
-   max-width: 800px;
-   margin-bottom: 2rem;
- }
-
-
-
- .segundoContudo {
-   margin-top: 5rem; 
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  padding: 100px 40px;
+  overflow: hidden;
 }
 
-.contentWrapper {
-   width: 100%;
-   max-width: 1100px; /* Ajuste este valor conforme necessário */
-   margin-top: 50px;
-   padding: 0 20px;
+.primeiroContudo {
+  max-width: 1200px;
+  margin: 0 auto 60px;
 }
 
-.tabButtons {
-   display: flex;
-   margin-bottom: 1.5rem;
-   gap: 2rem;
-   justify-content: center; /* Centraliza os botões */
+.tagline {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
 }
 
-.tabButton {
-   font-size: 1rem;
-   font-weight: 500;
-   color: #000;
-   background-color: #53555e; 
-   padding: 0.4rem 3rem;
-   border-radius: 30px;
-   margin: 0;
-   display: inline-block;
-   width: 200px;
-   text-align: center;
-   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-   transition: all 0.3s ease;
-   cursor: pointer;
-   border: none;
-   position: relative;
-   white-space: nowrap;
+.mainTitle {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  max-width: 800px;
+  color: #fff;
 }
 
-.tabButton:hover {
-   background-color: #3d3f50;
-   transform: translateY(-2px);
-   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.activeTab {
-   background-color: #f8c537;
-   color: #000;
-   font-weight: 600;
-   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.serviceCard {
+  background: var(--bg-obsidian);
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.activeTab:hover {
-   background-color: #e6b82e; 
+.serviceCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
 }
 
-.contentContainer {
-   display: flex;
-   align-items: center;
-   gap: 2rem;
-   width: 100%;
+.imageWrapper {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
 }
 
-.textContent {
-   flex: 1;
-   max-width: 50%;
-   display: flex;
-   flex-direction: column;
-   gap: 1rem;
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.contentTitle {
-   font-size: 3rem;
-   font-weight: 600;
-   color: rgb(236, 234, 234);
+.serviceCard:hover .cardImage {
+  transform: scale(1.05);
 }
 
-.contentDescription {
-   font-size: 1rem;
-   line-height: 1.6;
-   color: rgb(207, 207, 207);
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* Sólido sutil */
 }
 
-.imageContent {
-   flex: 1;
-   max-width: 60%;
+.cardInfo {
+  padding: 48px;
 }
 
-.contentImage {
-   width: 100%;
-   height: auto;
-   border-radius: 8px;
-   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
-/* Estilos para o botão de interesse (já fornecidos por você) */
-.interesseWrapper {
-   display: inline-flex;
-   align-items: center;
-   background-color: #13141c;
-   border-radius: 6px;
-   width: fit-content;
+.cardDescription {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 32px;
 }
 
-.interesseText {
-   font-weight: 600;
-   font-size: 0.8rem;
-   margin-right: 10px;
-   color: rgb(230, 229, 229);
-   white-space: nowrap;
+.leadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  color: #000;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-.iconButton {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 30px;
-   height: 30px;
-   background-color: #FFD700;
-   border: 1px solid #000;
-   border-radius: 4px;
-   padding: 0;
-   cursor: pointer;
-   transition: all 0.2s ease;
+.leadButton:hover {
+  background: var(--accent-gold);
+  color: #000;
+  transform: translateX(4px);
 }
 
-.arrowIcon {
-   font-size: 12px;
-   color: #000;
-   transition: all 0.2s ease;
+@media (max-width: 992px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
 }
 
-.iconButton:hover {
-   background-color: #000;
-}
-
-.iconButton:hover .arrowIcon {
-   color: #FFD700;
-}
-
-/*=== mobile ===*/
 @media (max-width: 768px) {
   .section {
-    padding: 1rem;
+    padding: 80px 24px;
   }
-
+  
   .primeiroContudo {
-    margin: 1.5rem auto;
-    padding: 0 1rem;
+    margin-bottom: 40px;
   }
 
-  .primeiroContudo h1 {
-    font-size: 2rem;
-    padding-bottom: 0.8rem;
-    margin-bottom: 1rem;
+  .cardInfo {
+    padding: 32px;
+  }
+  
+  .mainTitle {
+    font-size: 2.2rem;
   }
 
-  .primeiroContudo h1::after {
-    width: 90%;
+  .imageWrapper {
+    height: 280px;
   }
 
-  .primeiroContudo p {
-    font-size: 1rem;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .segundoContudo {
-    margin-top: 1rem;
-  }
-
-  .contentWrapper {
-    margin-top: 1.5rem;
-    padding: 0;
-  }
-
-  .tabButton {
-    padding: 0.6rem 1rem;
-    width: 120px;
-    max-width: 250px;
-    margin: 0 auto;
-  }
-
-  .contentContainer {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .textContent {
-    max-width: 100%;
-    order: 2;
-  }
-
-  .contentTitle {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .contentTitle br {
-    display: none; /* Isso remove a quebra de linha no mobile */
-  }
-
-  .contentDescription {
-    font-size: 0.95rem;
-    text-align: center;
-  }
-
-  .imageContent {
-    max-width: 100%;
-    order: 1;
-  }
-
-  .interesseWrapper {
-    margin: 0 auto;
+  .cardTitle {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .mainTitle {
+    font-size: 1.8rem;
+  }
+
+  .imageWrapper {
+    height: 220px;
+  }
+
+  .cardInfo {
+    padding: 24px;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+
+  .leadButton {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}

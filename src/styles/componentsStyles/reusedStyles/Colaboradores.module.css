@@ -1,442 +1,178 @@
 .section {
-  padding: 4rem 9rem;
-  background-color: #13141c;
+  padding: 0;
   color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .primeiroContudo {
-  max-width: 1200px;
-  margin: 0 auto 3rem;
   width: 100%;
-  text-align: left;
-}
-
-.primeiroContudo h4 {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.primeiroContudo h1 {
-  font-size: 45px;
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.2;
-  background: linear-gradient(90deg, #ffffff, #e0e0e0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.primeiroContudo p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 800px;
-  margin-bottom: 2rem;
-}
-
-.primeiroContudo h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #000;
-  background-color: #f8c537;
-  padding: 0.2rem 2.6rem;
-  border-radius: 30px;
-  margin: 2rem auto 0;
-  display: block;
-  width: fit-content;
+  max-width: 1200px;
+  margin-bottom: 3rem;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: default;
-  border: none;
-  position: relative;
-  margin-left: 680px;
 }
 
 .segundoContudo {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 3rem;
-  margin: 0 auto;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 50px;
   width: 100%;
-  align-items: stretch;
+  align-items: start;
 }
 
-.accordionContainer {
-  flex: 3;
+/* Content Card */
+.contentCard {
+  background: #1a1a1e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  min-height: 550px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cardLeft {
   display: flex;
   flex-direction: column;
-}
-
-.tabsContainer {
-  margin-bottom: 1.5rem;
-}
-
-.accordionWrapper, .cartazWrapper {
-  flex: 3;
-  display: flex;
-}
-
-.cartazWrapper {
-  flex: 2;
-  align-items: center;
-}
-
-.accordion {
-  background-color: #13141c;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.accordionItem {
-  position: relative;
-  overflow: hidden;
-  flex-grow: 1;
-  max-height: 180px;
-}
-
-.accordionItem::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    #868bb3 0%,
-    #44475c 20%,
-    rgba(11, 12, 15, 0) 80%
-  );
-}
-
-.accordionItem:last-child {
-  border-bottom: none;
-}
-
-.accordionItem::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0%;
-  width: 3px;
-  background: #f8c537;
-  transition: height 0.3s ease-out;
-}
-
-.accordionItem.active::before {
-  height: 100%;
-}
-
-.accordionButton {
-  width: 100%;
-  padding: 1.5rem;
-  background-color: #13141c;
-  color: white;
-  border: none;
-  text-align: left;
-  font-weight: 550;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.4rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.accordionButton:hover {
-  background-color: #13141c;
-}
-
-.accordionIcon {
-  transition: transform 0.3s ease;
-  color: white;
-  margin-left: 10px;
-  font-size: 1.5rem;
-}
-
-.rotate, 
-.accordionButton.active .accordionIcon,
-.accordionItem.active .accordionIcon {
-  transform: rotate(180deg);
-}
-
-.accordionCollapse {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
-  background-color: #13141c;
-}
-
-.accordionCollapse.show {
-  max-height: 500px;
-}
-
-.accordionBody {
-  padding: 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-}
-
-.tabButtons {
-  display: flex;
-  margin-bottom: 1.5rem;
-  gap: 2rem;
-  justify-content: flex-start;
-}
-
-.tabButton {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #000;
-  background-color: #53555e;
-  padding: 0.4rem 3rem;
-  border-radius: 30px;
-  margin: 0;
-  display: inline-block;
-  width: auto;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-  position: relative;
-  white-space: nowrap;
-}
-
-.tabButton:hover {
-  background-color: #3d3f50;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.activeTab {
-  background-color: #f8c537;
-  color: #000;
-  font-weight: 600;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.activeTab:hover {
-  background-color: #e6b82e;
-}
-
-
-.cartazContainer {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  border-radius: 10px;
-  background-color: #1a1b24;
-  overflow: hidden;
-  padding: 15px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  z-index: 0;
+  gap: 30px;
 }
 
-.cartazContainer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: 10px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.144),
-    rgba(255, 255, 255, 0.05)
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  z-index: -1;
-  pointer-events: none;
+.cardMetaLabel {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: fit-content;
 }
 
-.cartaz {
+.cardTitle {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+}
+
+.cardDescription {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 20px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chipLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.chipValue {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.cardImageWrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cartazNovo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 6px;
-  max-height:  none;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cartazNovo{
-  width: 590px;
-  height: 100%;
-  margin: 0;
+.contentCard:hover .cartazNovo {
+  transform: scale(1.05);
 }
 
-.cartazContainer::after {
-  content: '';
-  position: absolute;
-  top: -2;
-  left: -2;
-  right: -2;
-  bottom: -2;
-  border: 1px solid rgba(255, 255, 255, 0.253);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/*responsividade*/
-@media (max-width: 768px) {
-  .section {
-    padding: 2rem 1.5rem;
+@media (max-width: 1200px) {
+  .contentCard {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px;
     min-height: auto;
   }
-
-  .section .primeiroContudo {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .section .primeiroContudo h4 {
-    font-size: 0.7rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .section .primeiroContudo h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    background: linear-gradient(90deg, #ffffff, #e0e0e0);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-
-  .section .primeiroContudo p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .section .primeiroContudo h3 {
-    font-size: 1rem;
-    padding: 0.2rem 1.5rem;
-    margin: 1.5rem auto 0;
-    width: auto;
-    margin-left: auto;
-  }
-
-
-  .segundoContudo {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .accordionContainer, 
-  .cartazWrapper {
-    width: 100%;
-  }
-
-  .accordionButton {
-    padding: 1rem;
-    font-size: 1.1rem;
-  }
-
-  .accordionIcon {
-    font-size: 1.2rem;
-  }
-
-  .accordionBody {
-    padding: 1rem;
-  }
-
-  .tabButtons {
-    flex-direction: column;
-    gap: 0.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .tabButton {
-    width: 100%;
-    padding: 0.7rem;
-    font-size: 0.9rem;
-  }
-
-  .cartazContainer {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-    padding: 10px;
-  }
-
-  .cartazNovo {
-    max-height: 400px;
-  }
-
-  /* Ajustes para telas muito pequenas */
-  @media (max-width: 480px) {
-    .section {
-      padding: 1.5rem 1rem;
-    }
-
-    .primeiroContudo h1 {
-      font-size: 1.8rem;
-    }
-
-    .primeiroContudo p {
-      font-size: 0.9rem;
-    }
-
-    .accordionButton {
-      font-size: 1rem;
-      padding: 0.8rem;
-    }
-
-    .accordionItem {
-    max-height: 240px;
-    }
-
-    .cartazContainer {
-      max-width: 100%;
-    }
+  
+  .cardImageWrapper {
+    height: 350px;
   }
 }
 
-@media (max-width: 992px) {
-  .section {
-    padding: 4rem 2rem;
-  }
-  
-  .primeiroContudo h1 {
-    font-size: 2.8rem;
-  }
-  
+@media (max-width: 1024px) {
   .segundoContudo {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentCard {
+    padding: 30px 20px;
+    border-radius: 24px;
+    gap: 30px;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .cardImageWrapper {
+    height: 280px;
+  }
+
+  .chip {
+    padding: 10px 15px;
+    flex: 1 1 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .primeiroContudo h1 {
+    font-size: 2rem;
   }
   
-  .cartazWrapper {
-    margin-top: 3rem;
-    width: 100%;
+  .cardMetaLabel {
+    font-size: 10px;
   }
 }

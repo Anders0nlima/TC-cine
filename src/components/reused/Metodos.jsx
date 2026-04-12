@@ -1,38 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { motion } from "framer-motion";
 import styles from "../../styles/componentsStyles/reusedStyles/Metodos.module.css";
 import video1 from "../../assets/productionMedia/video1.mp4";
-import logoCine3 from "../../assets/productionMedia/logoCine3.png";
-import { getConteudos } from "../conteudoMetodo/MetodosConteudos";
+import { useConteudos } from "../conteudoMetodo/MetodosConteudos";
 import logo3 from "../../assets/homeMedia/homenavbar/logoCine3.png"
-
-const ConteudoSeguro = ({ conteudo, className }) => {
-  const conteudoAtual = conteudo || {
-    titulo: 'Content not available :(',
-    texto: 'Please select any item above',
-    imagem: null
-  };
-
-  return (
-    <div className={className}>
-      <div className={styles.textosContainer}>
-        <img src={logo3} alt="logo" className={styles.logoimg}/>
-        <h2 className={styles.titulo}>{conteudoAtual.titulo}</h2>
-        <p className={styles.texto}>{conteudoAtual.texto}</p>
-      </div>
-      {conteudoAtual.imagem && (
-        <div className={styles.imagemContainer}>
-          <img 
-            src={conteudoAtual.imagem} 
-            alt={conteudoAtual.titulo}
-            className={styles.imagem}
-          />
-        </div>
-      )}
-    </div>
-  );
-};
 
 const Metodos = ({
   titulo,
@@ -44,135 +17,132 @@ const Metodos = ({
   variant = 'padrao',
   customBotoes,
   customConteudos,
-  containerTitulo,
-  containerDescricao,
-  watchButtonText
+  activeTabOverride,
+  customImages,
+  cardTag // NOVO PROP
 }) => {
-  const CONTEUDOS = getConteudos();
+  const CONTEUDOS = useConteudos();
   const [showVideoModal, setShowVideoModal] = useState(false);
   const modalVideoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
-  const [saindo, setSaindo] = useState(false);
 
   const botoes = customBotoes || CONTEUDOS[variant]?.botoes || [];
   const conteudos = customConteudos || CONTEUDOS[variant]?.dados || {};
 
-  // Inicializa com a primeira chave válida
-  const [conteudoAtivo, setConteudoAtivo] = useState(() => {
-    const chaveValida = botoes.find(botao => botao in conteudos);
-    return chaveValida || (botoes[0] ?? '');
-  });
+  const [internalActive, setInternalActive] = useState(botoes[0]);
+  
+  const activeId = activeTabOverride !== undefined ? activeTabOverride : internalActive;
+  const conteudoAtivo = typeof activeId === 'number' ? botoes[activeId] : activeId;
 
-  // Debug
-  /*useEffect(() => {
-    console.log('Estado atual:', {
-      conteudoAtivo,
-      existe: conteudoAtivo in conteudos,
-      botoes,
-      conteudos: Object.keys(conteudos)
-    });
-  }, [conteudoAtivo, conteudos]);*/
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      isPlaying ? videoRef.current.pause() : videoRef.current.play();
-      setIsPlaying(!isPlaying);
-    }
-  };
+  const currentData = conteudos[conteudoAtivo] || conteudos[botoes[0]] || {};
+  
+  // Usa a imagem customizada se injetada pelo dashboard mestre
+  const currentImage = (customImages && customImages[activeId]) || currentData.imagem;
 
   const toggleVideoModal = () => setShowVideoModal(!showVideoModal);
 
-  const mudarConteudo = (novoConteudo) => {
-    if (novoConteudo !== conteudoAtivo && novoConteudo in conteudos) {
-      setSaindo(true);
-      setTimeout(() => {
-        setConteudoAtivo(novoConteudo);
-        setSaindo(false);
-      }, 300);
-    }
+  const getMetadata = (id) => {
+    const metaMap = {
+      'Resultado final': [
+        { label: 'Entrega', value: 'Master 4K' },
+        { label: 'Fluxo', value: 'Pós-Imediata' },
+        { label: 'Qualidade', value: 'Lossless' }
+      ],
+      'Estudo dinâmico': [
+        { label: 'Foco', value: 'Narrativa' },
+        { label: 'Técnica', value: 'Dynamic Shot' },
+        { label: 'Base', value: 'Motion' }
+      ],
+      'Técnicas criativas': [
+        { label: 'Estilo', value: 'Cinematic' },
+        { label: 'Lente', value: 'Anamorphic' },
+        { label: 'Cena', value: 'Ambiental' }
+      ],
+      'Mapa espaciais': [
+        { label: 'Plano', value: 'Topográfico' },
+        { label: 'Uso', value: 'VFX / Set' },
+        { label: 'Precisão', value: 'Milimétrica' }
+      ],
+      'Simulações técnicas': [
+        { label: 'Motor', value: '3D Engine' },
+        { label: 'Prev', value: 'Digital Set' },
+        { label: 'Custo', value: 'Otimizado' }
+      ],
+      // Fallback for sub tabs by label
+      'default': [
+        { label: 'Config', value: 'Pro Tier' },
+        { label: 'Status', value: 'Verified' },
+        { label: 'Format', value: 'DCI-P3' }
+      ]
+    };
+    return metaMap[id] || metaMap['default'];
   };
 
   return (
-    <>
-      <section id="metodos" name="metodos" className={styles.section}> 
-        {/* Primeiro Conteúdo */}
+    <section className={styles.section}> 
+      {activeTabOverride === undefined && (
         <div className={styles.primeiroContudo}>
           <h4>{titulo}</h4>
           <h1>{tituloPrincipal}</h1>
           <p>{descricao}</p>
         </div>
+      )}
 
-        {/* Segundo Conteúdo */} 
-        {/*<div className={styles.segundoContudo}>
-          <div className={styles.videoContainer}>
-            <div className={styles.gradientOverlay} />
-            <video
-              ref={videoRef}
-              className={styles.videoPlayer}
-              src={videoExp}
-              loop
-              muted
-              autoPlay
-              playsInline
-            />
+      <div className={styles.quartoContudo} style={{ gridTemplateColumns: activeTabOverride !== undefined ? '1fr' : '' }}>
+        {activeTabOverride === undefined && (
+          <div className={styles.sidebar}>
+            {botoes.map((botao) => (
+              <button
+                key={botao}
+                className={`${styles.botaoNav} ${conteudoAtivo === botao ? styles.ativo : ''}`}
+                onClick={() => setInternalActive(botao)}
+              >
+                <span>{botao}</span>
+                <div className={styles.indicator} />
+              </button>
+            ))}
           </div>
+        )}
+        
+        <motion.div 
+          key={conteudoAtivo}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className={styles.conteudoContainer}
+        >
+             <div className={styles.textosContainer}>
+                <div className={styles.cardMetaLabel}>{cardTag || "Configuração de Método"}</div>
+                <img src={logo3} alt="logo" className={styles.logoimg}/>
+                <h2 className={styles.titulo}>{currentData.titulo}</h2>
+                <p className={styles.texto}>{currentData.texto}</p>
+                
+                <div className={styles.chipsContainer}>
+                  {getMetadata(conteudoAtivo) && getMetadata(conteudoAtivo).length > 0 && getMetadata(conteudoAtivo).map((m, idx) => (
+                    <div key={idx} className={styles.chip}>
+                      <span className={styles.chipLabel}>{m.label}</span>
+                      <span className={styles.chipValue}>{m.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-          <div className={styles.contentLeft}>
-            <div className={styles.group}>
-              <img 
-                className={styles.logoMetodo}
-                src={logoCine3} 
-                alt="Logo TC|CINE" 
-                height={25}
-                width={150}
-              />
-            </div>
-            <div className={styles.companyDescription}>{containerTitulo}</div>
-            <p className={styles.companyText}>{containerDescricao}</p>
-          </div>
+              {currentImage && (
+                <div className={styles.imagemContainer}>
+                  <img src={currentImage} alt={currentData.titulo} className={styles.imagem} />
+                </div>
+              )}
+        </motion.div>
+      </div>
 
-          <button className={styles.playButton} onClick={toggleVideoModal}>
-            <FontAwesomeIcon icon={faPlay} className={styles.playIcon} />
-            <span>{watchButtonText}</span>
-          </button>
-        </div>*/}
-
-        {/* Terceiro Conteúdo */}
+      {activeTabOverride === undefined && (
         <div className={styles.terceiroContudo}>
           <h3>{Destaque}</h3>
           <p>{subDescricao}</p>
+          <button className={styles.watchButton} onClick={toggleVideoModal}>
+            Explorar Método <FontAwesomeIcon icon={faPlay} style={{ marginLeft: '10px' }} />
+          </button>
         </div>
+      )}
 
-        {/* Quarto Conteúdo */}
-        <div className={styles.quartoContudo}>
-          <div className={styles.navbarContainer}>
-            <nav className={styles.navbar}>
-              {botoes.map((botao, index) => (
-                <div key={botao} className={styles.itemNav}>
-                  <button
-                    className={`${styles.botaoNav} ${conteudoAtivo === botao ? styles.ativo : ''}`}
-                    onClick={() => mudarConteudo(botao)}
-                    disabled={!(botao in conteudos)}
-                  >
-                    {botao}
-                  </button>
-                  {index !== botoes.length - 1 && <div className={styles.separador}></div>}
-                </div>
-              ))}
-            </nav>
-          </div>
-          
-          <div className={`${styles.conteudo} ${saindo ? styles.saindo : ''} ${styles.darkTheme}`}>
-            <ConteudoSeguro 
-              conteudo={conteudos[conteudoAtivo]} 
-              className={styles.conteudoContainer}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Modal do Vídeo */}
       {showVideoModal && (
         <div className={styles.videoModal}>
           <div className={styles.videoModalBackdrop} onClick={toggleVideoModal} />
@@ -186,17 +156,13 @@ const Metodos = ({
                 autoPlay
               />
             </div>
-            <button 
-              className={styles.closeButton} 
-              onClick={toggleVideoModal}
-              aria-label="Fechar vídeo"
-            >
-              <FontAwesomeIcon icon={faTimes} className={styles.closeIcon} />
+            <button className={styles.closeButton} onClick={toggleVideoModal}>
+              <FontAwesomeIcon icon={faTimes} />
             </button>
           </div>
         </div>
       )}
-    </>
+    </section>
   );
 };
 

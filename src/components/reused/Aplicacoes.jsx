@@ -4,7 +4,7 @@ import imagemEdicao from "../../assets/productionMedia/edicao.png"
 import imagemSonoridade from "../../assets/productionMedia/sonorizacao.png"
 import imagemGrind from "../../assets/productionMedia/colorgrading.png"
 import { BotaoGeral } from '../reused/BotaoGeral';
-import { useLanguage } from '../translationComponents/LanguageContext';
+import { useLanguage } from '../context/LanguageContext';
 
 
 const Aplicacoes = ({

@@ -3,7 +3,7 @@ import logo2 from "../../assets/homeMedia/homenavbar/logoCine2.png"
 
 import Footer from "../reused/Footer"
 import { NavBar } from "../reused/NavBar"
-import { useLanguage } from "../translationComponents/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 export const Privacidade = () => {
     const { t } = useLanguage();

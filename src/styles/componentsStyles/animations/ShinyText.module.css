@@ -1,0 +1,40 @@
+.shinyText {
+  --shiny-base: rgba(255, 255, 255, 0.45);
+  --shiny-highlight: rgba(255, 255, 255, 0.95);
+
+  color: var(--shiny-base); /* Fallback */
+  background: linear-gradient(
+    120deg,
+    var(--shiny-base) 40%,
+    var(--shiny-highlight) 50%,
+    var(--shiny-base) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: shine linear infinite;
+  white-space: nowrap; /* Garante que o brilho não quebre em múltiplas linhas estranhas */
+}
+
+.shinyText.gold {
+  --shiny-base: #D4AF37;
+  --shiny-highlight: #fff;
+  color: var(--shiny-base);
+}
+
+.shinyText.disabled {
+  animation: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}

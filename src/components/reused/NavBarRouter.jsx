@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
 import { useState, useEffect } from 'react';
-import { useLanguage } from "../translationComponents/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 import styles from "../../styles/componentsStyles/reusedStyles/NavBarRouter.module.css";
 
 export const NavBarRouter = ({ 

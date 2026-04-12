@@ -1,13 +1,3 @@
-/* ===== Reset e Configurações Globais ===== */
-html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
 /* ===== Estilos do Navbar ===== */
 .navbar {
   display: flex;

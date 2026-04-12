@@ -1,151 +1,109 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #13141c;
-    padding: 20px 120px;
-    gap: 200px;
-  }
-  
-  .txt {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--bg-obsidian);
+  padding: 60px 8%;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.txt {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.txt h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.txt p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.buttonsWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.interesseWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-radius: 40px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.interesseWrapper:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.interesseWrapper.primary {
+  background: #fff;
+  border: none;
+}
+
+.interesseWrapper.primary .interesseText {
+  color: #000;
+}
+
+.interesseWrapper.primary .iconButton {
+  background: #000;
+}
+
+.interesseWrapper.primary .arrowIcon {
+  color: #fff;
+}
+
+.interesseText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.arrowIcon {
+  font-size: 12px;
+  color: #000;
+}
+
+@media (max-width: 968px) {
+  .container {
     flex-direction: column;
-    margin-right: 16px; /* Espaço entre o texto e os botões */
-  }
-  
-  .txt h1 {
-    margin: 0;
-    font-size: 25px;
-    font-weight: bold;
-    color: rgb(252, 251, 251);
-  }
-  
-  .txt p {
-    margin: 4px 0 0 0;
-    font-size: 17px;
-    color: rgb(182, 182, 182);
+    text-align: center;
+    padding: 60px 20px;
+    gap: 30px;
   }
   
   .buttonsWrapper {
-    display: flex;
-    gap: 16px;
+    flex-direction: column;
+    width: 100%;
   }
   
   .interesseWrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: inherit; 
-    background-color: #13141c;
-    border: 1px solid #e0e0e0;
-  }
-  
-  .interesseText {
-    font-size: 14px;
-    white-space: nowrap;
-    color: rgb(182, 182, 182);
-  }
-  
-  .interesseText strong {
-    font-weight: 600;
-  }
-  
-  .iconButton {
-    display: flex;
-    align-items: center;
+    width: 100%;
     justify-content: center;
-    width: 24px;
-    height: 24px;
-    background-color: #FFD700;
-    border: 1px solid #000;
-    border-radius: 4px;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
   }
-  
-  .arrowIcon {
-    font-size: 12px;
-    color: #000;
-    transition: all 0.2s ease;
-  }
-  
-  /* Efeitos de hover */
-  .iconButton:hover {
-    background-color: #f5f5f5;
-    background-color: #000;
-  }
-  
-  .iconButton:hover .arrowIcon {
-    color: #FFD700;
-  }
-
-  @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 24px;
-    gap: 40px;
-  }
-
-  .txt {
-    margin-right: 0; /* Remove margem lateral */
-  }
-
-  .txt h1 {
-    font-size: 20px; /* Reduz um pouco a fonte */
-  }
-
-  .txt p {
-    font-size: 15px;
-  }
-
-  .buttonsWrapper {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-  }
-
-  .interesseWrapper {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .interesseText {
-    font-size: 13px;
-  }
-
-  .iconButton {
-    width: 32px;
-    height: 32px;
-  }
-
-  .arrowIcon {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 16px;
-    gap: 24px;
-  }
-
-  .txt h1 {
-    font-size: 18px;
-  }
-
-  .txt p {
-    font-size: 14px;
-  }
-
-  .iconButton {
-    width: 28px;
-    height: 28px;
-  }
-}
+}

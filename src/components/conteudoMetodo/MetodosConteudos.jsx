@@ -6,9 +6,9 @@ import imagem6 from "../../assets/productionMedia/Simulacoes_tecnicas.png";
 import grind1 from "../../assets/productionMedia/grind1.png";
 import grind2 from "../../assets/productionMedia/grind2.png";
 import grind3 from "../../assets/productionMedia/grind3.png";
-import { useLanguage } from "../translationComponents/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 
-export const getConteudos = () => {
+export const useConteudos = () => {
   const { t } = useLanguage();
 
   // Sistema de tradução segura com fallback
@@ -16,7 +16,7 @@ export const getConteudos = () => {
     try {
       const translation = t(key);
       return translation || defaultValue;
-    } catch (error) {
+    } catch {
       //console.warn(`Falha na tradução para a chave: ${key}`, error);
       return defaultValue;
     }

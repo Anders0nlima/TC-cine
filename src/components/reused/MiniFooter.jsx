@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styles from "../../styles/componentsStyles/reusedStyles/MiniFooter.module.css"
 
@@ -12,28 +12,33 @@ export const MiniFooter = ({
   link2 = "/pos-producao",
 }) => {
   return (
-    <div className={styles.container}>
+    <motion.div 
+      className={styles.container}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <div className={styles.txt}>
         <h1>{tx1}</h1>
         <p>{tx2}</p>
       </div>
 
       <div className={styles.buttonsWrapper}>
-        <Link to={link1 || '#'} className={styles.interesseWrapper}>
-        <span className={styles.interesseText}><strong>{txbutton1}</strong></span>
+        <Link to={link1 || '#'} className={`${styles.interesseWrapper} ${styles.primary}`}>
+          <span className={styles.interesseText}>{txbutton1}</span>
           <div className={styles.iconButton}>
-            <FontAwesomeIcon icon={faChevronRight} className={styles.arrowIcon} />
+            <ChevronRight size={16} className={styles.arrowIcon} />
           </div>
         </Link>
 
-            <Link to={link2 || '#'} className={styles.interesseWrapper}>
-           <span className={styles.interesseText}><strong>{txbutton2}</strong></span>
-           <div className={styles.iconButton}>
-            <FontAwesomeIcon icon={faChevronRight} className={styles.arrowIcon} />
+        <Link to={link2 || '#'} className={styles.interesseWrapper}>
+          <span className={styles.interesseText}>{txbutton2}</span>
+          <div className={styles.iconButton}>
+            <ChevronRight size={16} className={styles.arrowIcon} />
           </div>
         </Link>
-      
       </div>
-    </div>
+    </motion.div>
   );
 };

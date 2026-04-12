@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useLanguage } from '../translationComponents/LanguageContext';
-import { faBars, faTimes, faSearch, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { useLanguage } from '../context/LanguageContext';
+import { faBars, faTimes, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import brazilFlag from '../../assets/homeMedia/homenavbar/brazilFlag.webp';
 import ukFlag from '../../assets/homeMedia/homenavbar/ukFlag.png';
 import espanhaFlag from "../../assets/homeMedia/homenavbar/espanha.webp"

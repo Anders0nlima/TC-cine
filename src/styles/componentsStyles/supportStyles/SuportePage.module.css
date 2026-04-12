@@ -1,0 +1,125 @@
+/* Layout Principal */
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 100px;
+    background-color: #fafafa;
+    align-items: center;
+}
+
+.heroSection {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+}
+
+.formSide {
+    width: 100%;
+    max-width: 900px;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+    margin-bottom: 5rem;
+  }
+  
+  /* Estilos do Formulário */
+  .formTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+  }
+  
+  .formDescription {
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  
+  .formWrapper {
+    width: 100%;
+  }
+  
+  /* Seção de Info (Antigo Carrossel) */
+  .infoSection {
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 6rem;
+    padding: 0 1.5rem;
+  }
+
+  .infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .infoCard {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+  }
+
+  .infoCard:hover {
+    transform: translateY(-5px);
+  }
+
+  .cardImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+    color: #111;
+    margin-bottom: 0.75rem;
+  }
+
+  .cardText {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .pageContainer {
+      padding-top: 80px;
+    }
+
+    .heroSection {
+        margin-bottom: 2rem;
+    }
+
+    .formTitle {
+      font-size: 2.25rem;
+      letter-spacing: -1px;
+    }
+    
+    .formSide {
+      padding: 1.5rem;
+      border-radius: 24px;
+      margin-bottom: 3rem;
+    }
+
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .infoSection {
+        margin-bottom: 4rem;
+    }
+}

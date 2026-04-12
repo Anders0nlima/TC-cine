@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faLinkedinIn, faTiktok, faXTwitter  } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faTiktok, faXTwitter  } from '@fortawesome/free-brands-svg-icons';
 import styles from '../../styles/componentsStyles/reusedStyles/Footer.module.css';
-import { useLanguage } from '../translationComponents/LanguageContext';
+import { useLanguage } from '../context/LanguageContext';
 import logo1 from '../../assets/footerMedia/logofooter2.png'
 import logo2 from '../../assets/footerMedia/logofooter1.png'
 import logo3 from '../../assets/footerMedia/log3.png'
@@ -76,138 +76,143 @@ function Footer() {
       } else {
         alert('Erro ao enviar. Tente novamente.');
       }
-    } catch (error) {
+    } catch {
       alert('Erro ao enviar. Tente novamente.');
     } finally {
       setSubmitting(false);
     }
   };
 
-  const handleNotReady = (e) => {
-  e.preventDefault(); // impede a navegação
-  alert("Esta página ainda não está pronta.");
-};
+
+
 
   return (
     <footer className={styles.main_footer}>
-      {/* Primeira parte: Logos e troca de idioma */}
-      <div className={styles.footer_top}>
-        <div className={styles.logo_group}>
-          <img className={styles.especifica} src={logo1} alt="Logo 1" />
-          <img src={logo2} alt="Logo 2" />
-          <img src={logo3} alt="Logo 3" />
-          <img src={logo4} alt="Logo 4" />
-          <img src={logo5} alt="Logo 5" />
-        </div>
-        <div className={styles.language_switcher}>
-          <div className={styles.languageSelector}>
-            <button
-              className={`${styles.languagePill} ${languageOpen ? styles.active : ''}`}
-              onClick={toggleLanguage}
-            >
-              <div className={styles.flagContainer}>
-                <img
-                  src={currentLanguage.flag}
-                  alt={currentLanguage.name}
-                  className={styles.flagImage}
+      <div className={styles.footer_container}>
+        {/* Row 1: Brand, Links, Newsletter */}
+        <div className={styles.footer_content}>
+          
+          {/* Brand & Mission */}
+          <div className={styles.footer_brand}>
+            <img className={styles.primary_logo} src={logo1} alt="TC|CINE Logo" />
+            <p className={styles.brand_mission}>
+              {t("homeLandingPage.descriptionText")}
+            </p>
+            <div className={styles.brand_socials_hidden}>
+              {/* Socials moved to column */}
+            </div>
+          </div>
+
+          {/* Links Grid */}
+          <div className={styles.links_section}>
+            <div className={styles.link_column}>
+              <h4>Explorar</h4>
+              <Link to="/">{t("navbar.home")}</Link>
+              <Link to="/producao">{t("navbar.producao")}</Link>
+              <Link to="/pos-producao">{t("navbar.posProducao")}</Link>
+            </div>
+            <div className={styles.link_column}>
+              <h4>Suporte</h4>
+              <Link to="/suporte">{t("mainFooter.linkUm")}</Link>
+            </div>
+            <div className={styles.link_column}>
+              <h4>Redes Sociais</h4>
+              <div className={styles.social_list}>
+                <a href="https://www.instagram.com/tccinelabs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/company/tccine-tecnologia-criativa-cinematogr%C3%A1fica/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://x.com/TCCINELABS" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Newsletter Section */}
+          <div className={styles.newsletter_section}>
+            <h4>Newsletter</h4>
+            <p>{t("mainFooter.newsletterText")}</p>
+            <form onSubmit={handleNewsletterSubmit} className={styles.newsletter_form}>
+              <div className={styles.input_wrapper}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder={t("mainFooter.emailPlaceholder")}
+                  required
+                  disabled={submitted}
                 />
-              </div>
-              <span className={styles.languageName}>{currentLanguage.name}</span>
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className={`${styles.chevron} ${languageOpen ? styles.rotate : ''}`}
-              />
-            </button>
-            {languageOpen && (
-              <div className={styles.languageDropdown}>
                 <button
-                  className={`${styles.languageOption} ${language === 'pt' ? styles.selected : ''}`}
-                  onClick={() => handleLanguageChange('pt')}
+                  type="submit"
+                  disabled={submitting || submitted}
                 >
-                  <div className={styles.flagContainer}>
-                    <img src={brazilFlag} alt="Português" className={styles.flagImage} />
-                  </div>
-                  <span>Português</span>
-                </button>
-                <button
-                  className={`${styles.languageOption} ${language === 'en' ? styles.selected : ''}`}
-                  onClick={() => handleLanguageChange('en')}
-                >
-                  <div className={styles.flagContainer}>
-                    <img src={ukFlag} alt="English" className={styles.flagImage} />
-                  </div>
-                  <span>English</span>
+                  {submitting
+                    ? <div className={styles.spinner}></div>
+                    : submitted
+                    ? t("mainFooter.subscribed")
+                    : t("mainFooter.subscribe")}
                 </button>
               </div>
-            )}
+            </form>
           </div>
         </div>
-      </div>
 
-      {/* Segunda parte: Links + Newsletter + Redes Sociais */}
-      <div className={styles.footer_middle}>
-        <div className={styles.links_grid}>
-          <Link to="/suporte">{t("mainFooter.linkUm")}</Link>
-          <Link to="/infoPages/sobre" onClick={handleNotReady}>{t("mainFooter.linkDois")}</Link>
-          <Link to="/infoPages/servicos" onClick={handleNotReady}>{t("mainFooter.linkTres")}</Link>
-          <Link to="/infoPages/junte" onClick={handleNotReady}>{t("mainFooter.linkQuatro")}</Link>
-          <Link to="/infoPages/bibliotecas" onClick={handleNotReady}>{t("mainFooter.linkCinco")}</Link>
-          <Link to="/infoPages/equipe" onClick={handleNotReady}>{t("mainFooter.linkSeis")}</Link>
-          <Link to="/infoPages/profissionais" onClick={handleNotReady}>{t("mainFooter.linkSete")}</Link>
-          <Link to="/infoPages/parcerias" onClick={handleNotReady}>{t("mainFooter.linkOito")}</Link>
-          <Link to="/infoPages/contato" onClick={handleNotReady}>{t("mainFooter.linkNove")}</Link>
-        </div>
-        <div className={styles.newsletter}>
-          <p>{t("mainFooter.newsletterText")}</p>
-          <form onSubmit={handleNewsletterSubmit}>
-            <input
-              type="email"
-              name="email"
-              placeholder={t("mainFooter.emailPlaceholder")}
-              required
-              disabled={submitted}
-            />
-            <button
-              type="submit"
-              disabled={submitting || submitted}
-            >
-              {submitting
-                ? t("mainFooter.sending") // exemplo: “Enviando...”
-                : submitted
-                ? t("mainFooter.subscribed") // exemplo: “Registrado”
-                : t("mainFooter.subscribe")} {/* exemplo: “Inscrever-se” */}
-            </button>
-          </form>
-          <h4 className={styles.redesSociaisText}>{t("mainFooter.redes")}</h4>
-          <div className={styles.social_icons}>
-            <a href="https://www.instagram.com/tccinelabs/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://www.facebook.com/people/Tecnologia-Criativa-Cinematogr%C3%A1fica/61578880891041/?locale=pt_BR" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://www.linkedin.com/company/tccine-tecnologia-criativa-cinematogr%C3%A1fica/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </a>
-            <a href="https://www.tiktok.com/@tccine" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTiktok} />
-            </a>
-            <a href="https://x.com/TCCINELABS" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faXTwitter} />
-            </a>
+        {/* Partners / Ecosystem Logos */}
+        <div className={styles.ecosystem_logos}>
+          <div className={styles.ecosystem_title}>ECOSSISTEMA TC|CINE</div>
+          <div className={styles.logo_group}>
+            <img src={logo2} alt="Partner 2" />
+            <img src={logo3} alt="Partner 3" />
+            <img src={logo4} alt="Partner 4" />
+            <img src={logo5} alt="Partner 5" />
           </div>
         </div>
-      </div>
 
-      {/* Terceira parte: Políticas */}
-      <div className={styles.footer_bottom}>
-        <div className={styles.links}>
-          <Link to="/infoPages/termos">{t("mainFooter.terms")}</Link>
-          <Link to="/infoPages/cookies">{t("mainFooter.cookies")}</Link>
-          <Link to="/infoPages/privacidade">{t("mainFooter.privacy")}</Link>
-        </div>
-        <div className={styles.copyright}>
-          <p>{t("mainFooter.copyright")}</p>
+        {/* Bottom Bar: Language, Policies, Copyright */}
+        <div className={styles.footer_bottom}>
+          <div className={styles.bottom_left}>
+            <div className={styles.language_switcher}>
+              <div className={styles.languageSelector}>
+                <button
+                  className={`${styles.languagePill} ${languageOpen ? styles.active : ''}`}
+                  onClick={toggleLanguage}
+                >
+                  <div className={styles.flagContainer}>
+                    <img
+                      src={currentLanguage.flag}
+                      alt={currentLanguage.name}
+                      className={styles.flagImage}
+                    />
+                  </div>
+                  <span className={styles.languageName}>{currentLanguage.name}</span>
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className={`${styles.chevron} ${languageOpen ? styles.rotate : ''}`}
+                  />
+                </button>
+                {languageOpen && (
+                  <div className={styles.languageDropdown}>
+                    {Object.values(languageOptions).map((opt) => (
+                      <button
+                        key={opt.code}
+                        className={`${styles.languageOption} ${language === opt.code ? styles.selected : ''}`}
+                        onClick={() => handleLanguageChange(opt.code)}
+                      >
+                        <div className={styles.flagContainer}>
+                          <img src={opt.flag} alt={opt.name} className={styles.flagImage} />
+                        </div>
+                        <span>{opt.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={styles.legal_links}>
+              <Link to="/infoPages/termos">{t("mainFooter.terms")}</Link>
+              <Link to="/infoPages/cookies">{t("mainFooter.cookies")}</Link>
+              <Link to="/infoPages/privacidade">{t("mainFooter.privacy")}</Link>
+            </div>
+          </div>
+          <div className={styles.copyright}>
+            <p>{t("mainFooter.copyright")}</p>
+          </div>
         </div>
       </div>
     </footer>
