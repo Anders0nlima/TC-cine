@@ -1,44 +1,44 @@
-# 🎬 TCCINE
+# TCCINE
 
-## 🌟 Plataforma de Serviços Audiovisuais
+## Plataforma de Serviços Audiovisuais
 
-TCCINE é uma plataforma dedicada a conectar pessoas com profissionais e recursos essenciais para a produção audiovisual. Ideal para quem busca serviços como **edição de vídeo**, **efeitos sonoros**, **correção de cor** e outras **técnicas que enriquecem o trabalho final**.
+**TCCINE** é uma plataforma web voltada para o mercado audiovisual, criada para conectar criadores de conteúdo, produtores independentes, cineastas e estudantes a serviços especializados de **produção** e **pós-produção**. A plataforma apresenta de forma moderna e interativa serviços como **edição de vídeo**, **design sonoro**, **correção de cor**, **motion graphics** e **estratégias de marketing audiovisual**.
+Seja você um criador independente, estudante, produtor ou cineasta — aqui você encontra o que precisa para elevar seu projeto ao próximo nível.
 
-Seja você um criador independente, estudante, produtor ou cineasta, aqui você pode encontrar exatamente o que precisa para elevar seu projeto ao próximo nível.
+--- 
+
+## Funcionalidades
+- **Landing page** com hero animado, vídeo de fundo e navegação lateral por âncoras
+- **Página de Produção** — dashboard interativo com abas dinâmicas, slider before/after e design sonoro
+- **Página de Marketing** — dashboard com estratégias, métricas de ROI e conteúdo de valor
+- **Suporte** — canal direto via formulário integrado ao WhatsApp e Formspree
+- **Páginas institucionais** — Sobre, Equipe, Parcerias, Profissionais, Bibliotecas, Termos e Privacidade
+- **Internacionalização (i18n)** — sistema próprio de contexto de idioma com arquivos de tradução completos (PT/EN)
+- **Animações fluidas** com Framer Motion em toda a interface
+  
+---
+
+## Tecnologias Utilizadas
+O desenvolvimento da plataforma TCCINE foi feito com foco em performance, responsividade e uma experiência de usuário premium.
+
+### Core
+- **Vite** — Bundler e ambiente de desenvolvimento de alta performance
+- **React 19** — Biblioteca principal para construção da interface
+- **JavaScript** — Lógica e interatividade do front-end
+- **HTML & CSS Modules** — Estrutura e estilização com escopo isolado por componente
+- **Media Queries** — Responsividade completa para mobile e desktop
+
+### Bibliotecas & Integrações
+- **Framer Motion** — Animações e transições de página fluidas
+- **React Router DOM v7** — Navegação SPA com múltiplas rotas
+- **Formspree** — Envio de formulários diretamente para e-mail
+- **Vercel Analytics** — Monitoramento de tráfego em produção
+- **Lucide React / React Icons / Font Awesome** — Iconografia consistente
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
-
-O desenvolvimento da plataforma TCCINE foi feito com foco em performance, responsividade e uma boa experiência do usuário. As principais tecnologias empregadas foram:
-
-- ⚡ **Vite** — Utilizado como bundler e ambiente de desenvolvimento por sua performance e simplicidade.
-- ⚛️ **React** — Biblioteca principal para construção da interface do usuário.
-- 💻 **JavaScript** — Linguagem utilizada para implementar a lógica do front-end.
-- 🎨 **HTML & CSS** — Base estrutural e visual da aplicação.
-- 📱 **Media Queries** — Responsividade garantida para diferentes tamanhos de tela (mobile e desktop).
-- ✉️ **Formspree** — Ferramenta usada para envio de formulários diretamente para o e-mail, facilitando a comunicação com os usuários.
-
----
-
-## 🌐 Publicação Online (Deploy)
-
-A plataforma TCCINE foi publicada online para acesso público utilizando duas ferramentas diferentes:
-
-- ▲ **Vercel**: Utilizado para hospedar a aplicação **front-end**. A escolha da Vercel se deu pela facilidade de integração com o GitHub, build automático a cada push na branch principal, suporte a projetos React/Vite e deploy rápido. Bastou conectar o repositório, configurar o build com `vite`, e a plataforma ficou disponível em poucos minutos.
-
-- 🌍 **Hostinger**: Utilizado para hospedar o **domínio personalizado** da TCCINE. Após adquirir o domínio, foi feito o apontamento DNS para a aplicação hospedada na Vercel, permitindo que o site seja acessado através de um endereço próprio e profissional.
-
-Esse processo garantiu que o projeto ficasse acessível ao público de forma rápida, estável e com uma URL personalizada, melhorando a apresentação e usabilidade da plataforma.
-
----
-
-## 📄 Sobre esta Documentação
-
-Este README é apenas um **resumo simplificado** do projeto TCCINE. Caso você tenha interesse em entender com mais profundidade **como a plataforma foi construída**, quais foram as **decisões de desenvolvimento**, os **desafios de implementação**, além de ver **imagens ilustrativas**, **explicações detalhadas** e **diagramas**, recomendo acessar a documentação completa no link abaixo:
-
-👉 [Clique aqui para ter acesso ao PDF com a documentação completa](https://github.com/user-attachments/files/21797982/Documentacao.TCCINE.pdf)
-
-
----
-
+## Publicação Online (Deploy)
+A plataforma TCCINE foi publicada online utilizando duas ferramentas:
+- **Vercel** — Hospedagem do front-end com integração direta ao GitHub. Build automático a cada push na branch principal, com suporte nativo a projetos React/Vite. O deploy é feito em poucos minutos com a configuração do `vite build`.
+- **Hostinger** — Hospedagem do domínio personalizado da TCCINE. Após adquirir o domínio, foi feito o apontamento DNS para a aplicação na Vercel, permitindo acesso por uma URL própria e profissional.
+Esse processo garante que o projeto fique acessível ao público de forma rápida, estável e com identidade profissional.
